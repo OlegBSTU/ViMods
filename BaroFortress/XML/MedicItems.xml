@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Items>
+
+  <Item name="CrossbowSep" identifier="CrossbowSep" category="Weapon" tags="weapon,gun" Scale="0.15"
+    impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="527,150,172,144"
+      origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicMainEquipment.png" sourcerect="512,388,512,212"
+      depth="0.55" origin="0.5,0.5" />
+    <Body width="500" height="200" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="45,-10"
+      handle1="-20,-6" handle2="30,10" holdangle="-40" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <SpawnItem identifiers="CrossbowBoltSep" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </Holdable>
+    <RangedWeapon reload="1.75" launchimpulse="20.0" barrelpos="85,14" spread="1"
+      unskilledspread="10" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Medic/CrossbowFire.ogg" type="OnUse" range="500" />
+      <RequiredItems items="CrossbowBoltSep" type="Contained" />
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <SpawnItem identifiers="CrossbowBoltSep" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer itempos="27,10" iteminterval="0,-4" hideitems="true" capacity="1"
+      maxstacksize="6" containedstateindicatorslot="0" containedstateindicatorstyle="spear"
+      containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
+      <Containable items="CrossbowBoltSep" hide="true" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,448,64,64"
+        origin="0.5,0.5" />
+    </ItemContainer>
+  </Item>
+
+
+  <Item name="CrossbowBoltSep" identifier="CrossbowBoltSep" category="Weapon" scale="0.15"
+    sonarsize="2" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/Medic/MedicMainEquipment.png" sourcerect="540,325,260,52"
+      depth="0.55" />
+    <Body width="5" height="5" density="25" />
+    <Projectile characterusable="false" hitscan="false" launchimpulse="0" sticktocharacters="true"
+      sticktoitems="true" sticktostructures="true" sticktodeflective="true" sticktodoors="true"
+      sticktolighttargets="true">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <Affliction identifier="CrossbowSep" strength="1" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="neq Character" />
+          <Sound file="%ModDir%/Sounds/Medic/CrossbowHit.ogg" selectionmode="random" range="500"
+            volume="10" />
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnActive" target="This">
+        <Conditional condition="gte 100" />
+        <ParticleEmitter particle="HealingParticles" ColorMultiplier="255,150,50,255"
+          EmitInterval="0.05" anglemin="-5" anglemax="5" particleamount="1" velocitymin="-10"
+          velocitymax="-100" scalemin="0.15" scalemax="0.2" LifeTimeMultiplier="0.5" />
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1"
+          velocitymin="0" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+        <ParticleEmitter particle="HealingTracer" ColorMultiplier="255,150,50,255"
+          EmitInterval="0.01" ParticleAmount="2" ParticlesPerSecond="2" anglemin="-5" anglemax="5"
+          particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.3" scalemax="0.3" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" setvalue="true" noninteractable="true" />
+      <StatusEffect type="OnNotContained" target="This" delay="3">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This">
+        <Conditional entitytype="eq Character" />
+        <ParticleEmitter particle="HealingParticles" ColorMultiplier="255,150,50,255"
+          DistanceMin="50" DistanceMax="250" anglemin="-5" anglemax="5" particleamount="5"
+          velocitymin="-10" velocitymax="-100" scalemin="2" scalemax="2" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" condition="0.0" setvalue="true" />
+    </Projectile>
+  </Item>
+
+
+
+  <Item name="SolemnVow" identifier="SolemnVow" category="Weapon" Tags=""
+    cargocontaineridentifier="metalcrate" scale="0.1" impactsoundtag="impact_metal_heavy"
+    RequireAimToUse="True">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="135,0,148,148"
+      origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="255,0,220,500"
+      depth="0.55" origin="0.5,0.5" />
+    <Body width="65" height="15" density="25" />
+    <MeleeWeapon slots="Any,RightHand" aimpos="20,10" handle1="0,-20" holdangle="0" reload="0.88" range="50" combatPriority="25" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="2" itemdamage="3" structuredamage="2" structuresoundtype="StructureBlunt">
+        <Affliction identifier="blunttrauma" strength="30" />
+        <Affliction identifier="stun" strength="0.1" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="%ModDir%/Sounds/MeleeBlunt.ogg" selectionmode="random" range="250" />
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <StatusHUD drawhudwhenequipped="true" />
+  </Item>
+
+
+  <Item name="DartGun" identifier="DartGun" category="Weapon" cargocontaineridentifier="metalcrate" tags="weapon,gun" Scale="0.07" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="0,0,108,108"
+      origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="512,0,512,390"
+      depth="0.55" origin="0.5,0.5" />
+    <Body width="25" height="25" density="0" />
+
+    <Holdable slots="Any,RightHand" controlpose="true" aimpos="70,5" handle1="-150,-50"
+      msg="ItemMsgPickUpSelect" />
+    <RangedWeapon barrelpos="50,-120" spread="0" combatPriority="70"
+      drawhudwhenequipped="true" crosshairscale="0.2" reload="20">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <RequiredItems items="SleepDart" type="Contained" msg="ItemMsgAmmoRequired" />
+        <Affliction identifier="stun" strength="5" />
+      </Attack>
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Medic/SleepDart.ogg" type="OnUse" range="500"
+        selectionmode="Random" />
+      <StatusEffect type="OnUse" target="This">
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150"
+          velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+        <Conditional condition="gte 100" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" condition="5" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true"
+        containedstateindicatorstyle="bullet" containedstateindicatorslot="0"
+        containedspritedepth="0.56">
+        <Containable items="SleepDart" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" IsOn="true"
+            targetitemcomponent="LightComponent" />
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64"
+          origin="0.5,0.5" />
+      </ItemContainer>
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <Conditional condition="gte 100" />
+        <SpawnItem identifiers="SleepDart" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <LightComponent LightColor="255,200,50,255" Flicker="0" range="25" IsOn="true">
+      <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
+      <StatusEffect type="OnContained" targettype="This">
+        <Conditional condition="eq 95" />
+        <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="800.0" />
+      </StatusEffect>
+    </LightComponent>
+    <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
+  </Item>
+
+
+  <Item name="SleepDart" identifier="SleepDart" category="Weapon" maxstacksize=""
+    cargocontaineridentifier="metalcrate" allowasextracargo="true" Scale="0.5" tags=""
+    impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" colormultiplier="255,200,50,200"
+      sourcerect="166,430,40,43" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Jobgear/TalentGear.png" colormultiplier="255,200,50,200"
+      sourcerect="3,118,24,9" depth="0.55" origin="0.5,0.5" />
+    <Body width="34" height="14" density="25" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0"
+        colormultiplier="255,200,50,200" scalemultiplier="1,1" />
+      <Attack structuredamage="20" targetforce="20" itemdamage="20" severlimbsprobability="1.0"
+        penetration="0.5">
+        <Affliction identifier="stun" strength="5" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0"
+          scalemultiplier="1,1" colormultiplier="255,200,115,200" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10"
+          particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.75" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+  <Item name="BioticGrenadeLauncherSep" identifier="BioticGrenadeLauncherSep" category="Weapon"
+    cargocontaineridentifier="metalcrate"
+    tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.1"
+    impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="0,160,120,120"
+      origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="0,150,250,150"
+      depth="0.55" origin="0.5,0.5" />
+    <Body width="25" height="25" density="0" />
+
+    <Holdable slots="Any,RightHand" controlpose="true" holdpos="35,10" handle1="0,0" aimpos="35,10" />
+    <RangedWeapon barrelpos="0,0" reload="20" spread="0" unskilledspread="10" combatPriority="75"
+      drawhudwhenequipped="true" crosshairscale="0.2">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <RequiredItems items="BioticGrenadeSep" type="Contained" msg="ItemMsgAmmoRequired" />
+      </Attack>
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Medic/BioticGrenadeThrown.ogg" type="OnUse" range="250" />
+      <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+        <Conditional condition="gte 100" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" condition="5" />
+      <RequiredItems items="BioticGrenadeSep" type="Contained" msg="ItemMsgAmmoRequired" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true"
+        containedstateindicatorstyle="bullet" containedstateindicatorslot="0"
+        containedspritedepth="0.56">
+        <Containable items="BioticGrenadeSep" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" IsOn="true"
+            targetitemcomponent="LightComponent" />
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64"
+          origin="0.5,0.5" />
+      </ItemContainer>
+      <StatusEffect type="OnContained" target="This">
+        <Conditional condition="gte 100" />
+        <SpawnItem identifiers="BioticGrenadeSep" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <LightComponent LightColor="255,200,50,255" Flicker="0" range="25" IsOn="true">
+      <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
+      <StatusEffect type="OnContained" targettype="This">
+        <Conditional condition="eq 95" />
+        <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="800.0" />
+      </StatusEffect>
+    </LightComponent>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
+  </Item>
+
+  <Item name="BioticGrenadeSep" identifier="BioticGrenadeSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="bioticgrenade" Scale="0.1" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="0,160,120,120" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="0,150,250,150" depth="0.55" origin="0.5,0.5" />
+    <Body width="38" height="15" density="30" />
+    <Projectile characterusable="false" launchimpulse="12.0" sticktocharacters="false">
+      <Attack structuredamage="40" penetration="1" severlimbsprobability="5">
+        <Affliction identifier="burn" strength="50" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1"
+          velocitymin="0" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+        <ParticleEmitter particle="HealingTracer" ColorMultiplier="255,0,255,255"
+          EmitInterval="0.01" ParticleAmount="2" ParticlesPerSecond="2" anglemin="-5" anglemax="5"
+          particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.3" scalemax="0.3" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <sound file="%ModDir%/Sounds/Medic/BioticGrenadeHit.ogg" range="2000" />
+        <Explosion range="300.0" ballastfloradamage="800" structuredamage="0" levelwalldamage="0" itemdamage="0" force="0" severlimbsprobability="0.0" shockwave="false" flames="false" smoke="false" flash="false">
+          <Affliction identifier="burn" strength="50" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" delay="10">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <ParticleEmitter particle="BaroFortressSplash" ScaleMultiplier="3,3" VelocityMin="50" VelocityMax="100" ParticleAmount="1" CopyEntityDir="False" ColorMultiplier="255,0,255,255" Angle="180"/>
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+
+  <Item name="QuickfixSep" identifier="QuickfixSep" category="Weapon" cargocontaineridentifier="metalcrate" tags="" Scale="0.2" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="370,148,140,140" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicMainEquipment.png" sourcerect="0,300,512,300" ColorMultiplier="255,150,50,255" depth="0.9" origin="0.5,0.5" />
+    <Body width="50" height="30" density="0" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="45,-20" handle1="-30,-80" handle2="300,220" holdangle="0" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon launchimpulse="5.0" reload="1" weapondamagemodifier="1.25" spread="0" combatPriority="70" drawhudwhenequipped="true" barrelpos="85,16" crosshairscale="0.2" holdtrigger="true">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Medic/MedigunHealingStart1.ogg" type="OnUse" range="500"/>
+      <RequiredItems items="MedigunRaySep" type="Contained"/>
+      <StatusEffect type="OnContained" target="This">
+        conditional 
+        <SpawnItem identifiers="MedigunRaySep" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" iteminterval="0,-4" itempos="27,10" containedstateindicatorstyle="spear" containedstateindicatorslot="0" containedspritedepth="0.56">
+      <Containable items="MedigunRaySep" hide="true" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,448,64,64" origin="0.5,0.5" />
+    </ItemContainer>
+    <aitarget sightrange="0" soundrange="500" fadeouttime="2" />
+  </Item>
+
+  <Item name="MedigunRaySep" identifier="MedigunRaySep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon name="MedicOutfitSep" texture="%ModDir%/Images/Medic/MedicOutfitSep.png" sourcerect="472,0,40,40" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/ParticlesSheet.png" sourcerect="334,408,64,64" depth="0.57" origin="0.5,0.5" />
+    <Body width="10" height="10" density="30" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="45,-20" handle1="-30,-80" handle2="300,220" holdangle="0" msg="ItemMsgPickUpSelect" />
+    <Rope sourcepullforce="10" targetpullforce="0" projectilepullforce="0" maxlength="500" snaponcollision="false" spritewidth="50" tile="true" origin="0.5,0.5" targetminmass="10" lerpforces="true" snapanimduration="1" ReelSoundPitchSlide="1.0,2.25">
+      <Sprite texture="%ModDir%/Images/ParticlesSheet.png" sourcerect="232,372,140,140" depth="0.57" origin="0.5,0.5" />
+      <ReelSound file="%ModDir%/Sounds/Medic/MedigunHealingLoop.ogg" range="500" loop="true" />
+      <SnapSound file="%ModDir%/Sounds/Medic/MedigunHealingEnd.ogg" range="500"/>
+      <StatusEffect type="OnUse" target="This" Snapped="true" delay="1" checkconditionalalways="true">
+        <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Conditional targetitemcomponent="Projectile" IsStuckToTarget="true" />
+        <ParticleEmitter particle="HealingParticles" ColorMultiplier="255,150,50,255"
+        EmitInterval="1" anglemin="-5" anglemax="5" particleamount="1" velocitymin="-10" velocitymax="-100" scalemin="0.3" scalemax="0.4" LifeTimeMultiplier="1.5" />
+      </StatusEffect>
+    </Rope>
+    <Projectile characterusable="false" launchimpulse="5" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodeflective="true" sticktodoors="false" sticktolighttargets="true">
+      <Attack structuredamage="0" itemdamage="0" targetforce="0" severlimbsprobability="0">
+        <Affliction identifier="haste" strength="5" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This" delay="10">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And" disabledeltatime="true">
+        <Conditional Snapped="false" />
+        <Conditional mass="lt 30" />
+        <Affliction identifier="drag" strength="1" />
+      </StatusEffect>
+    </Projectile>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  
+
+  <!-- <ParticleEmitter particle="BaroFortressDrip" AngleMax="360" ScaleMin="2" ScaleMax="3"
+  ScaleMultiplier="1,1" EmitInterval="0.5" ParticleAmount="1" ParticlesPerSecond="1"
+  ColorMultiplier="255,50,255,255" />-->
+
+</Items>

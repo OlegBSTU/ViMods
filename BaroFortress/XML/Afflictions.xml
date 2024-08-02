@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+
+  <Affliction
+    name=""
+    identifier="bioticgrenadeheal"
+    description=""
+    type="psychosis"
+    causeofdeathdescription="Died to biotic grenade"
+    selfcauseofdeathdescription="Ana Omari, reporting for... Uh?"
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    iconcolors="255,150,50,255;255,150,50,255"
+    affectmachines="true">
+        <Effect minstrength="0"
+      maxstrength="100"
+      minscreenblur="0.0"
+      maxscreenblur="0.2"
+      strengthchange="-10">
+      <StatusEffect target="character" disabledeltatime="true" stackable="false">
+        <Conditional InWater="true" />
+        <Effect strengthchange="-40" />
+      </StatusEffect>
+      <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+        <Conditional jarate="gte 20" />
+        <ParticleEmitter particle="BaroFortressDrip" color="255,150,50,255" copyentityangle="true"
+          anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
+          scalemin="0.3" scalemax="0.6" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="384,0,128,128"
+      color="255,150,50,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name=""
+    identifier="bioticgrenadeharm"
+    description=""
+    type="psychosis"
+    causeofdeathdescription="Died to biotic grenade"
+    selfcauseofdeathdescription="Ana Omari, reporting for duty"
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    iconcolors="255,50,255,255;255,50,255,255"
+    affectmachines="true">
+    <Effect minstrength="0"
+      maxstrength="100"
+      minscreenblur="0.2"
+      maxscreenblur="0.9"
+      strengthchange="-10">
+
+      <StatusEffect target="character" disabledeltatime="true" stackable="false">
+        <Conditional InWater="true" />
+        <Effect strengthchange="-40" />
+      </StatusEffect>
+      <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+        <Conditional jarate="gte 20" />
+        <ParticleEmitter particle="BaroFortressDrip" color="255,50,255,255" copyentityangle="true"
+          anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
+          scalemin="0.3" scalemax="0.6" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="384,0,128,128"
+      color="255,50,255,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name=""
+    identifier="madmilk"
+    description=""
+    type="psychosis"
+    causeofdeathdescription="Died to Madmilk"
+    selfcauseofdeathdescription="It's just hilarious. How on earth were you able to die to madmilk?"
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    iconcolors="255,255,255,255;255,255,255,255"
+    affectmachines="true">
+    <Effect minstrength="0"
+      maxstrength="100"
+      minscreenblur="0.2"
+      maxscreenblur="0.9"
+      strengthchange="-10">
+
+      <StatusEffect target="character" disabledeltatime="true" stackable="false">
+        <Conditional InWater="true" />
+        <Effect strengthchange="-40" />
+      </StatusEffect>
+      <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+        <Conditional jarate="gte 20" />
+        <ParticleEmitter particle="BaroFortressDrip" color="255,255,255,255" copyentityangle="true"
+          anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
+          scalemin="0.3" scalemax="0.6" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="256,0,128,128"
+      color="255,255,255,255" origin="0,0" />
+  </Affliction>
+
+
+  <Affliction
+    name=""
+    identifier="jarate"
+    description=""
+    type="psychosis"
+    causeofdeathdescription="Died to Jarate"
+    selfcauseofdeathdescription="It's just hilarious. How on earth were you able to die to jarate?"
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="100"
+    iconcolors="255,255,0,255;255,255,0,255"
+    affectmachines="true">
+    <Effect minstrength="0"
+      maxstrength="100"
+      resistancefor="damage"
+      minresistance="0"
+      maxresistance="-0.3"
+      minscreenblur="0.2"
+      maxscreenblur="0.9"
+      strengthchange="-10">
+
+      <StatusEffect target="character" disabledeltatime="true" stackable="false">
+        <Conditional InWater="true" />
+        <Effect strengthchange="-40" />
+      </StatusEffect>
+      <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+        <Conditional jarate="gte 20" />
+        <ParticleEmitter particle="BaroFortressDrip" color="255,255,0,255" copyentityangle="true"
+          anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
+          scalemin="0.3" scalemax="0.6" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="256,0,128,128" color="255,255,0,255"
+      origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="crossbowsep"
+    identifier="crossbowsep"
+    description="crossbowsep"
+    type="psychosis"
+    isbuff="false"
+    limbspecific="false"
+    maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="128,0,128,128"
+      color="255,150,50,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="vaccinesep"
+    identifier="vaccinesep"
+    description="vaccinesep"
+    type="psychosis"
+    isbuff="false"
+    limbspecific="false"
+    maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="0,0,128,128"
+      color="255,150,50,255" origin="0,0" />
+  </Affliction>
+
+</Afflictions>

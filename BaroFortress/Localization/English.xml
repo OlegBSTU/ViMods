@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+
+          <!-- MEDIC -->
+
+  <entityname.QuickfixSep>Quickfix (S)</entityname.QuickfixSep>
+  <entitydescription.QuickfixSep>War historians will appreciate the original medigun - still handy even though the invuln function shorted out after its first use. This one, though, is reinforced with alien tech, allowing it not to short out anymore!</entitydescription.QuickfixSep>
+
+  <entityname.SolemnVow>Solemn Vow</entityname.SolemnVow>
+  <entitydescription.SolemnVow>Art lovers will cherish this bust of Hippocrates, commemorating a time when the Medic still thought doing no harm was a good idea</entitydescription.SolemnVow>
+
+  <entityname.CrossbowSep>Crusader's Crossbow (S)</entityname.CrossbowSep>
+  <entitydescription.CrossbowSep>This thing might look like an old crossbow of before. However, it's nothing more than a regular syringe gun!</entitydescription.CrossbowSep>
+
+  <entityname.BioticGrenadeLauncherSep>Biotic Grenade (S)</entityname.BioticGrenadeLauncherSep>
+  <entitydescription.BioticGrenadeLauncherSep>This grenade was reverse-engineered from some alien nanobot tech first found in ruins. The substance inside is extremely volatile and burns the human skin, preventing any healing of tissues, but only if this substance was not injected beforehand, in which case it instead heals external wounds. Nanobots break down shortly after being activated though - making effects temporary</entitydescription.BioticGrenadeLauncherSep>
+
+  <entityname.DartGun>Sleep Dart Gun</entityname.DartGun>
+  <entitydescription.DartGun>Remember when syringe guns were very bulky and heavy? They still are! This small device, though, is very compact and allows shooting small darts containing an extremely powerful dementonite-based drug to sedate those hit for a short duration. Has a light and sound indicator so you'll always know when it's ready!</entitydescription.DartGun>
+
+          <!-- OUTFITS -->
+
+  <entityname.MedicOutfitSep>Separatist Medic Outfit</entityname.MedicOutfitSep>
+  <entitydescription.MedicOutfitSep>The original Medic cape was too uncomfortable to wear after any contact with water, making it unsuitable for aquatic operations on Europa. This outfit doesn't look as good, but is still extremely badass and is also compatible with mediguns, allowing Medics to fully utilize their potentials</entitydescription.MedicOutfitSep>
+
+  <entityname.ScoutOutfitSep>Separatist Scout Outfit</entityname.ScoutOutfitSep>
+  <entitydescription.ScoutOutfitSep>While prooviding zero to none protection, this outfit is very lightweight, allowing Scout to run for his life with ease!</entitydescription.ScoutOutfitSep>
+
+  <entityname.IntelSep>Separatist Intelligence</entityname.IntelSep>
+  <entitydescription.IntelSep>This suitcase is filled to the brim with top secret separatist documents! Now run...</entitydescription.IntelSep>
+
+          <!-- AFFLICTIONS -->
+  
+<!--
+  <afflictionname.jarate>Jarate? NOOO</afflictionname.jarate>
+  <afflictiondescription.jarate>It's like you have just been covered in sulfuric acid, but IT STINKS SO BAD!</afflictiondescription.jarate>
+-->
+
+  </infotexts>

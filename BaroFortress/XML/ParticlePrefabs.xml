@@ -1,0 +1,234 @@
+﻿<prefabs>
+<HealingTracer
+    startsizemin="0.4,0.4"
+    startsizemax="0.5,0.5"
+    sizechangemin="0.25,0.25"
+    sizechangemax="0.3,0.3"
+    startrotationmin="0"
+    startrotationmax="360"
+    startcolor="255,255,255,255"
+    endcolor="255,255,255,50"
+    growtime="0.2"
+    lifetime="1"
+    velocitychange="0,0"
+    startdelaymin="0"
+    startdelaymax="0"
+    angularvelocitymin="0"
+    angularvelocitymax="0"
+    rotatetodirection="False"
+    drag="0"
+    waterdrag="0"
+    velocitychangewater="0,0"
+    collisionradius="1"
+    usecollision="True"
+    deleteoncollision="True"
+    friction="0"
+    restitution="0"
+    drawtarget="Both"
+    blendstate="AlphaBlend"
+    animduration="1"
+    loopanim="True"
+    drawontop="False"
+    lifetimemin="0"
+    middlecolor="255,255,255,255"
+    usemiddlecolor="False"
+    priority="0">
+    <sprite
+    texture="%ModDir%/Images/ParticlesSheet.png"
+    sourcerect="40,170,100,100" />
+  </HealingTracer>
+  
+  <HealingParticles
+    startsizemin="0.6,0.6"
+    startsizemax="1,1"
+    sizechangemin="0.1,0.1"
+    sizechangemax="0.3,0.3"
+    startrotationmin="-20"
+    startrotationmax="20"
+    startcolor="255,255,255,255"
+    endcolor="100,100,100,100"
+    lifetime="3"
+    growtime="0.1"
+    usecollision="True"
+    deleteoncollision="True"
+    drawtarget="Both"
+    velocitychange="0,0.1"
+    startdelaymin="0"
+    startdelaymax="0"
+    angularvelocitymin="0"
+    angularvelocitymax="0"
+    rotatetodirection="False"
+    drag="0"
+    waterdrag="0"
+    velocitychangewater="0,0.1"
+    collisionradius="25"
+    friction="0.5"
+    restitution="0.5"
+    blendstate="AlphaBlend"
+    animduration="1"
+    loopanim="True"
+    drawontop="False"
+    lifetimemin="0"
+    middlecolor="255,255,255,255"
+    usemiddlecolor="False"
+    priority="-1">
+    <sprite
+      texture="%ModDir%/Images/ParticlesSheet.png"
+      sourcerect="0,0,64,64" />
+  </HealingParticles>
+
+  <BaroFortressSplash
+  LifeTime="3"
+  LifeTimeMin="0"
+  StartDelayMin="0"
+  StartDelayMax="0.1"
+  AngularVelocityMin="0"
+  AngularVelocityMax="0"
+  StartRotationMin="0"
+  StartRotationMax="0"
+  RotateToDirection="False"
+  Drag="0"
+  WaterDrag="0"
+  VelocityChange="0,0"
+  VelocityChangeWater="0,0"
+  CanEnterSubs="True"
+  CollisionRadius="1"
+  InvariantCollisionSize="False"
+  UseCollision="True"
+  DeleteOnCollision="False"
+  Friction="0.5"
+  Restitution="0.5"
+  StartSizeMin="1,1"
+  StartSizeMax="2,1.5"
+  SizeChangeMin="0.4,-0.1"
+  SizeChangeMax="0.4,-0.2"
+  GrowTime="0.1"
+  StartColor="255,255,255,100"
+  MiddleColor="255,255,255,255"
+  EndColor="255,255,255,100"
+  UseMiddleColor="True"
+  DrawTarget="Both"
+  DrawOnTop="True"
+  DrawAlways="False"
+  BlendState="AlphaBlend"
+  Priority="0"
+  AnimDuration="1"
+  LoopAnim="False">
+  <sprite
+    texture="%moddir%/Images/BaroFortressSplash.png"
+    sourcerect="0,0,128,128" />
+</BaroFortressSplash>
+
+<BaroFortressDrip
+  LifeTime="3"
+  LifeTimeMin="0"
+  StartDelayMin="0"
+  StartDelayMax="0"
+  AngularVelocityMin="0"
+  AngularVelocityMax="0"
+  StartRotationMin="0"
+  StartRotationMax="360"
+  RotateToDirection="True"
+  Drag="0"
+  WaterDrag="0.3"
+  VelocityChange="0,-9.8"
+  VelocityChangeWater="0,-5"
+  CollisionRadius="10"
+  UseCollision="True"
+  DeleteOnCollision="True"
+  Friction="0.5"
+  Restitution="0.2"
+  StartSizeMin="0.4,0.2"
+  StartSizeMax="1,0.3"
+  SizeChangeMin="0,0"
+  SizeChangeMax="0,0"
+  GrowTime="0.5"
+  StartColor="255,255,255,255"
+  MiddleColor="255,255,255,255"
+  EndColor="200,200,200,0"
+  UseMiddleColor="False"
+  DrawTarget="Both"
+  DrawOnTop="False"
+  DrawAlways="False"
+  BlendState="AlphaBlend"
+  Priority="5"
+  AnimDuration="1"
+  LoopAnim="True">
+  <sprite
+    texture="%ModDir%/Images/BaroFortressDrip.png"
+    sourcerect="0,0,32,32" />
+  <sprite
+    texture="%ModDir%/Images/BaroFortressDrip.png"
+    sourcerect="32,0,32,32" />
+  <sprite
+    texture="%ModDir%/Images/BaroFortressDrip.png"
+    sourcerect="64,0,32,32" />
+  <sprite
+    texture="%ModDir%/Images/BaroFortressDrip.png"
+    sourcerect="96,0,32,32" />
+  <sprite
+    texture="%ModDir%/Images/BaroFortressDrip.png"
+    sourcerect="128,0,32,32" />
+  <sprite
+    texture="%ModDir%/Images/BaroFortressDrip.png"
+    sourcerect="160,0,32,32" />
+  <sprite
+    texture="%ModDir%/Images/BaroFortressDrip.png"
+    sourcerect="192,0,32,32" />
+  <sprite
+    texture="%ModDir%/Images/BaroFortressDrip.png"
+    sourcerect="224,0,32,32" />
+</BaroFortressDrip>
+
+<IntelPapers
+  LifeTime="3"
+  LifeTimeMin="0"
+  StartDelayMin="0"
+  StartDelayMax="0"
+  AngularVelocityMin="0"
+  AngularVelocityMax="0"
+  StartRotationMin="0"
+  StartRotationMax="360"
+  RotateToDirection="True"
+  Drag="0"
+  WaterDrag="0.3"
+  VelocityChange="0,-9.8"
+  VelocityChangeWater="0,-5"
+  CanEnterSubs="True"
+  CollisionRadius="10"
+  InvariantCollisionSize="False"
+  UseCollision="True"
+  DeleteOnCollision="True"
+  Friction="1.4901161E-08"
+  Restitution="1"
+  StartSizeMin="0.4,0.2"
+  StartSizeMax="1,0.3"
+  SizeChangeMin="0,0"
+  SizeChangeMax="0,0"
+  GrowTime="0.5"
+  StartColor="255,255,255,255"
+  MiddleColor="255,255,255,255"
+  EndColor="200,200,200,255"
+  UseMiddleColor="False"
+  DrawTarget="Both"
+  DrawOnTop="False"
+  DrawAlways="False"
+  BlendState="AlphaBlend"
+  Priority="5"
+  AnimDuration="1"
+  LoopAnim="True">
+  <sprite
+    texture="%ModDir%/Images/IntelPapers.png"
+    sourcerect="0,0,64,100" />
+  <sprite
+    texture="%ModDir%/Images/IntelPapers.png"
+    sourcerect="70,35,64,64" />
+  <sprite
+    texture="%ModDir%/Images/IntelPapers.png"
+    sourcerect="140,11,72,68" />
+  <sprite
+    texture="%ModDir%/Images/IntelPapers.png"
+    sourcerect="220,0,80,84" />
+</IntelPapers>
+
+</prefabs>

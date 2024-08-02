@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="BaroFortress 2" modversion="0.0.1" corepackage="False">
+	
+	<!-- Content -->
+	<Afflictions file="%ModDir%/XML/Afflictions.xml" />
+	<Particles file="%ModDir%/XML/ParticlePrefabs.xml" />
+	<Item file="%ModDir%/XML/MedicItems.xml" />
+	<Item file="%ModDir%/XML/Outfits.xml" />
+	
+	<!-- Localization -->
+	<Text file="%ModDir%/Localization/English.xml" /> 
+
+	<!-- COPYRIGHT LOLOLOL  -->
+
+</contentpackage>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Items>
+
+  <Override>
+    <Item name="" identifier="headset" scale="0.5" category="Equipment"
+      tags="smallitem,mobileradio" description="" cargocontaineridentifier="metalcrate"
+      impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="crewcab" secondary="divingcab" />
+      <Price baSeprice="105">
+        <Price storeidentifier="merchantoutpost" minavailable="3" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="10" />
+        <Price storeidentifier="merchantresearch" minavailable="4" />
+        <Price storeidentifier="merchantmilitary" minavailable="6" />
+        <Price storeidentifier="merchantmine" minavailable="6" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,0,64,64"
+        origin="0.5,0.5" />
+      <Sprite name="Headset" texture="Content/Items/Jobgear/headgears.png" depth="0.6"
+        sourcerect="28,321,49,62" origin="0.5,0.5" />
+      <Body radius="20" height="20" density="15" />
+      <Deconstruct time="10">
+        <Item identifier="plastic" amount="2" />
+        <Item identifier="copper" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="fpgacircuit" />
+      </Fabricate>
+      <WifiComponent range="35000.0" LinkToChat="true" MinChatMessageInterval="0.0">
+        <StatusEffect type="OnActive" targettype="This">
+          <Conditional JamTimer="gt 0" targetitemcomponent="WifiComponent" />
+          <sound file="Content/Sounds/RadioStatic.ogg" range="500.0"
+            frequencymultiplier="0.7" loop="true" volume="0.5" />
+        </StatusEffect>
+      </WifiComponent>
+      <Upgrade gameversion="0.18.0.0">
+        <WifiComponent>
+          <RequiredItems items="" />
+        </WifiComponent>
+      </Upgrade>
+      <Wearable limbtype="Head" slots="Any,Headset" msg="ItemMsgPickUpSelect"
+        displaycontainedstatus="true">
+        <sprite name="Headset Wearable" texture="Content/Items/Jobgear/headgears.png"
+          limb="Head" depth="0.1" hidelimb="false" inheritlimbdepth="true"
+          inheritscale="true" ignorelimbscale="true" scale="0.7"
+          hideotherwearables="false" sourcerect="26,317,51,64" origin="0.5,0.6" />
+      </Wearable>
+
+      <ItemContainer itempos="27,10" iteminterval="0,-4" hideitems="true" capacity="1"
+        maxstacksize="6" containedstateindicatorslot="0"
+        containedstateindicatorstyle="spear"
+        containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
+        <Containable items="adminsounds" />
+        <SlotIcon slotindex="0" texture="%ModDir%/Images/Intel.png"
+          sourcerect="410,0,190,128" origin="0.5,0.5" />
+      </ItemContainer>
+    </Item>
+  </Override>
+
+  <Item name="MedicOutfitSep" identifier="MedicOutfitSep" category="Equipment"
+    tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+    <InventoryIcon name="MedicOutfitSep" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+      sourcerect="472,0,40,40" origin="0.5,0.5" />
+    <Sprite name="Medic Uniform 1" texture="Content/Items/Jobgear/MiscJobGear.png"
+      sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+    <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Medic Outfit Sep Torso" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+        limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
+        inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Right Hand"
+        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightHand" hidelimb="true"
+        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Left Hand" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+        limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+        inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Right Lower Arm"
+        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightForearm" hidelimb="true"
+        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Left Lower Arm"
+        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftForearm" hidelimb="true"
+        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Right Upper Arm"
+        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightArm" hidelimb="true"
+        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Left Upper Arm"
+        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftArm" hidelimb="true"
+        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Waist" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+        limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+        inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Right Thigh"
+        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightThigh" hidelimb="true"
+        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Left Thigh"
+        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftThigh" hidelimb="true"
+        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Right Leg" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+        limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+        inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Left Leg" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+        limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+        inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Right Shoe"
+        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightFoot" hidelimb="true"
+        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Medic Outfit Sep Left Shoe" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+        limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+        inheritsourcerect="true" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Wearable>
+  </Item>
+
+  <Item name="IntelSep" identifier="IntelSep" category="Equipment" tags="clothing" scale="0.3"
+    cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
+    <InventoryIcon texture="%ModDir%/Images/Intel.png" sourcerect="410,0,190,128" origin="0.5,0.5" />
+    <Sprite name="Intel Sep" texture="%ModDir%/Images/Intel.png" sourcerect="0,350,100,350"
+      depth="0.6" origin="0.5,0.5" />
+    <Body width="2" height="250" density="20" />
+    <LightComponent LightColor="255,150,50,255" range="200.0" IsOn="true" Flicker="0.2"
+      FlickerSpeed="0.1" pulsefrequency="0.1" pulseamount="0.7">
+      <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
+    </LightComponent>
+    <Wearable slots="OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Intel Sep wearable" texture="%ModDir%/Images/Intel.png" limb="Torso"
+        hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5"
+        inheritsourcerect="false" sourcerect="0,350,300,350">
+        <LightComponent LightColor="255,150,50,255" range="200.0" IsOn="true" Flicker="0.2"
+          FlickerSpeed="0.1" pulsefrequency="0.1" pulseamount="0.7">
+          <LightTexture texture="Content/Lights/pointlight_bright.png" origin="0.5,0.5" />
+        </LightComponent>
+      </sprite>
+      <StatusEffect type="OnWearing" target="This">
+        <ParticleEmitter particle="IntelPapers" AngleMax="360" DistanceMin="50" DistanceMax="200"
+          VelocityMin="200" VelocityMax="200" ScaleMin="0.5" ScaleMax="1" ScaleMultiplier="1,1"
+          EmitInterval="1" ParticleAmount="3" ParticlesPerSecond="1"
+          ColorMultiplier="255,255,255,255" Distance="50" Velocity="200" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" delay="10">
+        <Remove />
+      </StatusEffect>
+    </Wearable>
+  </Item>
+
+</Items>
