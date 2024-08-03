@@ -112,8 +112,107 @@
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
       </StatusEffect>
+      <StatValue stattype="SwimmingSpeed" value="0.07" />
+      <StatValue stattype="WalkingSpeed" value="0.07" />
     </Wearable>
   </Item>
+
+  <Item name="ScoutOutfitSep" identifier="ScoutOutfitSep" category="Equipment"
+  tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+  <InventoryIcon name="ScoutOutfitSep" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
+    sourcerect="472,0,40,40" origin="0.5,0.5" />
+  <Sprite name="ScoutOutfitSep" texture="Content/Items/Jobgear/MiscJobGear.png"
+    sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
+  <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+  <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
+    <sprite name="Scout Outfit Sep Torso" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
+      limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
+      inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Right Lower Arm"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="RightForearm" hidelimb="false"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Left Lower Arm"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="LeftForearm" hidelimb="false"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Waist" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
+      limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+      inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Right Thigh"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="RightThigh" hidelimb="true"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Left Thigh"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="LeftThigh" hidelimb="true"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Right Leg" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
+      limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+      inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Left Leg" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
+      limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+      inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Right Shoe"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="RightFoot" hidelimb="true"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Left Shoe" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
+      limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+      inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Head" texture="Content/Items/Jobgear/headgears.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hidelimb="false" sourcerect="320,327,88,51" origin="0.45,1.0" />
+
+    <StatusEffect type="OnNotContained" target="This">
+      <Remove />
+    </StatusEffect>
+    <StatValue stattype="SwimmingSpeed" value="0.33" />
+    <StatValue stattype="WalkingSpeed" value="0.33" />
+  </Wearable>
+</Item>
+
+<Item name="ScoutOutfitCoal" identifier="ScoutOutfitCoal" category="Equipment"
+tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+<InventoryIcon name="ScoutOutfitCoal" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
+  sourcerect="472,0,40,40" origin="0.5,0.5" />
+<Sprite name="ScoutOutfitCoal" texture="Content/Items/Jobgear/MiscJobGear.png"
+  sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
+<Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
+  <sprite name="Scout Outfit Coal Torso" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
+    limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Right Lower Arm"
+    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="RightForearm" hidelimb="false"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Left Lower Arm"
+    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="LeftForearm" hidelimb="false"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Waist" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
+    limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Right Thigh"
+    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="RightThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Left Thigh"
+    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="LeftThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Right Leg" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
+    limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Left Leg" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
+    limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Right Shoe"
+    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="RightFoot" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Left Shoe" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
+    limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Scout Outfit Coal Head" texture="Content/Items/Jobgear/headgears.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hidelimb="false" sourcerect="320,327,88,51" origin="0.45,1.0" />
+
+  <StatusEffect type="OnNotContained" target="This">
+    <Remove />
+  </StatusEffect>
+  <StatValue stattype="SwimmingSpeed" value="0.33" />
+  <StatValue stattype="WalkingSpeed" value="0.33" />
+</Wearable>
+</Item>
+
 
   <Item name="IntelSep" identifier="IntelSep" category="Equipment" tags="clothing" scale="0.3"
     cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">

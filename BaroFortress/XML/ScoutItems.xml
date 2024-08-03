@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Force A Nature" identifier="ForceANature" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.3" depth="0.9" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="0,8,92,68" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="0,0,320,94" depth="0.55" origin="0.5,0.25" />
+    <Body width="50" height="30" density="0" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="20,-20" aimpos="20,-20" handle1="-10,-20" handle2="100,-30" holdangle="-40" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnContained" target="This">
+        <Conditional condition="gte 100" />
+        <SpawnItem identifiers="ForceANatureShell" amount="2" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" targettype="This" condition="71"></StatusEffect>
+      <StatusEffect type="OnContained" targettype="This">
+        <Conditional condition="eq 72" />
+        <Sound file="%ModDir%/Sounds/Scout/ForceNatureReload.ogg" type="OnUse" range="750" selectionmode="Random" />
+        <ParticleEmitter particle="casingfirearm" colormultiplier="0.5,0.5,0.5,1" ScaleMultiplier="1.5,1.5" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+      </StatusEffect>
+    </Holdable>
+    <RangedWeapon barrelpos="120,-20" spread="0.1" combatPriority="80" reload="0.3" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Sounds/Scout/ForceNatureShoot.ogg" type="OnUse" range="1500" selectionmode="Random" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="2.5" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <RequiredItems items="ForceANatureShell" type="Contained" />
+      <StatusEffect type="OnUse" target="This" condition="1" setvalue="true" disabledeltatime="true" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <Propulsion force="-1000" usablein="both" ApplyToHands="false">
+        <RequiredItems items="ForceANatureShell" type="Contained" />
+      </Propulsion>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="2" hideitems="true" drawinventory="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="ForceANatureShell" hide="true" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+    </ItemContainer>
+    <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+  </Item>
+  <Item name="ForceANatureShell" identifier="ForceANatureShell" category="Weapon" maxstacksize="2" maxstacksizecharacterinventory="2" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,960,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="189,299,23,11" depth="0.55" origin="0.5,0.5" />
+    <Body width="23" height="10" density="15" />
+    <Pickable slots="" msg="ItemMsgPickUpSelect" />
+    <!--When fired, spawns 12 projectiles simultaneously.-->
+    <Projectile characterusable="false" hitscan="true" hitscancount="12" removeonhit="true" spread="15">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,100" scalemultiplier="1,0.5" />
+      <Attack structuredamage="1" targetforce="30000" itemdamage="0" severlimbsprobability="0.5">
+        <Affliction identifier="BulletDamage" strength="5" />
+        <Affliction identifier="stun" strength="0.05" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+  
+  <Item name="Guillotine Launcher" identifier="GuillotineLauncher" category="Weapon" maxstacksize="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.2" impactsoundtag="impact_metal_heavy">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="98,10,64,52" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="350,0,80,256" depth="0.55" origin="0.5,0.25" />
+    <Body width="24" height="52" density="300" />
+    <Holdable slots="Any,RightHand" controlpose="true" holdpos="0,0" holdangle="0" handle1="-40,-120" aimpos="-25,50" />
+    <RangedWeapon barrelpos="0,0" reload="5" spread="0" unskilledspread="10" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <RequiredItems items="Guillotine" type="Contained" />
+      </Attack>
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Scout/CleaverThrown.ogg" type="OnUse" range="350" />
+      <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+        <Conditional condition="gte 100" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" condition="20" />
+      <RequiredItems items="Guillotine" type="Contained" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" containedstateindicatorstyle="bullet" containedstateindicatorslot="0" containedspritedepth="0.56">
+        <Containable items="Guillotine" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" IsOn="true" targetitemcomponent="LightComponent" />
+        </Containable>
+      </ItemContainer>
+      <StatusEffect type="OnContained" target="This">
+        <Conditional condition="gte 100" />
+        <SpawnItem identifiers="Guillotine" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <LightComponent LightColor="255,200,50,255" Flicker="0" range="25" IsOn="true">
+      <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
+      <StatusEffect type="OnContained" targettype="This" delay="0.5">
+        <Conditional condition="eq 80" />
+        <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="100.0" />
+      </StatusEffect>
+    </LightComponent>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
+  </Item>
+
+
+
+  <Item name="Guillotine" identifier="Guillotine" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="bioticgrenade" Scale="0.2" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="98,10,64,52" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="350,0,80,256" depth="0.55" origin="0.5,0.25" />
+    <Body width="38" height="15" density="30" />
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodeflective="true" sticktodoors="true">
+      <Attack structuredamage="40" severlimbsprobability="100">
+        <Affliction identifier="GuillotineBleeding" amount="5.0" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This" Condition="0" disabledeltatime="true" setvalue="true" noninteractable="true">
+        <sound file="%ModDir%/Sounds/Scout/CleaverHit.ogg" range="750" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" delay="2">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+  <Item name="Winger" identifier="Winger" category="Weapon" cargocontaineridentifier="metalcrate" tags="weapon,gun" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="0,120,68,60" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="0,100,132,100" depth="0.55" origin="0.5,0.25" />
+    <Body width="38" height="15" density="30" />
+    <Holdable slots="Any,RightHand" controlpose="true" aimpos="70,5" handle1="-40,-30">
+      <StatusEffect type="OnSecondaryUse" target="This">
+        <Conditional condition="gte 98" />
+        <SpawnItem identifiers="WingerAmmo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="WingerAmmo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="WingerAmmo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="WingerAmmo" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="WingerAmmo" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" targettype="This" condition="98"/>
+      <StatusEffect type="OnContained" targettype="This">
+        <Conditional condition="eq 99" />
+        <Sound file="%ModDir%/Sounds/Scout/WingerReload.ogg" type="OnUse" range="500" selectionmode="Random" />
+        <ParticleEmitter particle="casingfirearm" colormultiplier="0.5,0.5,0.5,1" ScaleMultiplier="1.5,1.5" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+      </StatusEffect>
+    </Holdable>
+    <RangedWeapon barrelpos="100,-10" spread="20" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" reload="0.15">
+      <RequiredItems items="WingerAmmo" type="Contained" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Scout/WingerShoot.ogg" type="OnUse" range="1000" selectionmode="Random" />
+      <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+        <Conditional condition="gte 100" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <ItemContainer capacity="1" maxstacksize="5" hideitems="true" drawinventory="false" containedstateindicatorstyle="bullet" containedstateindicatorslot="0" containedspritedepth="0.56">
+        <Containable items="WingerAmmo" hide="true" />
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      </ItemContainer>
+      <StatusEffect type="OnUse" target="This" condition="1" setvalue="true" disabledeltatime="true" />
+    </RangedWeapon>
+    <Propulsion force="100" usablein="both" ApplyToHands="false"/>
+    <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
+  </Item>
+
+
+
+  <Item name="WingerAmmo" identifier="WingerAmmo" category="Weapon" maxstacksize="5" cargocontaineridentifier="metalcrate" allowasextracargo="true" Scale="0.5" tags="" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" colormultiplier="255,200,50,200" sourcerect="166,430,40,43" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Jobgear/TalentGear.png" colormultiplier="255,200,50,200" sourcerect="3,118,24,9" depth="0.55" origin="0.5,0.5" />
+    <Body width="34" height="14" density="25" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,255,200" scalemultiplier="1,1" />
+      <Attack structuredamage="20" targetforce="-100" itemdamage="0" severlimbsprobability="1.0" penetration="0.5">
+        <Affliction identifier="BulletDamage" strength="17" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1" colormultiplier="255,200,115,200" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.75" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+
+  <Item name="Holy Mackerel" identifier="HolyMackerel" category="Weapon" Tags="" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="172,0,92,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="432,0,80,200" depth="0.55" origin="0.5,0.5" />
+    <Body width="65" height="15" density="25" />
+    <MeleeWeapon slots="Any,RightHand" holdpos="40,-20" aimpos="20,10" handle1="0,-20" controlpose="false" holdangle="0" reload="0.2" range="50" combatPriority="25" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureBlunt">
+        <Affliction identifier="MeleeDamage" strength="35" />
+        <Affliction identifier="stun" strength="0.1" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="%ModDir%/Sounds/Scout/HolyMackerelHit.ogg" selectionmode="random" range="1500" volume="3"/>
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+  </Item>
+
+
+
+  <Item name="Fan o' War" identifier="FanOWar" category="Weapon" Tags="" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="188,73,68,40" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="552,0,88,256" depth="0.55" origin="0.5,0.5" />
+    <Body width="65" height="15" density="25" />
+    <MeleeWeapon slots="Any,RightHand" holdpos="40,-20" aimpos="20,10" handle1="-10,-20" controlpose="false" holdangle="0" reload="0.2" range="50" combatPriority="25" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureBlunt">
+        <Affliction identifier="MeleeDamage" strength="9" />
+        <Affliction identifier="stun" strength="15" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="%ModDir%/Sounds/Scout/BatMeleeHit.ogg" selectionmode="random" range="500" />
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+  </Item>
+
+
+
+  <Item name="Bonk! Atomic Punch" identifier="BonkAtomicPunch" category="Weapon" maxstacksize="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.2" impactsoundtag="impact_metal_heavy">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="95,135,60,44" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="214,112,52,100" depth="0.55" origin="0.5,0.5" />
+    <Body width="24" height="52" density="300" />
+    <Holdable slots="Any,RightHand" controlpose="true" holdpos="0,0" holdangle="0" handle1="-40,-120" aimpos="-25,50">
+    <StatusEffect type="OnNotContained" target="This">
+      <Remove />
+    </StatusEffect>
+
+    <StatusEffect type="OnSecondaryUse" target="This" Condition="-100.0" disabledeltatime="true">
+        <Conditional Condition="gte 100" />
+    </StatusEffect>
+    <StatusEffect type="OnSecondaryUse" target="This,Character">
+      <Conditional Condition="gte 100" />
+      <Use/>
+    </StatusEffect>
+    <StatusEffect type="OnUse" target="This" setvalue="true">
+      <Sound file="%ModDir%/Sounds/Scout/BonkCanCrush.ogg" type="OnUse" range="500"/>
+    </StatusEffect>
+    <StatusEffect type="OnUse" target="UseTarget" >
+      <Affliction identifier="haste" amount="5" />
+    </StatusEffect>
+    <StatusEffect type="OnContained" target="UseTarget" >
+        <Affliction identifier="haste" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" IsOn="true" targetitemcomponent="LightComponent">
+        <Conditional Condition="gte 100" />
+      </StatusEffect>
+    </Holdable>
+    <LightComponent LightColor="255,200,50,255" Flicker="0" range="25" IsOn="true">
+      <StatusEffect type="OnBroken" targettype="This" IsOn="false" delay="1">
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" delay="0.5">
+        <Conditional condition="eq 95" />
+        <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="100.0" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" Condition="5.0" />
+    </LightComponent>
+   </Item>
+
+
+</Items>
