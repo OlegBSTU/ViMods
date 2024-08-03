@@ -28,13 +28,14 @@
         <Remove />
       </StatusEffect>
     </RangedWeapon>
-    <ItemContainer itempos="27,10" iteminterval="0,-4" hideitems="true" capacity="1"
+    <ItemContainer itempos="27,10" iteminterval="0,-4" drawinventory="false" hideitems="true" capacity="1"
       maxstacksize="6" containedstateindicatorslot="0" containedstateindicatorstyle="spear"
       containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
       <Containable items="CrossbowBoltSep" hide="true" />
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,448,64,64"
         origin="0.5,0.5" />
     </ItemContainer>
+    <StatusHUD drawhudwhenequipped="true" />
   </Item>
 
 
@@ -77,6 +78,7 @@
       </StatusEffect>
       <StatusEffect type="OnImpact" target="This" condition="0.0" setvalue="true" />
     </Projectile>
+    <StatusHUD drawhudwhenequipped="true" />
   </Item>
 
 
@@ -90,8 +92,8 @@
       depth="0.55" origin="0.5,0.5" />
     <Body width="65" height="15" density="25" />
     <MeleeWeapon slots="Any,RightHand" aimpos="20,10" handle1="0,-20" holdangle="0" reload="0.88" range="50" combatPriority="25" msg="ItemMsgPickUpSelect">
-      <Attack targetimpulse="2" itemdamage="3" structuredamage="2" structuresoundtype="StructureBlunt">
-        <Affliction identifier="blunttrauma" strength="30" />
+      <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureBlunt">
+        <Affliction identifier="MeleeDamage" strength="30" />
         <Affliction identifier="stun" strength="0.1" />
         <StatusEffect type="OnUse" target="UseTarget">
           <Conditional entitytype="eq Character" />
@@ -137,7 +139,7 @@
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
       </StatusEffect>
-      <ItemContainer capacity="1" maxstacksize="1" hideitems="true"
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true"
         containedstateindicatorstyle="bullet" containedstateindicatorslot="0"
         containedspritedepth="0.56">
         <Containable items="SleepDart" hide="true">
@@ -156,10 +158,11 @@
       <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
       <StatusEffect type="OnContained" targettype="This">
         <Conditional condition="eq 95" />
-        <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="800.0" />
+        <sound file="%ModDir%/Sounds/SecondaryReadyOverwatch.ogg" range="50.0" />
       </StatusEffect>
     </LightComponent>
     <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
+    <StatusHUD drawhudwhenequipped="true" />
   </Item>
 
 
@@ -174,7 +177,7 @@
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0"
         colormultiplier="255,200,50,200" scalemultiplier="1,1" />
-      <Attack structuredamage="20" targetforce="20" itemdamage="20" severlimbsprobability="1.0"
+      <Attack structuredamage="20" targetforce="20" itemdamage="0" severlimbsprobability="1.0"
         penetration="0.5">
         <Affliction identifier="stun" strength="5" />
       </Attack>
@@ -204,7 +207,6 @@
     <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="0,150,250,150"
       depth="0.55" origin="0.5,0.5" />
     <Body width="25" height="25" density="0" />
-
     <Holdable slots="Any,RightHand" controlpose="true" holdpos="35,10" handle1="0,0" aimpos="35,10" />
     <RangedWeapon barrelpos="0,0" reload="20" spread="0" unskilledspread="10" combatPriority="75"
       drawhudwhenequipped="true" crosshairscale="0.2">
@@ -222,7 +224,7 @@
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
       </StatusEffect>
-      <ItemContainer capacity="1" maxstacksize="1" hideitems="true"
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true"
         containedstateindicatorstyle="bullet" containedstateindicatorslot="0"
         containedspritedepth="0.56">
         <Containable items="BioticGrenadeSep" hide="true">
@@ -241,10 +243,11 @@
       <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
       <StatusEffect type="OnContained" targettype="This">
         <Conditional condition="eq 95" />
-        <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="800.0" />
+        <sound file="%ModDir%/Sounds/SecondaryReadyOverwatch.ogg" range="50.0" />
       </StatusEffect>
     </LightComponent>
     <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
+    <StatusHUD drawhudwhenequipped="true" />
   </Item>
 
   <Item name="BioticGrenadeSep" identifier="BioticGrenadeSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="bioticgrenade" Scale="0.1" impactsoundtag="impact_metal_light">
@@ -252,9 +255,7 @@
     <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="0,150,250,150" depth="0.55" origin="0.5,0.5" />
     <Body width="38" height="15" density="30" />
     <Projectile characterusable="false" launchimpulse="12.0" sticktocharacters="false">
-      <Attack structuredamage="40" penetration="1" severlimbsprobability="5">
-        <Affliction identifier="burn" strength="50" />
-      </Attack>
+      <Attack structuredamage="40" severlimbsprobability="0"/>
       <StatusEffect type="OnActive" target="This">
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1"
           velocitymin="0" velocitymax="50" scalemin="0.25" scalemax="0.5" />
@@ -265,7 +266,7 @@
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
         <sound file="%ModDir%/Sounds/Medic/BioticGrenadeHit.ogg" range="2000" />
         <Explosion range="300.0" ballastfloradamage="800" structuredamage="0" levelwalldamage="0" itemdamage="0" force="0" severlimbsprobability="0.0" shockwave="false" flames="false" smoke="false" flash="false">
-          <Affliction identifier="burn" strength="50" />
+          <Affliction identifier="BioticGrenadeSep" strength="1" />
         </Explosion>
       </StatusEffect>
       <StatusEffect type="OnNotContained" target="This" delay="10">
@@ -291,15 +292,15 @@
       <Sound file="%ModDir%/Sounds/Medic/MedigunHealingStart1.ogg" type="OnUse" range="500"/>
       <RequiredItems items="MedigunRaySep" type="Contained"/>
       <StatusEffect type="OnContained" target="This">
-        conditional 
         <SpawnItem identifiers="MedigunRaySep" spawnposition="ThisInventory" />
       </StatusEffect>
     </RangedWeapon>
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" iteminterval="0,-4" itempos="27,10" containedstateindicatorstyle="spear" containedstateindicatorslot="0" containedspritedepth="0.56">
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" iteminterval="0,-4" itempos="27,10" containedstateindicatorstyle="spear" containedstateindicatorslot="0" containedspritedepth="0.56">
       <Containable items="MedigunRaySep" hide="true" />
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,448,64,64" origin="0.5,0.5" />
     </ItemContainer>
     <aitarget sightrange="0" soundrange="500" fadeouttime="2" />
+    <StatusHUD drawhudwhenequipped="true" />
   </Item>
 
   <Item name="MedigunRaySep" identifier="MedigunRaySep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light">
@@ -333,7 +334,6 @@
         <Affliction identifier="drag" strength="1" />
       </StatusEffect>
     </Projectile>
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
   
 

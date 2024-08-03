@@ -3,10 +3,16 @@
 	
 	<!-- Content -->
 	<Afflictions file="%ModDir%/XML/Afflictions.xml" />
+
 	<Particles file="%ModDir%/XML/ParticlePrefabs.xml" />
+
 	<Item file="%ModDir%/XML/MedicItems.xml" />
-	<Item file="%ModDir%/XML/Outfits.xml" />
+	<Item file="%ModDir%/XML/ScoutItems.xml" />
 	
+	<Item file="%ModDir%/XML/Outfits.xml" />
+
+	<Jobs file="%ModDir%/XML/Classes.xml" />
+
 	<!-- Localization -->
 	<Text file="%ModDir%/Localization/English.xml" /> 
 
