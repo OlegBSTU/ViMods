@@ -29,7 +29,7 @@
       </StatusEffect>
     </RangedWeapon>
     <ItemContainer itempos="27,10" iteminterval="0,-4" drawinventory="false" hideitems="true" capacity="1"
-      maxstacksize="6" containedstateindicatorslot="0" containedstateindicatorstyle="spear"
+      maxstacksize="1" containedstateindicatorslot="0" containedstateindicatorstyle="spear"
       containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
       <Containable items="CrossbowBoltSep" hide="true" />
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,448,64,64"
@@ -39,7 +39,7 @@
   </Item>
 
 
-  <Item name="CrossbowBoltSep" identifier="CrossbowBoltSep" category="Weapon" scale="0.15"
+  <Item name="CrossbowBoltSep" identifier="CrossbowBoltSep" scale="0.15"
     sonarsize="2" hideinmenus="true">
     <Sprite texture="%ModDir%/Images/Medic/MedicMainEquipment.png" sourcerect="540,325,260,52"
       depth="0.55" />

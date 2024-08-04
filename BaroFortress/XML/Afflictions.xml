@@ -1,92 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <Afflictions>
+
+<!-- OVERRIDES-->
+
+<Override>
+  <Affliction
+   name="Suffocating"
+   identifier="oxygenlow"
+   type="oxygenlow"
+   causeofdeathdescription="Suffocated"
+   selfcauseofdeathdescription="You have suffocated."
+   limbspecific="false"
+   indicatorlimb="Torso"
+   activationthreshold="1"
+   showiconthreshold="1000"
+   showicontoothersthreshold="1000"
+   showinhealthscannerthreshold="50"
+   maxstrength="1">
+   <Effect minstrength="1" maxstrength="50"
+     minfacetint="200,180,255,0"
+     maxfacetint="200,180,255,100"/>
+   <Effect minstrength="50" maxstrength="100"
+     minfacetint="200,180,255,100"
+     maxfacetint="200,180,255,200"
+     minbodytint="150,150,255,0"
+     maxbodytint="150,150,255,100"/>
+   <Effect minstrength="100" maxstrength="100">
+     <StatusEffect target="Character" interval="1" disabledeltatime="true">
+       <Affliction identifier="FlatDamage" amount="6"/>
+       <Affliction identifier="stun" amount="0.01"/>
+       <sound file="%ModDir%/Sounds/Drowning.ogg" range="500.0" loop="true" />
+     </StatusEffect>
+   </Effect>
+   </Affliction>
+
+<Affliction
+  name="Barotrauma"
+  identifier="pressure"
+  type="gaze"
+  limbspecific="false"
+  maxstrength="1">
+</Affliction>
+
+ </Override>
 
 <!-- Base damage afflictions. All af them get converted into flatdamage 1 to 1. Only flatdamage has real effects-->
 
-  <Affliction
-    name="Damage"
-    identifier="FlatDamage"
-    description="One shouldn't see this text. Report it to mod developers"
-    type="damage"
-    limbspecific="false"
-    indicatorlimb="Torso"
-    activationthreshold="0"
-    showiconthreshold="1000"
-    showicontoothersthreshold="1000"
-    showinhealthscannerthreshold="0"
-    treatmentthreshold="1"
-    maxstrength="1000"
-    affectmachines="true">
-    <Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="1000"/>
-  </Affliction>
-  
-  <Affliction
-    name="Explosion Damage"
-    identifier="ExpDamage"
-    description="One shouldn't see this text. Report it to mod developers"
-    type="damage"
-    limbspecific="false"
-    indicatorlimb="Torso"
-    activationthreshold="0"
-    showiconthreshold="5000"
-    showicontoothersthreshold="5000"
-    showinhealthscannerthreshold="5000"
-    treatmentthreshold="5000"
-    maxstrength="1000"
-    affectmachines="true">
-    <Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="0"/>
-  </Affliction>
+<Affliction
+name="Damage"
+identifier="FlatDamage"
+description="One shouldn't see this text. Report it to mod developers"
+type="damage"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="0"
+treatmentthreshold="1"
+maxstrength="1000"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="1000"/>
+</Affliction>
 
-  <Affliction
-    name="Fire Damage"
-    identifier="FireDamage"
-    description="One shouldn't see this text. Report it to mod developers"
-    type="damage"
-    limbspecific="false"
-    indicatorlimb="Torso"
-    activationthreshold="0"
-    showiconthreshold="5000"
-    showicontoothersthreshold="5000"
-    showinhealthscannerthreshold="5000"
-    treatmentthreshold="5000"
-    maxstrength="1000"
-    affectmachines="true">
-    <Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="0"/>
-  </Affliction>
+<Affliction
+name="Explosion Damage"
+identifier="ExpDamage"
+description="One shouldn't see this text. Report it to mod developers"
+type="damage"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
+treatmentthreshold="5000"
+maxstrength="1000"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="1000">
+  <StatusEffect target="Character" disabledeltatime="true">
+    <Affliction identifier="FlatDamage" amount="1"/>
+    <ReduceAffliction identifier="ExpDamage" amount="1"/>
+  </StatusEffect>
+</Effect>
+</Affliction>
 
-  <Affliction
-    name="Bullet Damage"
-    identifier="BulletDamage"
-    description="One shouldn't see this text. Report it to mod developers"
-    type="damage"
-    limbspecific="false"
-    indicatorlimb="Torso"
-    activationthreshold="0"
-    showiconthreshold="5000"
-    showicontoothersthreshold="5000"
-    showinhealthscannerthreshold="5000"
-    treatmentthreshold="5000"
-    maxstrength="1000"
-    affectmachines="true">
-    <Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="0"/>
-  </Affliction>
+<Affliction
+name="Fire Damage"
+identifier="FireDamage"
+description="One shouldn't see this text. Report it to mod developers"
+type="damage"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="1"
+treatmentthreshold="5000"
+maxstrength="1000"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="1000">
+  <StatusEffect target="Character" disabledeltatime="true">
+    <Affliction identifier="FlatDamage" amount="1"/>
+    <ReduceAffliction identifier="FireDamage" amount="1"/>
+  </StatusEffect>
+</Effect>
+</Affliction>
 
-  <Affliction
-    name="Melee Damage"
-    identifier="MeleeDamage"
-    description="One shouldn't see this text. Report it to mod developers"
-    type="damage"
-    limbspecific="false"
-    indicatorlimb="Torso"
-    activationthreshold="0"
-    showiconthreshold="5000"
-    showicontoothersthreshold="5000"
-    showinhealthscannerthreshold="5000"
-    treatmentthreshold="5000"
-    maxstrength="1000"
-    affectmachines="true">
-    <Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="0"/>
-  </Affliction>
+<Affliction
+name="Bullet Damage"
+identifier="BulletDamage"
+description="One shouldn't see this text. Report it to mod developers"
+type="damage"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
+treatmentthreshold="5000"
+maxstrength="1000"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="1000">
+  <StatusEffect target="Character" disabledeltatime="true">
+    <Affliction identifier="FlatDamage" amount="1"/>
+    <ReduceAffliction identifier="BulletDamage" amount="1"/>
+  </StatusEffect>
+</Effect>
+</Affliction>
+
+<Affliction
+name="Melee Damage"
+identifier="MeleeDamage"
+description="One shouldn't see this text. Report it to mod developers"
+type="damage"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
+treatmentthreshold="5000"
+maxstrength="1000"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="1000">
+  <StatusEffect target="Character" disabledeltatime="true">
+    <Affliction identifier="FlatDamage" amount="1"/>
+    <ReduceAffliction identifier="MeleeDamage" amount="1"/>
+  </StatusEffect>
+</Effect>
+</Affliction>
+
+
+
+<Affliction
+name="Overheal"
+identifier="Healing"
+description="One shouldn't see this text. Report it to mod developers"
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
+treatmentthreshold="1"
+maxstrength="1000"
+affectmachines="true">
+<Effect minstrength="250" maxstrength="1000">
+  <StatusEffect target="Character" disabledeltatime="true">
+    <ReduceAffliction identifier="FlatDamage" amount="1"/>
+    <ReduceAffliction identifier="Healing" amount="1"/>
+  </StatusEffect>
+</Effect>
+<Effect minstrength="1" maxstrength="250" resistancefor="Healing" minresistance="0" maxresistance="1">
+<StatusEffect target="Character" interval="1" disabledeltatime="true">
+  <ReduceAffliction identifier="FlatDamage" amount="1"/>
+  <ReduceAffliction identifier="Healing" amount="1"/>
+</StatusEffect>
+</Effect>
+</Affliction>
+
+
+<!-- General stuff -->
+
+
+<Affliction
+name="Burning"
+identifier="Burning"
+description=""
+limbspecific="false"
+type="gaze"
+isbuff="false"
+showiconthreshold="1"
+showinhealthscannerthreshold="1"
+maxstrength="10">
+<PeriodicEffect mininterval="0.5" maxinterval="0.5" disabledeltatime="true">
+<StatusEffect target="Character">
+<ReduceAffliction identifier="Burning" amount="0.5"/>
+<Affliction identifier="FireDamage" strength="4" />
+</StatusEffect>
+<StatusEffect target="Character">
+<Conditional inwater="true"/>
+<ReduceAffliction identifier="Burning" amount="1000" />
+</StatusEffect>
+<StatusEffect target="character" disabledeltatime="true">
+<sound file="Content/Sounds/FireSmall.ogg" range="500.0" loop="true" />
+</StatusEffect>
+<StatusEffect target="Character" disabledeltatime="true" stackable="true" duration="1" checkconditionalalways="false">
+<ParticleEmitter particle="flamethrower" particlespersecond="20" anglemin="60" anglemax="120" velocitymin="10" velocitymax="100" scalemin="0.1" scalemax="0.3" highqualitycollisiondetection="true"/>
+<ParticleEmitter particle="flamethrowersmoke" particlespersecond="10" anglemin="60" anglemax="120" velocitymin="500" velocitymax="1000"/>
+</StatusEffect>
+</PeriodicEffect>
+</Affliction>
 
 <!-- Medic stuff -->
 
@@ -98,113 +225,110 @@ type="damage"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="0"
-showiconthreshold="5000"
-showicontoothersthreshold="5000"
+showiconthreshold="1"
+showicontoothersthreshold="1"
 showinhealthscannerthreshold="5000"
 treatmentthreshold="5000"
 maxstrength="1000"
 affectmachines="true">
-<Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="0"/>
 </Affliction>
 
-  <Affliction
-    name="Biotic Grenade Extra Heal"
-    identifier="BioticGrenadeExtraHeal"
-    description=""
-    type="psychosis"
-    limbspecific="false"
-    indicatorlimb="Torso"
-    maxstrength="6"
-    iconcolors="255,150,50,255;255,150,50,255"
-    affectmachines="true">
-        <Effect minstrength="0"
-      maxstrength="100"
-      minscreenblur="0.0"
-      maxscreenblur="0.2"
-      strengthchange="-1">
-      <StatusEffect target="character" disabledeltatime="true" stackable="false">
-        <Conditional InWater="true" />
-        <Effect strengthchange="-3" />
-      </StatusEffect>
-      <StatusEffect target="Character" disabledeltatime="true" stackable="true">
-        <ParticleEmitter particle="BaroFortressDrip" color="255,150,50,255" copyentityangle="true"
-          anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
-          scalemin="0.3" scalemax="0.6" />
-      </StatusEffect>
-    </Effect>
-    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="384,0,128,128"
-      color="255,255,50,255" origin="0,0" />
-  </Affliction>
-
-  <Affliction
-    name="Biotic Grenade Antiheal"
-    identifier="BioticGrenadeAntiheal"
-    description=""
-    type="psychosis"
-    limbspecific="false"
-    indicatorlimb="Torso"
-    maxstrength="6"
-    iconcolors="255,50,255,255;255,50,255,255"
-    affectmachines="true">
+<Affliction
+name="Biotic Grenade Extra Heal"
+identifier="BioticGrenadeExtraHeal"
+description=""
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+maxstrength="6"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
+affectmachines="true">
     <Effect minstrength="0"
-      maxstrength="100"
-      minscreenblur="0.2"
-      maxscreenblur="0.9"
-      strengthchange="-1">
-      <StatusEffect target="character" disabledeltatime="true" stackable="false">
-        <Conditional InWater="true" />
-        <Effect strengthchange="-3" />
-      </StatusEffect>
-      <StatusEffect target="Character" disabledeltatime="true" stackable="true">
-        <ParticleEmitter particle="BaroFortressDrip" color="255,50,255,255" copyentityangle="true"
-          anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
-          scalemin="0.3" scalemax="0.6" />
-      </StatusEffect>
-    </Effect>
-    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="384,0,128,128"
-      color="255,50,255,255" origin="0,0" />
-  </Affliction>
-
-
-
-  <Affliction
-    name="Crossbow Sep"
-    identifier="CrossbowSep"
-    description=""
-    type="psychosis"
-    isbuff="false"
-    limbspecific="false"
-    maxstrength="2">
-    <icon texture="%ModDir%/Images/AfflictionsSheet.png" sourcerect="128,0,128,128"
-      color="255,150,50,255" origin="0,0" />
-  </Affliction>
-
-  <!-- Scout stuff -->
-
-  <Affliction
-  name="Guillotine Bleeding"
-  identifier="GuillotineBleeding"
-  description="One shouldn't see this text. Report it to mod developers"
-  type="damage"
-  limbspecific="false"
-  indicatorlimb="Torso"
-  activationthreshold="0"
-  showiconthreshold="5000"
-  showicontoothersthreshold="5000"
-  showinhealthscannerthreshold="1"
-  treatmentthreshold="5000"
-  maxstrength="1000"
-  affectmachines="true">
-  <Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="0"/>
-  <Effect minstrength="0" maxstrength="0" strengthchange="-1">
-  <StatusEffect target="Limb" interval="1" disabledeltatime="false">
-    <Conditional IsHuman="true"/>
-    <Affliction identifier="flatdamage" amount="8"/>
+  maxstrength="100"
+  minscreenblur="0.0"
+  maxscreenblur="0.2"
+  strengthchange="-1">
+  <StatusEffect target="character" disabledeltatime="true" stackable="false">
+    <Conditional InWater="true" />
+    <Effect strengthchange="-3" />
   </StatusEffect>
-  </Effect>
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+    <ParticleEmitter particle="BaroFortressDrip" color="255,150,50,255" copyentityangle="true"
+      anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
+      scalemin="0.3" scalemax="0.6" />
+  </StatusEffect>
+</Effect>
+</Affliction>
+
+<Affliction
+name="Biotic Grenade Antiheal"
+identifier="BioticGrenadeAntiheal"
+description=""
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+maxstrength="6"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
+affectmachines="true">
+<Effect minstrength="0"
+  maxstrength="100"
+  minscreenblur="0.2"
+  maxscreenblur="0.9"
+  strengthchange="-1">
+  <StatusEffect target="character" disabledeltatime="true" stackable="false" >
+    <Conditional InWater="true" />
+    <Effect strengthchange="-3" />
+  </StatusEffect>
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+    <ParticleEmitter particle="BaroFortressDrip" color="255,50,255,255" copyentityangle="true"
+      anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
+      scalemin="0.3" scalemax="0.6" />
+  </StatusEffect>
+</Effect>
 </Affliction>
 
 
 
+<Affliction
+name="Crossbow Sep"
+identifier="CrossbowSep"
+description=""
+type="gaze"
+isbuff="false"
+limbspecific="false"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
+maxstrength="2">
+</Affliction>
+
+<!-- Scout stuff -->
+
+<Affliction
+name="Guillotine Bleeding"
+identifier="GuillotineBleeding"
+description="One shouldn't see this text. Report it to mod developers"
+type="damage"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="1"
+treatmentthreshold="5000"
+maxstrength="6"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="6">
+  <StatusEffect target="Character" interval="1" disabledeltatime="true">
+    <ReduceAffliction identifier="GuillotineBleeding" amount="1"/>
+    <Affliction identifier="FlatDamage" amount="8"/>
+    <Affliction identifier="stun" amount="0.01"/>
+    </StatusEffect>
+</Effect>
+</Affliction> 
 
 </Afflictions>
