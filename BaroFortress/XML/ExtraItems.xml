@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Items>
+
+<Item name="Medkit" identifier="Medkit" scale="0.2" maxstacksize="1" sonarsize="2" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/Medkit.png" depth="0.1" sourcerect="0,0,256,256" origin="0.5,0.7" />
+    <Body width="50" height="40" density="25" />
+    <Holdable>
+        <StatusEffect type="OnPicked" target="This,Character">
+            <Affliction identifier="Healing" strength="450"/>
+            <RequiredAffliction identifier="damage" minstrength="15"/>
+          </StatusEffect>
+      <StatusEffect type="OnPicked" target="This">
+        <sound file="%ModDir%/Sounds/MedkitPickup.ogg" range="300" />
+        <RemoveItem/>
+      </StatusEffect>
+    </Holdable>
+  </Item>
+
+</Items>

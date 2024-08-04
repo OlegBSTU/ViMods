@@ -59,7 +59,7 @@
     </Item>
   </Override>
 
-  <Item name="MedicOutfitSep" identifier="MedicOutfitSep" category="Equipment"
+  <Item name="Medic Outfit Sep" identifier="MedicOutfitSep" category="Equipment"
     tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
     <InventoryIcon name="MedicOutfitSep" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
       sourcerect="472,0,40,40" origin="0.5,0.5" />
@@ -69,12 +69,6 @@
     <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
       <sprite name="Medic Outfit Sep Torso" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
         limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
-        inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Right Hand"
-        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightHand" hidelimb="true"
-        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Left Hand" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
-        limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true"
         inheritsourcerect="true" />
       <sprite name="Medic Outfit Sep Right Lower Arm"
         texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightForearm" hidelimb="true"
@@ -117,7 +111,7 @@
     </Wearable>
   </Item>
 
-  <Item name="ScoutOutfitSep" identifier="ScoutOutfitSep" category="Equipment"
+  <Item name="Scout Outfit Sep" identifier="ScoutOutfitSep" category="Equipment"
   tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
   <InventoryIcon name="ScoutOutfitSep" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
     sourcerect="472,0,40,40" origin="0.5,0.5" />
@@ -165,7 +159,7 @@
   </Wearable>
 </Item>
 
-<Item name="ScoutOutfitCoal" identifier="ScoutOutfitCoal" category="Equipment"
+<Item name="Scout Outfit Coal" identifier="ScoutOutfitCoal" category="Equipment"
 tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
 <InventoryIcon name="ScoutOutfitCoal" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
   sourcerect="472,0,40,40" origin="0.5,0.5" />
@@ -212,6 +206,65 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
   <StatValue stattype="WalkingSpeed" value="0.33" />
 </Wearable>
 </Item>
+
+
+
+<Item name="Soldier Outfit Sep" identifier="SoldierOutfitSep" category="Equipment"
+tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+<InventoryIcon name="SoldierOutfitSep" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png"
+  sourcerect="472,0,40,40" origin="0.5,0.5" />
+<Sprite name="SoldierOutfitSep" texture="Content/Items/Jobgear/MiscJobGear.png"
+  sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
+<Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
+  <sprite name="Soldier Outfit Sep Torso" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png"
+    limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Right Lower Arm"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="RightForearm" hidelimb="false"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Left Lower Arm"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="LeftForearm" hidelimb="false"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Soldier Outfit Sep Right Upper Arm"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="RightArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Left Upper Arm"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="LeftArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Waist" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png"
+    limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Right Thigh"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="RightThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Left Thigh"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="LeftThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Right Leg" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png"
+    limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Left Leg" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png"
+    limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Right Shoe"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="RightFoot" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Left Shoe" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png"
+    limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Head" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="1" hidelimb="false" sourcerect="462,53,53,45" origin="0.4,0.6" />
+
+  <StatusEffect type="OnNotContained" target="This">
+    <Remove />
+  </StatusEffect>
+  <StatValue stattype="SwimmingSpeed" value="-0.20" />
+  <StatValue stattype="WalkingSpeed" value="-0.20" />
+  <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="expdamage" damagemultiplier="0.4" />
+</Wearable>
+</Item>
+
+
 
 
   <Item name="IntelSep" identifier="IntelSep" category="Equipment" tags="clothing" scale="0.3"

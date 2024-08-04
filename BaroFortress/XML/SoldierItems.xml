@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+
+
+    <Item name="Direct Hit" identifier="DirectHit" category="Weapon" tags="weapon,gun" Scale="0.4"
+    impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Soldier/SoldierEquipmentSlots.png" sourcerect="0,94,76,72"
+      origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Soldier/SoldierEquipment.png" sourcerect="212,70,300,92"
+      depth="0.55" origin="0.5,0.5" />
+    <Body width="500" height="200" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="45,-10"
+      handle1="90,-20" handle2="120,-20" holdangle="-40" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" interval="0.8" target="This" condition="1" setvalue="true">
+            <Conditional condition="gte 91" />
+            <SpawnItem identifiers="DirectHitRocket" spawnposition="ThisInventory" />
+            <Sound file="%ModDir%/Sounds/Soldier/RocketReload.ogg" type="OnUse" range="500" selectionmode="Random" />
+          </StatusEffect>
+          <StatusEffect type="OnSecondaryUse" targettype="This" condition="90" AllowWhenBroken="true"/>
+          <StatusEffect type="OnUse" targettype="This" condition="1" setvalue="true"/>
+    </Holdable>
+    <RangedWeapon reload="0.8" launchimpulse="0" barrelpos="85,14" spread="0" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Soldier/DirectHitShoot.ogg" type="OnUse" range="500" />
+      <RequiredItems items="DirectHitRocket" type="Contained" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <Propulsion force="-1000" usablein="both" ApplyToHands="false">
+        <RequiredItems items="DirectHitRocket" type="Contained" />
+      </Propulsion>
+    </RangedWeapon>
+    <ItemContainer itempos="27,10" iteminterval="0,-4" drawinventory="true" hideitems="false" capacity="1"
+      maxstacksize="4" containedstateindicatorslot="0" containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
+      <Containable items="DirectHitRocket" hide="true" />
+    </ItemContainer>
+  </Item>
+
+
+
+  <Item name="Direct Hit Rocket" identifier="DirectHitRocket" scale="1" maxstacksize="4" sonarsize="2" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/Soldier/SoldierEquipment.png" sourcerect="380,212,134,25"
+      depth="0.55" />
+    <Body width="5" height="5" density="25" />
+    <Projectile characterusable="false" hitscan="false" launchimpulse="40">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <Affliction identifier="ExpDamage" strength="112" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <sound file="%ModDir%/Sounds/Soldier/DirectHitExplosion.ogg" range="2000" />
+        <Explosion range="150.0" ballastfloradamage="800" structuredamage="200" levelwalldamage="200" itemdamage="0" force="2000" severlimbsprobability="1" shockwave="true" flames="true" smoke="true" flash="true">
+          <Affliction identifier="ExpDamage" strength="40" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <Conditional condition="gte 100" />
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1"
+          velocitymin="0" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" setvalue="true" noninteractable="true" />
+      <StatusEffect type="OnNotContained" target="This" delay="8">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    </Item>
+
+
+    <Item name="Cow Mangler Sep" identifier="CowManglerSep" category="Weapon" tags="weapon,gun" Scale="0.4"
+    impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Soldier/SoldierEquipmentSlots.png" sourcerect="0,6,76,76"
+      origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Soldier/SoldierEquipment.png" sourcerect="196,282,316,120"
+      depth="0.55" origin="0.5,0.5" />
+    <Body width="500" height="200" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="45,-10"
+      handle1="0,-40" handle2="150,-40" holdangle="-40" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" interval="0.8" target="This" condition="1" setvalue="true">
+            <Conditional condition="gte 91" />
+            <SpawnItem identifiers="CowManglerRocketSep" spawnposition="ThisInventory" />
+            <Sound file="%ModDir%/Sounds/Soldier/ManglerReload.ogg" type="OnUse" range="500" selectionmode="Random" />
+          </StatusEffect>
+          <StatusEffect type="OnSecondaryUse" targettype="This" condition="90" AllowWhenBroken="true"/>
+          <StatusEffect type="OnUse" targettype="This" condition="1" setvalue="true"/>
+    </Holdable>
+    <RangedWeapon reload="0.8" launchimpulse="30" barrelpos="85,14" spread="0" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Soldier/ManglerShot.ogg" type="OnUse" range="500" />
+      <RequiredItems items="CowManglerRocketSep" type="Contained" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <Propulsion force="-500" usablein="both" ApplyToHands="false">
+        <RequiredItems items="CowManglerRocketSep" type="Contained" />
+      </Propulsion>
+    </RangedWeapon>
+    <ItemContainer itempos="27,10" iteminterval="0,-4" drawinventory="true" hideitems="false" capacity="1"
+      maxstacksize="4" containedstateindicatorslot="0" containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
+      <Containable items="CowManglerRocketSep" hide="true" />
+    </ItemContainer>
+  </Item>
+
+
+
+  <Item name="Cow Mangler Rocket Sep" identifier="CowManglerRocketSep" scale="0.5" maxstacksize="4" sonarsize="2" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/Soldier/ManglerProjectileSep.png" depth="0.1" sourcerect="0,0,512,400"/>
+    <Body width="5" height="5" density="25" />
+    <Projectile characterusable="false" hitscan="false" launchimpulse="0">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <Affliction identifier="ExpDamage" strength="20" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <sound file="%ModDir%/Sounds/Soldier/ManglerExplosionNormal.ogg" range="1500" />
+        <Explosion range="350.0" ballastfloradamage="800" structuredamage="200" levelwalldamage="200" itemdamage="0" force="200" severlimbsprobability="1" shockwave="false" flames="false" smoke="false" flash="true">
+          <Affliction identifier="ExpDamage" strength="70" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <Conditional condition="gte 100" />
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1"
+          velocitymin="0" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" setvalue="true" noninteractable="true" />
+      <StatusEffect type="OnNotContained" target="This" delay="8">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+
+  <Item name="Cow Mangler Charged Rocket Sep" identifier="CowManglerChargedRocketSep" scale="1.5" maxstacksize="4" sonarsize="2" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/Soldier/ManglerProjectileSep.png" depth="0.1" sourcerect="0,0,512,400"/>
+    <Body width="5" height="5" density="25" />
+    <Projectile characterusable="false" hitscan="false" launchimpulse="0">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <Affliction identifier="ExpDamage" strength="40" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <sound file="%ModDir%/Sounds/Soldier/ManglerExplosionCharged.ogg" range="2000" />
+        <Explosion range="800.0" ballastfloradamage="800" structuredamage="200" levelwalldamage="200" itemdamage="0" force="2000" severlimbsprobability="1" shockwave="true" flames="true" smoke="false" flash="true">
+          <Affliction identifier="ExpDamage" strength="80" />
+          <Affliction identifier="Burning" strength="5" />
+          <ParticleEmitter particle="EmpBlast"/> 
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <Conditional condition="gte 100" />
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+        <ParticleEmitter particle="ElectricShock" AngleMax="360" DistanceMin="111" DistanceMax="111" VelocityMin="111" VelocityMax="111" ScaleMax="2" ScaleMultiplier="1,1" EmitInterval="0.1" ParticleAmount="1" ParticlesPerSecond="1" ColorMultiplier="255,75,0,255" LifeTimeMultiplier="3" Distance="111" Velocity="111" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" setvalue="true" noninteractable="true">
+      <sound file="%ModDir%/Sounds/Soldier/ManglerChargeTravel.ogg" range="1500" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" delay="8">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+
+</Items>
