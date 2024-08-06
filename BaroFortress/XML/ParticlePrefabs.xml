@@ -28,7 +28,7 @@
     blendstate="AlphaBlend"
     animduration="1"
     loopanim="True"
-    drawontop="False"
+    drawontop="True"
     lifetimemin="0"
     middlecolor="255,255,255,255"
     usemiddlecolor="False"

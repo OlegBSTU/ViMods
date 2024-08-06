@@ -13,11 +13,15 @@
 	<Item file="%ModDir%/XML/Outfits.xml" />
 	<Item file="%ModDir%/XML/ExtraItems.xml" />
 
+	<!-- Hides all vanilla jobs, implements 9 new classes -->
+
 	<Jobs file="%ModDir%/XML/Classes.xml" />
 
 	<!-- Localization -->
+
 	<Text file="%ModDir%/Localization/English.xml" /> 
 
 	<!-- COPYRIGHT LOLOLOL  -->
+
 
 </contentpackage>
