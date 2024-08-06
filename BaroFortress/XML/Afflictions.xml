@@ -60,9 +60,12 @@ showicontoothersthreshold="1"
 showinhealthscannerthreshold="0"
 treatmentthreshold="1"
 maxstrength="1000"
-affectmachines="true">
+affectmachines="true"
+MedicalSkillGain="0">>
 <Effect minstrength="0" maxstrength="1000" minvitalitydecrease="0" maxvitalitydecrease="1000"/>
 </Affliction>
+
+
 
 <Affliction
 name="Explosion Damage"
@@ -86,6 +89,8 @@ affectmachines="true">
 </Effect>
 </Affliction>
 
+
+
 <Affliction
 name="Fire Damage"
 identifier="FireDamage"
@@ -108,6 +113,8 @@ affectmachines="true">
 </Effect>
 </Affliction>
 
+
+
 <Affliction
 name="Bullet Damage"
 identifier="BulletDamage"
@@ -129,6 +136,8 @@ affectmachines="true">
   </StatusEffect>
 </Effect>
 </Affliction>
+
+
 
 <Affliction
 name="Melee Damage"
@@ -168,22 +177,31 @@ showinhealthscannerthreshold="5000"
 treatmentthreshold="1"
 maxstrength="1000"
 affectmachines="true">
-<Effect minstrength="250" maxstrength="1000">
+<Effect minstrength="250" maxstrength="1000" resistancefor="Healing" minresistance="1" maxresistance="1" minvitalityincrease="250"
+maxvitalityincrease="1000">
   <StatusEffect target="Character" disabledeltatime="true">
-    <ReduceAffliction identifier="FlatDamage" amount="1"/>
-    <ReduceAffliction identifier="Healing" amount="1"/>
+    <ReduceAffliction identifier="FlatDamage" amount="3"/>
+    <ReduceAffliction identifier="Healing" amount="3"/>
   </StatusEffect>
 </Effect>
-<Effect minstrength="1" maxstrength="250" resistancefor="Healing" minresistance="0" maxresistance="1">
+<Effect minstrength="1" maxstrength="250" resistancefor="Healing" minresistance="0" maxresistance="1" minvitalityincrease="1"
+maxvitalityincrease="250">
 <StatusEffect target="Character" interval="1" disabledeltatime="true">
-  <ReduceAffliction identifier="FlatDamage" amount="1"/>
-  <ReduceAffliction identifier="Healing" amount="1"/>
+  <ReduceAffliction identifier="FlatDamage" amount="3"/>
+  <ReduceAffliction identifier="Healing" amount="3"/>
 </StatusEffect>
 </Effect>
+<PeriodicEffect mininterval="0.5" maxinterval="0.5" disabledeltatime="true">
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true" checkconditionalalways="false">
+    <ParticleEmitter particle="HealingParticles" AngleMax="360" DistanceMax="100" scalemin="0.5" scalemax="0.1" EmitInterval="0.5" ParticleAmount="1" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" />
+  </StatusEffect>
+</PeriodicEffect>
 </Affliction>
 
 
+
 <!-- General stuff -->
+
 
 
 <Affliction
@@ -205,17 +223,51 @@ maxstrength="10">
 <Conditional inwater="true"/>
 <ReduceAffliction identifier="Burning" amount="1000" />
 </StatusEffect>
-<StatusEffect target="character" disabledeltatime="true">
-<sound file="Content/Sounds/FireSmall.ogg" range="500.0" loop="true" />
-</StatusEffect>
 <StatusEffect target="Character" disabledeltatime="true" stackable="true" duration="1" checkconditionalalways="false">
 <ParticleEmitter particle="flamethrower" particlespersecond="20" anglemin="60" anglemax="120" velocitymin="10" velocitymax="100" scalemin="0.1" scalemax="0.3" highqualitycollisiondetection="true"/>
 <ParticleEmitter particle="flamethrowersmoke" particlespersecond="10" anglemin="60" anglemax="120" velocitymin="500" velocitymax="1000"/>
 </StatusEffect>
 </PeriodicEffect>
+<Effect minstrength="0" maxstrength="2">
+  <StatusEffect target="Character" duration="1">
+    <sound file="Content/Sounds/FireSmall.ogg" range="500.0" loop="true" />
+  </StatusEffect>
+</Effect>
 </Affliction>
 
+
+
+ <!-- Soldier Stuff -->
+
+
+
+ <Affliction
+ name="Discipline"
+ identifier="Discipline"
+ type="gaze"
+ limbspecific="false"
+ indicatorlimb="Torso"
+ activationthreshold="1.0"
+ showiconthreshold="0"
+ showinhealthscannerthreshold="0"
+ maxstrength="2">
+ <Effect minstrength="0" maxstrength="3"
+   strengthchange="-1"
+   minspeedmultiplier="1.4"
+   maxspeedmultiplier="1.4" >
+   <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+    <ParticleEmitter particle="weldsmoke" color="255,150,50,25" copyentityangle="true"
+      anglemin="0" anglemax="0" particlespersecond="40" velocitymin="5" velocitymax="15"
+      scalemin="2" scalemax="3" DistanceMin="0" DistanceMax="50"/>
+  </StatusEffect>
+ </Effect>
+</Affliction>
+
+
+
 <!-- Medic stuff -->
+
+
 
 <Affliction
 name="Biotic Grenade Sep"
@@ -233,6 +285,8 @@ maxstrength="1000"
 affectmachines="true">
 </Affliction>
 
+
+
 <Affliction
 name="Biotic Grenade Extra Heal"
 identifier="BioticGrenadeExtraHeal"
@@ -245,11 +299,10 @@ showiconthreshold="1"
 showicontoothersthreshold="1"
 showinhealthscannerthreshold="5000"
 affectmachines="true">
-    <Effect minstrength="0"
-  maxstrength="100"
-  minscreenblur="0.0"
-  maxscreenblur="0.2"
-  strengthchange="-1">
+    <Effect minstrength="0" maxstrength="100"
+    minscreenblur="0.0" maxscreenblur="0.2"
+  strengthchange="-1"
+  resistancefor="Healing" minresistance="-0.3" maxresistance="-0.3">
   <StatusEffect target="character" disabledeltatime="true" stackable="false">
     <Conditional InWater="true" />
     <Effect strengthchange="-3" />
@@ -261,6 +314,8 @@ affectmachines="true">
   </StatusEffect>
 </Effect>
 </Affliction>
+
+
 
 <Affliction
 name="Biotic Grenade Antiheal"
@@ -274,11 +329,10 @@ showiconthreshold="1"
 showicontoothersthreshold="1"
 showinhealthscannerthreshold="5000"
 affectmachines="true">
-<Effect minstrength="0"
-  maxstrength="100"
-  minscreenblur="0.2"
-  maxscreenblur="0.9"
-  strengthchange="-1">
+<Effect minstrength="0" maxstrength="100"
+  minscreenblur="0.2"  maxscreenblur="0.9"
+  strengthchange="-1" 
+  resistancefor="Healing" minresistance="1" maxresistance="1">
   <StatusEffect target="character" disabledeltatime="true" stackable="false" >
     <Conditional InWater="true" />
     <Effect strengthchange="-3" />
@@ -306,29 +360,32 @@ showinhealthscannerthreshold="5000"
 maxstrength="2">
 </Affliction>
 
-<!-- Scout stuff -->
 
-<Affliction
-name="Guillotine Bleeding"
-identifier="GuillotineBleeding"
-description="One shouldn't see this text. Report it to mod developers"
-type="damage"
-limbspecific="false"
-indicatorlimb="Torso"
-activationthreshold="0"
-showiconthreshold="1"
-showicontoothersthreshold="1"
-showinhealthscannerthreshold="1"
-treatmentthreshold="5000"
-maxstrength="6"
-affectmachines="true">
-<Effect minstrength="0" maxstrength="6">
-  <StatusEffect target="Character" interval="1" disabledeltatime="true">
-    <ReduceAffliction identifier="GuillotineBleeding" amount="1"/>
-    <Affliction identifier="FlatDamage" amount="8"/>
-    <Affliction identifier="stun" amount="0.01"/>
+
+<!-- EXTRAS -->
+
+
+
+  <Affliction
+    name="Kazotsky Kick"
+    identifier="KazotskyKick"
+    type="gaze"
+    limbspecific="false"
+    maxstrength="1">
+  <Effect minstrength="0" maxstrength="1">
+    <StatusEffect target="Character" duration="1">
+      <TriggerAnimation Type="Walk" path="%ModDir%/Animations/KazotskyKickWalk.xml" priority="111" ExpectedSpecies="Human" />
+      <TriggerAnimation Type="Crouch" path="%ModDir%/Animations/KazotskyKickCrouch.xml" priority="111" ExpectedSpecies="Human" />
+      <TriggerAnimation Type="Run" path="%ModDir%/Animations/KazotskyKickRun.xml" priority="111" ExpectedSpecies="Human" />
     </StatusEffect>
-</Effect>
-</Affliction> 
+    <StatusEffect target="Character" duration="1">
+      <Conditional InWater="false"/>
+      <sound file="%ModDir%/Sounds/KazotskyKick.ogg" range="300.0" loop="true" />
+      <ReduceAffliction identifier="KazotskyKick" amount="1" />
+    </StatusEffect>
+  </Effect>
+ </Affliction>
+
+
 
 </Afflictions>

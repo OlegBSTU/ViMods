@@ -7,7 +7,7 @@
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="20,-20" aimpos="20,-20" handle1="-10,-20" handle2="100,-30" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnContained" target="This">
         <Conditional condition="gte 100" />
-        <SpawnItem identifiers="ForceANatureShell" amount="2" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="ForceANatureShell" spawnposition="ThisInventory" />
       </StatusEffect>
       <StatusEffect type="OnSecondaryUse" targettype="This" condition="71"></StatusEffect>
       <StatusEffect type="OnContained" targettype="This">
@@ -43,7 +43,6 @@
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,960,64,64" origin="0.5,0.5" />
     <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="189,299,23,11" depth="0.55" origin="0.5,0.5" />
     <Body width="23" height="10" density="15" />
-    <Pickable slots="" msg="ItemMsgPickUpSelect" />
     <!--When fired, spawns 12 projectiles simultaneously.-->
     <Projectile characterusable="false" hitscan="true" hitscancount="12" removeonhit="true" spread="15">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,100" scalemultiplier="1,0.5" />
