@@ -28,7 +28,7 @@
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
       </StatusEffect>
-      <Propulsion force="-1000" usablein="both" ApplyToHands="false">
+      <Propulsion force="-500" usablein="both" ApplyToHands="false">
         <RequiredItems items="DirectHitRocket" type="Contained" />
       </Propulsion>
     </RangedWeapon>

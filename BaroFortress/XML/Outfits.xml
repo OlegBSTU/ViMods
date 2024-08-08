@@ -68,7 +68,7 @@
     <Sprite name="Medic Uniform 1" texture="Content/Items/Jobgear/MiscJobGear.png"
       sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
     <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-    <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
+    <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
       <sprite name="Medic Outfit Sep Torso" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
         limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
         inheritsourcerect="true" />
@@ -122,7 +122,7 @@
   <Sprite name="ScoutOutfitSep" texture="Content/Items/Jobgear/MiscJobGear.png"
     sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
   <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-  <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
+  <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
     <sprite name="Scout Outfit Sep Torso" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
       limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
       inheritsourcerect="true" />
@@ -172,7 +172,7 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
 <Sprite name="ScoutOutfitCoal" texture="Content/Items/Jobgear/MiscJobGear.png"
   sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
 <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
+<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
   <sprite name="Scout Outfit Coal Torso" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
     limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
     inheritsourcerect="true" />
@@ -222,7 +222,7 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
 <Sprite name="SoldierOutfitSep" texture="Content/Items/Jobgear/MiscJobGear.png"
   sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
 <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect">
+<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
   <sprite name="Soldier Outfit Sep Torso" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png"
     limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
     inheritsourcerect="true" />
@@ -271,6 +271,51 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
   <StatValue stattype="WalkingSpeed" value="-0.20" />
   <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="expdamage" damagemultiplier="0.4" />
 </Wearable>
+</Item>
+
+
+
+<Item name="Pyro Outfit Sep" identifier="PyroOutfitSep" category="" tags="" scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <InventoryIcon name="PyroOutfitSep" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png"
+  sourcerect="472,0,40,40" origin="0.5,0.5" />
+  <Sprite name="PyroOutfitSep" texture="Content/Items/Jobgear/MiscJobGear.png"
+  sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
+    <Body radius="45" width="34" density="20" />
+  <Wearable slots="InnerClothes">
+    <StatusEffect type="OnNotContained" target="This">
+      <Remove />
+    </StatusEffect>
+    <sprite name="Pyro Suit Helmet Wearable" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="1" hidelimb="true" alphaclipotherwearables="true" sourcerect="448,192,64,64" origin="0.5,0.5">
+      <LightComponent range="200.0" lightcolor="250,150,50,50" IsOn="true">
+        <LightTexture texture="Content/Lights/divinghelmetlight.png" origin="0.05, 0.5" size="1.0,1.0" />
+      </LightComponent>
+    </sprite>
+    <sprite name="Pyro Outfit Torso" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="Torso" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Right Hand" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Left Hand" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Right Upper Arm" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="RightArm" depthlimb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Left Upper Arm" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Right Lower Arm" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="RightForearm" depthlimb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Left Lower Arm" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Waist" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Right Thigh" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Left Thigh" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Right Leg" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Left Leg" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Left Shoe" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Pyro Outfit Right Shoe" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <StatusEffect type="OnWearing" target="Character" OxygenAvailable="1000.0" UseHullOxygen="false" />
+    <StatusEffect type="OnWearing" target="Character" ObstructVisionAmount="1" ObstructVision="true" PressureProtection="6650.0" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+      <TriggerAnimation Type="Walk" FileName="HumanWalkDivingSuit" priority="1" ExpectedSpecies="Human" />
+      <TriggerAnimation Type="Run" FileName="HumanRunDivingSuit" priority="1" ExpectedSpecies="Human" />
+      <Sound file="%ModDir%/Sounds/Pyro/PyroBreathing.ogg" range="250" loop="true" volume="10"/>
+    </StatusEffect>
+    <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="FireDamage" damagemultiplier="0.8" damagesound="LimbArmor"/>
+    <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="Burning,OxygenLow" damagemultiplier="0" damagesound=""/>
+    <StatValue stattype="SwimmingSpeed" value="0.2" />
+    <StatValue stattype="WalkingSpeed" value="0.2" />
+  </Wearable>
+  <aitarget maxsightrange="1500" />
 </Item>
 
 

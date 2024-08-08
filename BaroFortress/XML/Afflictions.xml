@@ -5,36 +5,6 @@
 <!-- OVERRIDES-->
 
 <Override>
-  <Affliction
-   name="Suffocating"
-   identifier="oxygenlow"
-   type="oxygenlow"
-   causeofdeathdescription="Suffocated"
-   selfcauseofdeathdescription="You have suffocated."
-   limbspecific="false"
-   indicatorlimb="Torso"
-   activationthreshold="1"
-   showiconthreshold="1000"
-   showicontoothersthreshold="1000"
-   showinhealthscannerthreshold="50"
-   maxstrength="1">
-   <Effect minstrength="1" maxstrength="50"
-     minfacetint="200,180,255,0"
-     maxfacetint="200,180,255,100"/>
-   <Effect minstrength="50" maxstrength="100"
-     minfacetint="200,180,255,100"
-     maxfacetint="200,180,255,200"
-     minbodytint="150,150,255,0"
-     maxbodytint="150,150,255,100"/>
-   <Effect minstrength="100" maxstrength="100">
-     <StatusEffect target="Character" interval="1" disabledeltatime="true">
-       <Affliction identifier="FlatDamage" amount="6"/>
-       <Affliction identifier="stun" amount="0.01"/>
-       <sound file="%ModDir%/Sounds/Drowning.ogg" range="500.0" loop="true" />
-     </StatusEffect>
-   </Effect>
-   </Affliction>
-
 <Affliction
   name="Barotrauma"
   identifier="pressure"
@@ -237,6 +207,35 @@ maxstrength="10">
 
 
 
+<!-- Scout Stuff-->
+
+
+
+<Affliction
+name="Guillotine Bleeding"
+identifier="GuillotineBleeding"
+description="One shouldn't see this text. Report it to mod developers"
+type="damage"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="1"
+treatmentthreshold="5000"
+maxstrength="6"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="6">
+  <StatusEffect target="Character" interval="1" disabledeltatime="true">
+    <ReduceAffliction identifier="GuillotineBleeding" amount="1"/>
+    <Affliction identifier="FlatDamage" amount="8"/>
+    <Affliction identifier="stun" amount="0.01"/>
+  </StatusEffect>
+ </Effect>
+</Affliction>
+
+
+
  <!-- Soldier Stuff -->
 
 
@@ -380,7 +379,7 @@ maxstrength="2">
     </StatusEffect>
     <StatusEffect target="Character" duration="1">
       <Conditional InWater="false"/>
-      <sound file="%ModDir%/Sounds/KazotskyKick.ogg" range="300.0" loop="true" />
+      <sound file="%ModDir%/Sounds/KazotskyKick.ogg" range="600.0" loop="true" />
       <ReduceAffliction identifier="KazotskyKick" amount="1" />
     </StatusEffect>
   </Effect>

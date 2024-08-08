@@ -1,0 +1,43 @@
+<Item name="AWPer Hand" focusonselected="true" offsetonselected="500" identifier="frogsniperrifle" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,rifle" Scale="0.5" impactsoundtag="impact_metal_light" description="Contains an advanced barrel that conserves velocity. Named after the inventor.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" spawnprobability="0.015" />
+    <Price baseprice="1020" sold="false" canbespecial="false" />
+    <InventoryIcon texture="%ModDir%/Textures/thumb.png" sourcerect="384,320,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Textures/rifle.png" sourcerect="0,208,218,56" depth="0.55" origin="0.5,0.25" />
+    <Body width="220" height="50" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" focusonselected="true" offsetonselected="500" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon barrelpos="100,0" reload="2" reloadnoskill="3" reloadskillrequirement="60" weapondamagemodifier="1.4" spread="0" unskilledspread="0" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.6">
+      <Crosshair texture="%ModDir%/Textures/scope.png" sourcerect="0,0,7373,4032" />
+      <CrosshairPointer texture="%ModDir%/Textures/empty.png" sourcerect="0,0,64,64" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="Content/Items/Weapons/WEAPON_rifleShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <StatusEffect type="OnUse">
+        <Explosion range="150.0" force="2.0" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="2.0" />
+      </StatusEffect>
+      <!-- Cocking sound-->
+      <StatusEffect type="OnUse" delay="0.7" target="Character">
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <Conditional skillrequirement="true" weapons="gte 60" />
+        <Sound file="%ModDir%/Sounds/riflereload.ogg" type="OnUse" range="3000" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" delay="1" target="Character">
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <Conditional skillrequirement="true" weapons="lt 60" />
+        <Sound file="%ModDir%/Sounds/riflereload.ogg" type="OnUse" range="3000" />
+      </StatusEffect>
+      <RequiredItems items="rifleammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="60" />
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="4" hideitems="false" containedstateindicatorstyle="bullet" containedstateindicatorslot="0" containedspritedepth="0.56">
+      <Containable items="rifleammo" hide="true" />
+      <SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="30,-3" setactive="true" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>

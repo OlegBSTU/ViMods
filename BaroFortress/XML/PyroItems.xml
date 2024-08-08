@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+
+
+  <Item name="Flamethrower" identifier="Flamethrower" category="Weapon" Tags="" cargocontaineridentifier="metalcrate" Scale="0.4" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Pyro/PyroEquipmentSlots.png" sourcerect="94,84,108,60" />
+    <Sprite texture="%ModDir%/Images/Pyro/PyroEquipment.png" sourcerect="130,200,382,116" depth="0.55" origin="0.5,0.5" />
+    <Body width="150" height="77" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="20,-30" holdangle="0" aimpos="40,-30" handle1="0,0" handle2="0,0" msg="ItemMsgPickUpSelect"/>
+    <RepairTool firedamage="0.0" structurefixamount="0.0" usablein="Air" range="350" barrelpos="54,0" fireprobability="0.0" repairmultiple="true" RepairMultipleWalls="false" repairthroughwalls="false" repairthroughholes="true" combatpriority="50" spread="25">
+      <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="265" anglemax="275" velocitymin="0" velocitymax="50" />
+      <ParticleEmitter particle="flamethrower" particlespersecond="80" anglemin="0" anglemax="0" velocitymin="1000" velocitymax="1500" highqualitycollisiondetection="true"/>
+      <ParticleEmitter particle="flamethrowersmoke" particlespersecond="80" anglemin="0" anglemax="0" velocitymin="500" velocitymax="1000"/>
+      <sound file="%ModDir%/Sounds/Pyro/FlamethrowerLoop.ogg" type="OnUse" range="750.0" loop="true" />
+      <StatusEffect type="OnFailure" target="This">
+        <ParticleEmitter particle="bubbles" particlespersecond="20" anglemin="-10" anglemax="10" scalemin="0.3" scalemax="0.7" velocitymin="5" velocitymax="50" copyentityangle="true"/>
+        <ParticleEmitter particle="fleshsmoke" particlespersecond="10" anglemin="-10" anglemax="10" scalemin="1" scalemax="1.5" velocitymin="5" velocitymax="100" copyentityangle="true"/>
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" targettype="UseTarget" targets="item" Condition="-15.0">
+        <Conditional HasTag="neq weldable"/>
+      </StatusEffect>
+      <LightComponent LightColor="255,174,121,255" Flicker="0.5" Range="500">
+        <sprite texture="Content/Items/Electricity/lightsprite.png" origin="-1.3,0.75" />
+      </LightComponent>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Conditional InWater="false"/>
+        <Affliction identifier="Burning" amount="2" />
+        <Affliction identifier="FireDamage" amount="15" />
+      </StatusEffect>
+      <Propulsion force="-10" usablein="both" ApplyToHands="true">
+      </Propulsion>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </RepairTool>
+    <aitarget sightrange="5000" soundrange="500" fadeouttime="5" />
+  </Item>
+
+
+  <Item name="Flare Gun" identifier="FlareGun" category="Weapon" maxstacksize="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.3" impactsoundtag="impact_metal_heavy">
+    <InventoryIcon texture="%ModDir%/Images/Pyro/PyroEquipmentSlots.png" sourcerect="88,9,72,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Pyro/PyroEquipment.png" sourcerect="352,0,160,84" depth="0.55" origin="0.5,0.5" />
+    <Body width="24" height="52" density="300" />
+    <Holdable slots="Any,RightHand" controlpose="true" holdpos="0,0" holdangle="0" handle1="-30,-10" aimpos="45,0" />
+    <RangedWeapon barrelpos="0,0" reload="2" spread="0" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <RequiredItems items="FlareGunFlare" type="Contained" />
+      </Attack>
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Pyro/FlaregunShoot.ogg" type="OnUse" range="350" />
+      <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+        <Conditional condition="gte 100" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" condition="51" />
+      <RequiredItems items="FlareGunFlare" type="Contained" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" containedstateindicatorstyle="bullet" containedstateindicatorslot="0" containedspritedepth="0.56">
+        <Containable items="FlareGunFlare" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" IsOn="true" targetitemcomponent="LightComponent" />
+        </Containable>
+      </ItemContainer>
+      <StatusEffect type="OnContained" target="This">
+        <Conditional condition="gte 100" />
+        <SpawnItem identifiers="FlareGunFlare" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <LightComponent LightColor="255,200,50,255" Flicker="0" range="25" IsOn="true">
+      <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
+      <StatusEffect type="OnContained" targettype="This" delay="1">
+        <Conditional condition="eq 51" />
+        <sound file="%ModDir%/Sounds/Pyro/FlaregunReload.ogg" range="200.0" />
+      </StatusEffect>
+    </LightComponent>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
+  </Item>
+
+
+
+  <Item name="Flare Gun Flare" identifier="FlareGunFlare" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.8" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Pyro/PyroEquipment.png" sourcerect="0,290,45,20" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Pyro/PyroEquipment.png" sourcerect="0,290,45,20" depth="0.55" origin="0.5,0.25" />
+    <Body width="20" height="10" density="30" />
+    <Projectile characterusable="false" launchimpulse="20.0">
+      <Attack structuredamage="2" severlimbsprobability="0">
+        <Affliction identifier="Burning" amount="7.5" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This" disabledeltatime="true">
+        <sound file="%ModDir%/Sounds/Pyro/FlaregunHit.ogg" range="500" />
+        <Remove/>
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" disabledeltatime="true" delay="1" checkconditionalalways="false">
+        <Conditional Burning="gte 0.1"/>
+        <Affliction identifier="FireDamage" amount="415.0" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" disabledeltatime="true">
+        <ParticleEmitter particle="flamethrower" particlespersecond="80" scalemin="0.1" scalemax="0.1" anglemin="0" anglemax="0" velocitymin="50" velocitymax="200" highqualitycollisiondetection="true"/>
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+
+    <Item name="Axetinguisher" identifier="Axetinguisher" category="Weapon" Tags="" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+      <InventoryIcon texture="%ModDir%/Images/Pyro/PyroEquipmentSlots.png" sourcerect="3,2,80,80" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Images/Pyro/PyroEquipment.png" sourcerect="0,0,128,232" depth="0.55" origin="0.5,0.5" />
+      <Body width="65" height="15" density="25" />
+      <MeleeWeapon slots="Any,RightHand" holdpos="40,-20" aimpos="20,10" handle1="-10,-20" controlpose="false" holdangle="0" reload="0.7" range="100" combatPriority="25" msg="ItemMsgPickUpSelect">
+        <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureSlash">
+          <Affliction identifier="MeleeDamage" strength="20" />
+          <Affliction identifier="stun" strength="0.1" />
+          <sound file="%ModDir%/Sounds/Pyro/AxeHitCharacter.ogg" type="OnUse" range="1000" />
+          <StatusEffect type="OnUse" target="UseTarget" comparison="or">
+            <Conditional inwater="true"/>
+            <Conditional Burning="gte 0.1"/>
+            <sound file="%ModDir%/Sounds/Pyro/NeonHit.ogg" type="OnUse" range="1000" />
+            <Affliction identifier="FireDamage" strength="60" />
+            <ReduceAffliction identifier="Burning" amount="111"/>
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnNotContained" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <LightSprite texture="%ModDir%/Images/Pyro/AxetinguisherLights.png" sourcerect="0,0,260,88" origin="0.5,0.5"/>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    </Item>
+
+
+
+    <Item name="Thermal Thrust" identifier="ThermalThrust" category="Weapon" maxstacksize="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.35" impactsoundtag="impact_metal_heavy">
+      <InventoryIcon texture="%ModDir%/Images/Pyro/PyroEquipmentSlots.png" sourcerect="0,0,96,80" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Images/Pyro/PyroEquipment.png" sourcerect="170,0,48,84" depth="0.55" origin="0.5,0.5" />
+      <Body width="24" height="52" density="300" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,0" holdangle="0" handle1="-20,0" aimpos="45,0">
+        <StatusEffect type="OnActive" target="This" stackable="false">
+          <sound file="%ModDir%/Sounds/Pyro/ThermalsUp.ogg" type="OnUse" range="300" loop="false"/>
+        </StatusEffect>
+      </Holdable>
+      <RangedWeapon reload="0" barrelpos="0,0" spread="0" crosshairscale="0.2">
+        <StatusEffect type="OnNotContained" target="This">
+          <Remove />
+        </StatusEffect>
+        <Propulsion force="50" usablein="both" ApplyToHands="false">
+          <StatusEffect type="OnContained" target="This" UsableIn="None" disabledeltatime="true">
+            <Conditional condition="lte 2"/>
+            <sound file="%ModDir%/Sounds/Pyro/ThermalsDown.ogg" type="OnUse" range="500"/>
+          </StatusEffect>
+          <StatusEffect type="OnContained" target="This" UsableIn="Both" >
+            <Conditional condition="gte 95"/>
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This">
+            <Conditional condition="gte 95"/>
+            <Hook name="ThermalsUse"/>
+            <sound file="%ModDir%/Sounds/Pyro/ThermalsUse.ogg" type="OnUse" range="1000"/>
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" delay="4" setvalue="true" condition="0" disabledeltatime="true">
+            <Conditional condition="gte 95"/>
+          </StatusEffect>
+          <StatusEffect type="OnContained" target="This" condition="5" disabledeltatime="false"/>
+            </Propulsion>
+      </RangedWeapon>    
+    </Item>
+
+
+
+</Items>
