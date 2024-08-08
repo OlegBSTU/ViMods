@@ -1,4 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="2rbine" modversion="1.0.8" corepackage="False" gameversion="1.5.9.1">
+<contentpackage name="2rbine" modversion="1.0.10" corepackage="False" gameversion="1.5.9.1">
   <Submarine file="%ModDir%/2rbine.sub" />
 </contentpackage>

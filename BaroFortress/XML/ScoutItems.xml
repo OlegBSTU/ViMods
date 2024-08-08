@@ -105,7 +105,7 @@
 
 
 
-  <Item name="Guillotine" identifier="Guillotine" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="bioticgrenade" Scale="0.2" impactsoundtag="impact_metal_light">
+  <Item name="Guillotine" identifier="Guillotine" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.2" impactsoundtag="impact_metal_light">
     <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="98,10,64,52" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="350,0,80,256" depth="0.55" origin="0.5,0.25" />
     <Body width="38" height="15" density="30" />
