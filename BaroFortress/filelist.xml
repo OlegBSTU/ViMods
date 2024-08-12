@@ -10,6 +10,7 @@
 	<Item file="%ModDir%/XML/ScoutItems.xml" />
 	<Item file="%ModDir%/XML/SoldierItems.xml" />
 	<Item file="%ModDir%/XML/PyroItems.xml" />
+	<Item file="%ModDir%/XML/DemoItems.xml" />
 	
 	<Item file="%ModDir%/XML/Outfits.xml" />
 	<Item file="%ModDir%/XML/ExtraItems.xml" />

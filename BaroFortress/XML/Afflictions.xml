@@ -264,6 +264,58 @@ affectmachines="true">
 
 
 
+<!-- Demo stuff -->
+
+
+
+<Affliction
+name="Shield Dash"
+identifier="ShieldDash"
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="0"
+showinhealthscannerthreshold="0"
+maxstrength="3">
+<Effect minstrength="0" maxstrength="3"
+  strengthchange="-1"
+  minspeedmultiplier="2"
+  maxspeedmultiplier="2" >
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+   <ParticleEmitter particle="weldsmoke" color="255,150,50,25" copyentityangle="true"
+     anglemin="0" anglemax="0" particlespersecond="40" velocitymin="5" velocitymax="15"
+     scalemin="2" scalemax="3" DistanceMin="0" DistanceMax="50"/>
+ </StatusEffect>
+</Effect>
+</Affliction>
+
+
+
+<Affliction
+name="Eyelander Limbs Taken"
+identifier="EyelanderLimbs"
+type="gaze"
+limbspecific="true"
+
+indicatorlimb="Head"
+activationthreshold="0"
+showiconthreshold="0"
+showinhealthscannerthreshold="0"
+maxstrength="25">
+<Effect minstrength="0" maxstrength="25"
+  minspeedmultiplier="1.00" maxspeedmultiplier="1.4" 
+  minvitalityincrease="0" maxvitalityincrease="100">
+  <StatusEffect target="Character" targetlimb="Head" offset="0,0" disabledeltatime="true" stackable="true">
+   <ParticleEmitter particle="gazerage" color="255,150,50,25" copyentityangle="true"
+     anglemin="0" anglemax="360" particlespersecond="80" velocitymin="0" velocitymax="0"
+     scalemin="0.3" scalemax="0.3" lifetimemultiplier="0.5" DistanceMin="0" DistanceMax="0"/>
+ </StatusEffect>
+</Effect>
+</Affliction>
+
+
+
 <!-- Medic stuff -->
 
 

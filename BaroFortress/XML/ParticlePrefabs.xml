@@ -231,4 +231,54 @@
     sourcerect="220,0,80,84" />
 </IntelPapers>
 
+
+
+<dragonfury
+LifeTime="1"
+LifeTimeMin="0"
+StartDelayMin="0"
+StartDelayMax="1"
+AngularVelocityMin="-10"
+AngularVelocityMax="10"
+StartRotationMin="0"
+StartRotationMax="360"
+RotateToDirection="False"
+Drag="0"
+WaterDrag="0"
+VelocityChange="0,10"
+VelocityChangeWater="0,10"
+CollisionRadius="60"
+InvariantCollisionSize="False"
+UseCollision="True"
+DeleteOnCollision="False"
+Friction="0.5"
+Restitution="0.5"
+StartSizeMin="0.2,0.2"
+StartSizeMax="1,1"
+SizeChangeMin="0,0"
+SizeChangeMax="3,3"
+GrowTime="0.1"
+StartColor="255,255,255,200"
+MiddleColor="0,0,0,0"
+EndColor="255,0,0,200"
+UseMiddleColor="False"
+CanEnterSubs="False"
+DrawTarget="Both"
+DrawOnTop="False"
+DrawAlways="False"
+BlendState="Additive"
+Priority="1"
+AnimDuration="1"
+LoopAnim="False">
+<animatedsprite
+  texture="Content/Particles/ExplosionAtlas.png"
+  sourcerect="0,0,4096,4096"
+  columns="8"
+  rows="8"
+  origin="0.5,0.5"
+  premultiplyalpha="false" />
+</dragonfury> 
+
+
+
 </prefabs>
