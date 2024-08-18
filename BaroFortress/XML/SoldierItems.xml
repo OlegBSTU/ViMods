@@ -286,6 +286,7 @@
         <Affliction identifier="MeleeDamage" strength="49" />
         <Affliction identifier="Discipline" strength="5" />
         <StatusEffect type="OnUse" target="This,Character">
+          <Conditional targettype="UseTarget" entitytype="Character"/>
           <Affliction identifier="Discipline" strength="5" />
         </StatusEffect>
       </Attack>
