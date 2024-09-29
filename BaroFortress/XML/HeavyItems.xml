@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+  <Item name="Sandvich" identifier="Sandvich" scale="0.2" maxstacksize="1" sonarsize="2" hideinmenus="true" impactsoundtag="impact_soft">
+    <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,58,67,56" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" depth="0.1" sourcerect="0,0,140,68" origin="0.5,0.7" />
+    <Body width="50" height="40" density="25" />
+    <Holdable>
+
+      <!-- Heal when picked up, emit sound for clarity -->
+      <StatusEffect type="OnPicked" target="This,Character">
+        <ReduceAffliction identifier="FlatDamage" amount="150"/>
+      </StatusEffect>
+      <StatusEffect type="OnPicked" target="This">
+        <sound file="%ModDir%/Sounds/MedkitPickup.ogg" range="300" />
+        <RemoveItem/>
+      </StatusEffect>
+
+      <!-- Delete after existing for 10 seconds -->
+      <StatusEffect type="Always" target="This" delay="10">
+        <Remove/>
+      </StatusEffect>
+
+    </Holdable>
+  </Item>
+
+
+ <!-- Fuck this one item in particular, lost half of my 2 braincells trying to make it work. It spawns sandviches when OnUse and gets eaten when OnSecondaryUse. I found a way to merge these two by removing condition timers entirely from "hold to eat" and added "RequireAimToUse="false"" to make shit work. FINALLY SOME GOOD FUCKING FOOD"-->
+  <Item name="Sandvich Plate" identifier="Sandvich Plate" category="Weapon" Scale="0.2" RequireAimToUse="False">
+    <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,58,67,56" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" depth="0.1" sourcerect="0,0,140,68" origin="0.5,0.7" />
+    <Body width="50" height="30" density="0" />
+    <Holdable slots="Any,LeftHand+RightHand" controlpose="true" holdpos="0,0" holdangle="16" handle1="0,0" aimpos="35,25" aimangle="16" aimable="false">
+      
+      <!-- Remove when dropped -->
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove/>
+      </StatusEffect>
+    </Holdable>
+
+      <RangedWeapon reload="3">
+
+      <!-- When RMB, break sandvich to start a cooldown and trigger OnBroken -->
+        <StatusEffect type="OnSecondaryUse" targettype="This,Character" condition="0" setvalue="true" comparison="AND">
+          <Conditional condition="eq 100"/>
+          <Conditional InWater="false"/>
+          <Affliction identifier="Nomming" amount="5" />
+        </StatusEffect>
+
+        <!-- When LMB, drop sandvich if not on cooldown, then start a cooldown without triggering OnBroken -->
+        <StatusEffect type="OnUse" target="This" condition="1" setvalue="true">
+           <Conditional condition="eq 100" />
+           <SpawnItem identifiers="sandvich" spawnposition="This" />
+        </StatusEffect>
+
+        <!-- Cooldown is 100/3 seconds -->
+        <StatusEffect type="OnContained" target="This" AllowWhenBroken="true" condition="3"/>
+
+      </RangedWeapon>
+  </Item>
+
+
+
+  <Item name="Dalokoh Bar" identifier="DalokohBar" scale="0.3" maxstacksize="1" sonarsize="2" hideinmenus="true" impactsoundtag="impact_soft">
+    <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,0,76,56" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" depth="0.1" sourcerect="145,0,148,62" origin="0.5,0.7" />
+    <Body width="50" height="40" density="25" />
+    <Holdable>
+
+      <!-- Heal when picked up, emit sound for clarity -->
+      <StatusEffect type="OnPicked" target="This,Character">
+        <Affliction identifier="Healing" amount="75"/>
+      </StatusEffect>
+      <StatusEffect type="OnPicked" target="This">
+        <sound file="%ModDir%/Sounds/MedkitPickup.ogg" range="300" />
+        <RemoveItem/>
+      </StatusEffect>
+
+      <!-- Delete after existing for 10 seconds -->
+      <StatusEffect type="Always" target="This" delay="10">
+        <Remove/>
+      </StatusEffect>
+
+    </Holdable>
+  </Item>
+
+
+ <!-- Fuck this one item in particular, lost half of my 2 braincells trying to make it work. 
+  It spawns sandviches when OnUse and gets eaten when OnSecondaryUse. 
+  I found a way to merge these two by removing condition timers entirely from "hold to eat" and added "RequireAimToUse="false""
+  to make shit work. FINALLY SOME GOOD FUCKING FOOD"-->
+  <Item name="Dalokoh Plate" identifier="Dalokoh Plate" category="Weapon" Scale="0.3" RequireAimToUse="False">
+    <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,0,76,56" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" depth="0.1" sourcerect="145,0,148,62" origin="0.5,0.7" />
+    <Body width="50" height="30" density="0" />
+    <Holdable slots="Any,LeftHand+RightHand" controlpose="true" holdpos="0,0" holdangle="16" handle1="0,0" aimpos="35,25" aimangle="16" aimable="false">
+      
+      <!-- Remove when dropped -->
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove/>
+      </StatusEffect>
+    </Holdable>
+
+      <RangedWeapon reload="3">
+
+      <!-- When RMB, break the item to start a cooldown and trigger OnBroken -->
+        <StatusEffect type="OnSecondaryUse" targettype="This,Character" condition="0" setvalue="true" comparison="AND">
+          <Conditional condition="eq 100"/>
+          <Conditional InWater="false"/>
+          <Affliction identifier="SweetTooth" amount="5" />
+        </StatusEffect>
+
+        <!-- When LMB, drop the item if not on cooldown, then start a cooldown without triggering OnBroken -->
+        <StatusEffect type="OnUse" target="This" condition="1" setvalue="true">
+           <Conditional condition="eq 100" />
+           <SpawnItem identifiers="DalokohBar" spawnposition="This" />
+        </StatusEffect>
+
+        <!-- Cooldown is 100/6=16 seconds (5 seconds to use the bar and 10 more to regen it) -->
+        <StatusEffect type="OnContained" target="This" AllowWhenBroken="true" condition="6"/>
+
+      </RangedWeapon>
+  </Item>
+
+
+
+  <Item name="Brass Beast" identifier="BrassBeast" category="Weapon" cargocontaineridentifier="metalcrate" tags="" Scale="0.4" depth="0.9" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="75,8,80,62" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" sourcerect="0,96,360,190" depth="0.55" origin="0.5,0.25" />
+    <Body width="50" height="30" density="0" />
+     <!-- Passive ammo spawn to simulate overheating. Spawning ammo is a little slower than spending it, so at some moment the firerate lowers itself. This effect only works when the item is held -->
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-20" aimpos="50,-20" handle1="-100,0" handle2="0,40" holdangle="-5" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" interval="0.15" AllowWhenBroken="true"> 
+        <SpawnItem identifiers="BrassBeastAmmo" amount="1" spawnposition="ThisInventory" />
+      </StatusEffect>
+ 
+     <!-- Spinning subsides when not used -->
+     <StatusEffect type="OnContained" targettype="This" condition="-1" disabledeltatime="true">
+      <Conditional condition="gte 2"/>
+     </StatusEffect>
+     <StatusEffect type="OnSecondaryUse" targettype="This,Character" condition="2" disabledeltatime="true" AllowWhenBroken="true">
+       <Sound file="%ModDir%/Sounds/Heavy/BrassBeastSpin.ogg" type="OnUse" range="400" loop="true" volume="0.5"/>
+       <Affliction identifier="BrassBeastSpin" strength="0.1" />
+     </StatusEffect>
+     
+     <!-- Disable when not at full spin speed -->
+       <StatusEffect type="OnContained" target="This" isShootable="false" disabledeltatime="true">
+       <Conditional condition="lt 98"/>
+     </StatusEffect>
+     <!-- Enable when at full spin speed-->
+     <StatusEffect type="OnContained" target="This" isShootable="true" disabledeltatime="true">
+        <Conditional condition="gte 98"/>
+     </StatusEffect>
+    </Holdable>
+
+    <RangedWeapon barrelpos="180,-30" spread="20" combatPriority="80" reload="0.1" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <RequiredItems items="BrassBeastAmmo" type="Contained" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <Propulsion force="-10" usablein="both" ApplyToHands="true">
+        <RequiredItems items="BrassBeastAmmo" type="Contained" />
+      </Propulsion>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="300" hideitems="true" drawinventory="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="BrassBeastAmmo" hide="true" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+    </ItemContainer>
+    <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+  </Item>
+
+
+
+  <Item name="Brass Beast Ammo" identifier="BrassBeastAmmo" category="Weapon" maxstacksize="25" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="189,299,23,11" depth="0.55" origin="0.5,0.5" />
+    <Body width="5" height="5" density="15" />
+    <Projectile characterusable="false" hitscan="true" hitscancount="1" removeonhit="true">
+      <StatusEffect type="OnNotContained" target="This" interval="5">
+       <Sound file="%ModDir%/Sounds/Heavy/BrassBeastShoot.ogg" type="OnUse" range="700"/>
+      </StatusEffect>
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,100" scalemultiplier="1,0.5" />
+      <Attack structuredamage="3" targetforce="1" itemdamage="0" severlimbsprobability="0.05">
+        <Affliction identifier="BulletDamage" strength="12" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+  
+  <Item name="Natasha" identifier="Natasha" category="Weapon" cargocontaineridentifier="metalcrate" tags="" Scale="0.4" depth="0.9" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="79,70,72,66" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" sourcerect="0,285,316,196" depth="0.55" origin="0.5,0.25" />
+    <Body width="50" height="30" density="0" />
+     <!-- Passive ammo spawn to simulate overheating. Spawning ammo is a little slower than spending it, so at some moment the firerate lowers itself. This effect only works when the item is held -->
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-20" aimpos="50,-20" handle1="-100,0" handle2="0,40" holdangle="-5" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" interval="0.15" AllowWhenBroken="true"> 
+        <SpawnItem identifiers="NatashaAmmo" amount="1" spawnposition="ThisInventory" />
+      </StatusEffect>
+ 
+     <!-- Spinning subsides when not used -->
+     <StatusEffect type="OnContained" targettype="This" condition="-1" disabledeltatime="true">
+      <Conditional condition="gte 2"/>
+     </StatusEffect>
+     <StatusEffect type="OnSecondaryUse" targettype="This,Character" condition="3" disabledeltatime="true" AllowWhenBroken="true">
+       <Sound file="%ModDir%/Sounds/Heavy/NatashaSpin.ogg" type="OnUse" range="400" loop="true" volume="0.5"/>
+       <Affliction identifier="NatashaSpin" strength="0.1" />
+     </StatusEffect>
+     
+     <!-- Disable when not at full spin speed -->
+       <StatusEffect type="OnContained" target="This" isShootable="false" disabledeltatime="true">
+       <Conditional condition="lt 98"/>
+     </StatusEffect>
+     <!-- Enable when at full spin speed-->
+     <StatusEffect type="OnContained" target="This" isShootable="true" disabledeltatime="true">
+        <Conditional condition="gte 98"/>
+     </StatusEffect>
+    </Holdable>
+
+    <RangedWeapon barrelpos="150,-30" spread="20" combatPriority="80" reload="0.1" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <RequiredItems items="NatashaAmmo" type="Contained" />
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <Propulsion force="-10" usablein="both" ApplyToHands="true">
+        <RequiredItems items="NatashaAmmo" type="Contained" />
+      </Propulsion>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="300" hideitems="true" drawinventory="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="NatashaAmmo" hide="true" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+    </ItemContainer>
+    <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+  </Item>
+
+
+
+  <Item name="Natasha Ammo" identifier="NatashaAmmo" category="Weapon" maxstacksize="25" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="189,299,23,11" depth="0.55" origin="0.5,0.5" />
+    <Body width="5" height="5" density="15" />
+    <Projectile characterusable="false" hitscan="true" hitscancount="1" removeonhit="true">
+      <StatusEffect type="OnNotContained" target="This" interval="5">
+       <Sound file="%ModDir%/Sounds/Heavy/NatashaShoot.ogg" type="OnUse" range="700"/>
+      </StatusEffect>
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,100" scalemultiplier="1,0.5" />
+      <Attack structuredamage="2" targetforce="0.5" itemdamage="0" severlimbsprobability="0.05">
+        <Affliction identifier="BulletDamage" strength="7" />
+        <Affliction identifier="NatashaSlowdown" strength="2" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+  <Item name="Golden Frying Pan" identifier="GoldenFryingPan" category="Weapon" Tags="" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_heavy" RequireAimToUse="False">
+    <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="160,6,74,63" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" sourcerect="372,134,70,277" depth="0.55" origin="0.5,0.5" />
+    <Body width="65" height="15" density="25" />
+    <MeleeWeapon slots="Any,RightHand" holdpos="40,0" aimable="true" aimpos="20,10" handle1="-5,-20" controlpose="false" holdangle="0" reload="0.7" range="100" combatPriority="25" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureBlunt">
+        <Affliction identifier="MeleeDamage" strength="65" />
+        <Affliction identifier="stun" strength="0.1" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="%ModDir%/Sounds/Heavy/HeavyPanHit1.ogg" selectionmode="random" range="1500" volume="3"/>
+          <Sound file="%ModDir%/Sounds/Heavy/HeavyPanHit2.ogg" selectionmode="random" range="1500" volume="3"/>
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+  </Item>
+
+
+  
+  <Item name="Fists of Steel" identifier="FistsOfSteel" category="Weapon" Tags="" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+    <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="164,73,89,68" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" sourcerect="300,5,136,106" depth="0.55" origin="0.5,0.5" />
+    <Body width="65" height="15" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,0" aimpos="0,0" handle1="0,0" handle2="0,0" holdangle="0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="Always" target="Limb" targetlimb="RightHand">
+        <HideLimb duration="1" />
+      </StatusEffect>
+    </Holdable>
+    <MeleeWeapon slots="Any,RightHand" holdpos="40,-20" aimpos="20,10" handle1="0,-20" controlpose="false" holdangle="0" reload="0.7" range="50" combatPriority="25" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureBlunt">
+        <Affliction identifier="MeleeDamage" strength="65" />
+        <Affliction identifier="stun" strength="0.1" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="%ModDir%/Sounds/Heavy/HeavySteelHit.ogg" selectionmode="random" range="500"/>
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+  </Item>
+
+
+
+</Items>

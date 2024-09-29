@@ -2,18 +2,32 @@
 
 <Items>
 
+<Item name="Medkit Spawner" identifier="MedkitSpawner" scale="0.15" sonarsize="2" tags="MedkitSpawner">
+ <Sprite texture="%ModDir%/Images/Medkit.png" depth="0.1" sourcerect="0,0,256,256" origin="0.5,0.5"/>
+<ItemContainer>
+  <StatusEffect type="OnNotContained" target="This" condition="1" setvalue="true" disabledeltatime="true">
+  <Conditional condition="eq 100"/>
+  <SpawnItem identifiers="Medkit" spawnposition="This" SpawnIfInventoryFull="true"/>
+  </StatusEffect>
+  <StatusEffect type="OnNotContained" target="This" condition="10"/>
+</ItemContainer>
+</Item>
+
+
+
 <Item name="Medkit" identifier="Medkit" scale="0.2" maxstacksize="1" sonarsize="2" hideinmenus="true">
-    <Sprite texture="%ModDir%/Images/Medkit.png" depth="0.1" sourcerect="0,0,256,256" origin="0.5,0.7" />
-    <Body width="50" height="40" density="25" />
+    <Sprite texture="%ModDir%/Images/Intel.png" depth="0.1" sourcerect="256,256,256,256" origin="0.5,0"/>
+    <DecorativeSprite texture="%ModDir%/Images/Medkit.png" sourcerect="0,0,256,256" depth="0.1" origin="0.5,0.8" offset="0,50" offsetanim="Sine" offsetanimspeed="0.5"/>
+    <Body width="75" height="256" density="25" />
     <Holdable>
         <StatusEffect type="OnPicked" target="This,Character">
-            <Affliction identifier="Healing" strength="450"/>
-            <RequiredAffliction identifier="damage" minstrength="15"/>
+            <ReduceAffliction identifier="FlatDamage" amount="300"/>
           </StatusEffect>
       <StatusEffect type="OnPicked" target="This">
         <sound file="%ModDir%/Sounds/MedkitPickup.ogg" range="300" />
         <RemoveItem/>
       </StatusEffect>
+      <StatusEffect type="OnNotContained" targettype="NearbyItems" range="300" targettags="MedkitSpawner" condition="0" setvalue="true" interval="1" duration="1"/> 
     </Holdable>
   </Item>
 

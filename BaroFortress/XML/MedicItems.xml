@@ -51,8 +51,7 @@
         <Affliction identifier="CrossbowSep" strength="1" />
         <StatusEffect type="OnUse" target="UseTarget">
           <Conditional entitytype="neq Character" />
-          <Sound file="%ModDir%/Sounds/Medic/CrossbowHit.ogg" selectionmode="random" range="500"
-            volume="10" />
+          <Sound file="%ModDir%/Sounds/Medic/CrossbowHit.ogg" selectionmode="random" range="500"/>
         </StatusEffect>
       </Attack>
       <StatusEffect type="OnActive" target="This">
