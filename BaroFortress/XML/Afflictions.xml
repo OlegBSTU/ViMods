@@ -428,7 +428,29 @@ maxstrength="25">
 
 <!-- Medic stuff -->
 
-
+<Affliction
+name="UberSep"
+identifier="UberSep"
+description="Get them! RAUS, RAUS!"
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="5000"
+showicontoothersthreshold="5000"
+showinhealthscannerthreshold="0"
+treatmentthreshold="1"
+maxstrength="100"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="100" resistancefor="FlatDamage" minresistance="1" maxresistance="1" minvitalityincrease="1000" maxvitalityincrease="1000" 
+minfacetint="255,75,0,50" maxfacetint="255,75,0,255" minbodytint="255,75,0,50" maxbodytint="255,75,0,255">
+<StatusEffect target="Character" disabledeltatime="true">
+  <ParticleEmitter particle="ElectricShock" CopyEntityAngle="True" AngleMin="0" AngleMax="360" VelocityMin="20" VelocityMax="40" DistanceMin="0" DistanceMax="50" ScaleMultiplier="0.3,0.3"
+EmitInterval="1" ParticleAmount="1" ParticlesPerSecond="6" ColorMultiplier="255,100,0,255" LifeTimeMultiplier="1" />
+  <ReduceAffliction identifier="UberSep" amount="2"/>
+</StatusEffect>
+</Effect>
+</Affliction>
 
 <Affliction
 name="Biotic Grenade Sep"

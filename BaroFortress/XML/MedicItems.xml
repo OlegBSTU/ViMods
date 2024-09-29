@@ -2,11 +2,11 @@
 
 <Items>
 
-  <Item name="CrossbowSep" identifier="CrossbowSep" category="Weapon" tags="weapon,gun" Scale="0.15"
+  <Item name="CrossbowSep" identifier="CrossbowSep" category="Weapon" tags="weapon,gun" Scale="0.3"
     impactsoundtag="impact_metal_light">
-    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="527,150,172,144"
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="527,150,172,144"
       origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/Medic/MedicMainEquipment.png" sourcerect="512,388,512,212"
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipment.png" sourcerect="256,194,256,106"
       depth="0.55" origin="0.5,0.5" />
     <Body width="500" height="200" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="45,-10"
@@ -39,9 +39,9 @@
   </Item>
 
 
-  <Item name="CrossbowBoltSep" identifier="CrossbowBoltSep" scale="0.15"
+  <Item name="CrossbowBoltSep" identifier="CrossbowBoltSep" scale="0.3"
     sonarsize="2" hideinmenus="true">
-    <Sprite texture="%ModDir%/Images/Medic/MedicMainEquipment.png" sourcerect="540,325,260,52"
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipment.png" sourcerect="270,162,130,26"
       depth="0.55" />
     <Body width="5" height="5" density="25" />
     <Projectile characterusable="false" hitscan="false" launchimpulse="0" sticktocharacters="true"
@@ -51,7 +51,7 @@
         <Affliction identifier="CrossbowSep" strength="1" />
         <StatusEffect type="OnUse" target="UseTarget">
           <Conditional entitytype="neq Character" />
-          <Sound file="%ModDir%/Sounds/Medic/CrossbowHit.ogg" selectionmode="random" range="500"/>
+          <Sound file="%ModDir%/Sounds/Medic/CrossbowHit.ogg" range="500"/>
         </StatusEffect>
       </Attack>
       <StatusEffect type="OnActive" target="This">
@@ -83,11 +83,11 @@
 
 
   <Item name="SolemnVow" identifier="SolemnVow" category="Weapon" Tags=""
-    cargocontaineridentifier="metalcrate" scale="0.1" impactsoundtag="impact_metal_heavy"
-    RequireAimToUse="True">
-    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="135,0,148,148"
+    cargocontaineridentifier="metalcrate" scale="0.4" impactsoundtag="impact_metal_heavy"
+    RequireAimToUse="False">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="135,0,148,148"
       origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="255,0,220,500"
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipmentExtra.png" sourcerect="64,0,55,125"
       depth="0.55" origin="0.5,0.5" />
     <Body width="65" height="15" density="25" />
     <MeleeWeapon slots="Any,RightHand" aimpos="20,10" handle1="0,-20" holdangle="0" reload="0.88" range="50" combatPriority="25" msg="ItemMsgPickUpSelect">
@@ -108,10 +108,10 @@
   </Item>
 
 
-  <Item name="DartGun" identifier="DartGun" category="Weapon" cargocontaineridentifier="metalcrate" tags="weapon,gun" Scale="0.07" impactsoundtag="impact_metal_light">
-    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="0,0,108,108"
+  <Item name="DartGun" identifier="DartGun" category="Weapon" cargocontaineridentifier="metalcrate" tags="weapon,gun" Scale="0.28" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="0,0,108,108"
       origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="512,0,512,390"
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipmentExtra.png" sourcerect="64,0,64,98"
       depth="0.55" origin="0.5,0.5" />
     <Body width="25" height="25" density="0" />
 
@@ -197,13 +197,14 @@
   </Item>
 
 
+
   <Item name="BioticGrenadeLauncherSep" identifier="BioticGrenadeLauncherSep" category="Weapon"
     cargocontaineridentifier="metalcrate"
-    tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.1"
+    tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.4"
     impactsoundtag="impact_metal_light">
-    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="0,160,120,120"
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="0,160,120,120"
       origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="0,150,250,150"
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipmentExtra.png" sourcerect="0,38,62,38"
       depth="0.55" origin="0.5,0.5" />
     <Body width="25" height="25" density="0" />
     <Holdable slots="Any,RightHand" controlpose="true" holdpos="35,10" handle1="0,0" aimpos="35,10" />
@@ -249,9 +250,11 @@
     <StatusHUD drawhudwhenequipped="true" />
   </Item>
 
-  <Item name="BioticGrenadeSep" identifier="BioticGrenadeSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="bioticgrenade" Scale="0.1" impactsoundtag="impact_metal_light">
-    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="0,160,120,120" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/Medic/MedicSecondary.png" sourcerect="0,150,250,150" depth="0.55" origin="0.5,0.5" />
+
+
+  <Item name="BioticGrenadeSep" identifier="BioticGrenadeSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="bioticgrenade" Scale="0.4" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="0,160,120,120" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipmentExtra.png" sourcerect="0,38,62,38" depth="0.55" origin="0.5,0.5" />
     <Body width="38" height="15" density="30" />
     <Projectile characterusable="false" launchimpulse="12.0" sticktocharacters="false">
       <Attack structuredamage="40" severlimbsprobability="0"/>
@@ -280,61 +283,122 @@
 
 
 
-  <Item name="QuickfixSep" identifier="QuickfixSep" category="Weapon" cargocontaineridentifier="metalcrate" tags="" Scale="0.2" impactsoundtag="impact_metal_light">
-    <InventoryIcon texture="%ModDir%/Images/Medic/MedicSlots.png" sourcerect="370,148,140,140" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/Medic/MedicMainEquipment.png" sourcerect="0,300,512,300" ColorMultiplier="255,150,50,255" depth="0.9" origin="0.5,0.5" />
+  <Item name="QuickfixSep" identifier="QuickfixSep" category="Weapon" tags="" Scale="0.4">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="370,148,140,140" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipment.png" sourcerect="0,150,256,150" depth="0.9" origin="0.5,0.5" />
     <Body width="50" height="30" density="0" />
-    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="45,-20" handle1="-30,-80" handle2="300,220" holdangle="0" msg="ItemMsgPickUpSelect" />
-    <RangedWeapon launchimpulse="5.0" reload="1" weapondamagemodifier="1.25" spread="0" combatPriority="70" drawhudwhenequipped="true" barrelpos="85,16" crosshairscale="0.2" holdtrigger="true">
+
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="45,-20" handle1="-15,-40" handle2="150,110" holdangle="0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="This">
+        <Conditional condition="gte 99"/>
+        <Sound file="%ModDir%/Sounds/Medic/MedigunUberReadyLoop.ogg" selectionmode="random" type="OnUse" range="300"/>
+        <ParticleEmitter particle="ElectricShock" CopyEntityAngle="True" AngleMin="-5" AngleMax="5" VelocityMin="20" VelocityMax="40" Distance="50" ScaleMultiplier="0.05,0.05"
+        EmitInterval="1" ParticleAmount="1" ParticlesPerSecond="3" ColorMultiplier="255,100,0,255" LifeTimeMultiplier="2" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <Conditional condition="lt 99"/>
+        <ParticleEmitter particle="HealingParticles" CopyEntityAngle="True" AngleMin="-5" AngleMax="5" VelocityMin="20" VelocityMax="40" Distance="50" ScaleMultiplier="0.05,0.05"
+        EmitInterval="1" ParticleAmount="1" ParticlesPerSecond="3" ColorMultiplier="255,100,0,255" LifeTimeMultiplier="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" stackable="false" condition="1" />
+    </Holdable>
+
+    <RangedWeapon launchimpulse="10.0" reload="1" weapondamagemodifier="1.25" spread="0" combatPriority="70" drawhudwhenequipped="true" barrelpos="140,15" crosshairscale="0.2" holdtrigger="true">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
-      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-      <Sound file="%ModDir%/Sounds/Medic/MedigunHealingStart1.ogg" type="OnUse" range="500"/>
-      <RequiredItems items="MedigunRaySep" type="Contained"/>
+      <Sound file="%ModDir%/Sounds/Medic/MedigunHealingStart1.ogg" selectionmode="random" type="OnUse" range="500"/>
+      <Sound file="%ModDir%/Sounds/Medic/MedigunHealingStart2.ogg" selectionmode="random" type="OnUse" range="500"/>
+      <RequiredItems items="MedigunUberSep" type="Contained"/>
       <StatusEffect type="OnContained" target="This">
-        <SpawnItem identifiers="MedigunRaySep" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="MedigunUberSep" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove/>
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This,NearbyItems" targettags="UberSep" range="1000" condition="1" setvalue="true" delay="10" stackable="false">
+      <Conditional condition="gte 100"/>
+      <Sound file="%ModDir%/Sounds/Medic/MedigunUberDepleted.ogg" selectionmode="random" type="OnUse" range="1000"/>
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This,Character" stackable="false" duration="10">
+        <Affliction identifier="UberSep" strength="300" />
       </StatusEffect>
     </RangedWeapon>
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" iteminterval="0,-4" itempos="27,10" containedstateindicatorstyle="spear" containedstateindicatorslot="0" containedspritedepth="0.56">
-      <Containable items="MedigunRaySep" hide="true" />
-      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,448,64,64" origin="0.5,0.5" />
+
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" iteminterval="0,-4" itempos="27,10">
+      <Containable items="MedigunUberSep" hide="true" />
     </ItemContainer>
-    <aitarget sightrange="0" soundrange="500" fadeouttime="2" />
     <StatusHUD drawhudwhenequipped="true" />
+    <Propulsion force="-5" usablein="both" ApplyToHands="true"/>
   </Item>
 
-  <Item name="MedigunRaySep" identifier="MedigunRaySep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.5" impactsoundtag="impact_metal_light">
+
+
+  <Item name="MedigunRaySep" identifier="MedigunRaySep" category="Weapon" maxstacksize="1" tags="" Scale="0.7">
     <InventoryIcon name="MedicOutfitSep" texture="%ModDir%/Images/Medic/MedicOutfitSep.png" sourcerect="472,0,40,40" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/ParticlesSheet.png" sourcerect="334,408,64,64" depth="0.57" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/ParticlesSheet.png" sourcerect="0,402,110,110" depth="0.57" origin="0.5,0.5" />
     <Body width="10" height="10" density="30" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="45,-20" handle1="-30,-80" handle2="300,220" holdangle="0" msg="ItemMsgPickUpSelect" />
-    <Rope sourcepullforce="10" targetpullforce="0" projectilepullforce="0" maxlength="500" snaponcollision="false" spritewidth="50" tile="true" origin="0.5,0.5" targetminmass="10" lerpforces="true" snapanimduration="1" ReelSoundPitchSlide="1.0,2.25">
-      <Sprite texture="%ModDir%/Images/ParticlesSheet.png" sourcerect="232,372,140,140" depth="0.57" origin="0.5,0.5" />
-      <ReelSound file="%ModDir%/Sounds/Medic/MedigunHealingLoop.ogg" range="500" loop="true" />
+    <Rope sourcepullforce="30" targetpullforce="0" projectilepullforce="0" maxlength="800" snaponcollision="false" spritewidth="50" tile="true" origin="0.5,0.5" targetminmass="10" lerpforces="true" snapanimduration="1" ReelSoundPitchSlide="1.0,2.25">
+      <Sprite texture="%ModDir%/Images/ParticlesSheet.png" sourcerect="35,402,40,110" depth="0.57" origin="0.5,0.5" />
+      <ParticleEmitter particle="HealingParticles" ColorMultiplier="255,150,50,255"
+      EmitInterval="1" anglemin="-5" anglemax="5" particleamount="1" velocitymin="-10" velocitymax="-100" scalemin="0.3" scalemax="0.4" LifeTimeMultiplier="1.5" />
+    <ReelSound file="%ModDir%/Sounds/Medic/MedigunHealingLoop.ogg" range="500" loop="true" />
       <SnapSound file="%ModDir%/Sounds/Medic/MedigunHealingEnd.ogg" range="500"/>
       <StatusEffect type="OnUse" target="This" Snapped="true" delay="1" checkconditionalalways="true">
-        <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false" />
+        <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false"/>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" condition="0" checkconditionalalways="true">
+        <Conditional Snapped="true"/>
       </StatusEffect>
       <StatusEffect type="OnNotContained" target="This">
         <Conditional targetitemcomponent="Projectile" IsStuckToTarget="true" />
         <ParticleEmitter particle="HealingParticles" ColorMultiplier="255,150,50,255"
         EmitInterval="1" anglemin="-5" anglemax="5" particleamount="1" velocitymin="-10" velocitymax="-100" scalemin="0.3" scalemax="0.4" LifeTimeMultiplier="1.5" />
       </StatusEffect>
-    </Rope>
-    <Projectile characterusable="false" launchimpulse="5" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodeflective="true" sticktodoors="false" sticktolighttargets="true">
-      <Attack structuredamage="0" itemdamage="0" targetforce="0" severlimbsprobability="0">
-        <Affliction identifier="haste" strength="5" />
-      </Attack>
-      <StatusEffect type="OnActive" target="This" delay="10">
-        <Remove />
+      <StatusEffect type="OnNotContained" target="NearbyCharacters" range="50">
+        <Affliction identifier="Overheal" strength="40" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And" disabledeltatime="true">
-        <Conditional Snapped="false" />
-        <Conditional mass="lt 30" />
-        <Affliction identifier="drag" strength="1" />
+    </Rope>
+    <Projectile characterusable="false" launchimpulse="5" sticktocharacters="true" sticktoitems="false" sticktostructures="false" sticktodeflective="false" sticktodoors="false" sticktolighttargets="false">
+      <StatusEffect type="OnBroken" target="This">
+        <Remove/>
       </StatusEffect>
     </Projectile>
   </Item>
   
+  
+  <Item name="MedigunUberSep" identifier="MedigunUberSep" category="Weapon" maxstacksize="1" tags="UberSep" Scale="0.7">
+    <InventoryIcon name="MedicOutfitSep" texture="%ModDir%/Images/Medic/MedicOutfitSep.png" sourcerect="472,0,40,40" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/ParticlesSheet.png" sourcerect="0,402,110,110" depth="0.57" origin="0.5,0.5" />
+    <Body width="10" height="10" density="30" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="45,-20" handle1="-30,-80" handle2="300,220" holdangle="0" msg="ItemMsgPickUpSelect" />
+    <Rope sourcepullforce="30" targetpullforce="0" projectilepullforce="0" maxlength="800" snaponcollision="false" spritewidth="50" tile="true" origin="0.5,0.5" targetminmass="10" lerpforces="true" snapanimduration="1" ReelSoundPitchSlide="1.0,2.25">
+      <Sprite texture="%ModDir%/Images/ParticlesSheet.png" sourcerect="35,402,40,110" depth="0.57" origin="0.5,0.5" />
+      <ReelSound file="%ModDir%/Sounds/Medic/MedigunHealingLoop.ogg" range="1500" loop="true" volume="3"/>
+      <SnapSound file="%ModDir%/Sounds/Medic/MedigunHealingEnd.ogg" range="500"/>
+      <StatusEffect type="OnUse" target="This" Snapped="true" delay="1" checkconditionalalways="true">
+        <Conditional targetitemcomponent="Projectile" IsStuckToTarget="false"/>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" condition="0" checkconditionalalways="true">
+        <Conditional Snapped="true"/>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Conditional targetitemcomponent="Projectile" IsStuckToTarget="true" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="NearbyCharacters" range="50">
+        <Affliction identifier="UberSep" strength="200" />
+        <Sound file="%ModDir%/Sounds/Medic/NanoBoost.ogg" selectionmode="random" type="OnUse" range="1500"/>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="NearbyCharacters" range="50">
+        <ReduceAffliction identifier="FlatDamage" strength="40" />
+      </StatusEffect>
+    </Rope>
+    <Projectile characterusable="false" launchimpulse="5" sticktocharacters="true" sticktoitems="false" sticktostructures="false" sticktodeflective="false" sticktodoors="false" sticktolighttargets="false">
+      <StatusEffect type="OnBroken" target="This">
+        <Remove/>
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
 
   <!-- <ParticleEmitter particle="BaroFortressDrip" AngleMax="360" ScaleMin="2" ScaleMax="3"
   ScaleMultiplier="1,1" EmitInterval="0.5" ParticleAmount="1" ParticlesPerSecond="1"
