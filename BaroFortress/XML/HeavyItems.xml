@@ -30,7 +30,7 @@
     <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,58,67,56" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" depth="0.1" sourcerect="0,0,140,68" origin="0.5,0.7" />
     <Body width="50" height="30" density="0" />
-    <Holdable slots="Any,LeftHand+RightHand" controlpose="true" holdpos="0,0" holdangle="16" handle1="0,0" aimpos="35,25" aimangle="16" aimable="false">
+    <Holdable slots="Any,LeftHand+RightHand" controlpose="true" holdpos="20,0" holdangle="16" handle1="0,0" aimpos="35,25" aimangle="16" aimable="false">
       
       <!-- Remove when dropped -->
       <StatusEffect type="OnNotContained" target="This">
