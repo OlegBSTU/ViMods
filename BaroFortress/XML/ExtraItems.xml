@@ -50,4 +50,37 @@
 
 
 
+  <Item name="Boxtrot" identifier="Boxtrot" category="Equipment" tags="clothing" scale="0.3">
+    <InventoryIcon texture="%ModDir%/Images/Spy/BoxtrotTaunt.png" sourcerect="0,0,96,68" origin="0.5,0.5" />
+    <Sprite name="Intel Sep" texture="%ModDir%/Images/Spy/BoxtrotTaunt.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+    <Body width="200" height="90" density="20" />
+    <Wearable slots="OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Foxtrot Head" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="Head"
+        hidelimb="true" inheritscale="true" scale="3" inheritorigin="false" origin="0.5,-0.1" hideotherwearables="true" inheritsourcerect="false" sourcerect="0,0,240,155"/>
+      <sprite name="Foxtrot Right Hand" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Left Hand" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Right Upper Arm" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Left Upper Arm" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Right Forearm" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Left Forearm" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" SourceRect="0,0,1,1"  />
+      <sprite name="Foxtrot Torso" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="Torso" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" SourceRect="0,0,1,1" />
+      <StatValue stattype="SwimmingSpeed" value="-0.5" />
+      <StatValue stattype="WalkingSpeed" value="-0.5" />
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVisionAmount="2" PressureProtection="70000.0" setvalue="true" disabledeltatime="true">
+        <TriggerAnimation Type="Walk" path="%ModDir%/Animations/BoxtrotWalk.xml" priority="111" ExpectedSpecies="Human" />
+        <TriggerAnimation Type="Crouch" path="%ModDir%/Animations/BoxtrotCrouch.xml" priority="111" ExpectedSpecies="Human" />
+        <TriggerAnimation Type="Run" path="%ModDir%/Animations/BoxtrotRun.xml" priority="111" ExpectedSpecies="Human" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" interval="20" disabledeltatime="true">
+        <Sound file="Content/Characters/Orangeboy/ORANGEBOY_positive.ogg" range="250" loop="true"/>
+      </StatusEffect>
+
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Wearable>
+  </Item>
+
+
+
 </Items>
