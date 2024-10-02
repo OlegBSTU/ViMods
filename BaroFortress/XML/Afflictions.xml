@@ -185,24 +185,24 @@ showiconthreshold="1"
 showinhealthscannerthreshold="1"
 maxstrength="10">
 <PeriodicEffect mininterval="0.5" maxinterval="0.5" disabledeltatime="true">
-<StatusEffect target="Character">
-<ReduceAffliction identifier="Burning" amount="0.5"/>
-<Affliction identifier="FireDamage" strength="4" />
-</StatusEffect>
-<StatusEffect target="Character">
-<Conditional inwater="true"/>
-<ReduceAffliction identifier="Burning" amount="1000" />
-</StatusEffect>
-<StatusEffect target="Character" disabledeltatime="true" stackable="true" duration="1" checkconditionalalways="false">
-<ParticleEmitter particle="flamethrower" particlespersecond="20" anglemin="60" anglemax="120" velocitymin="10" velocitymax="100" scalemin="0.1" scalemax="0.3" highqualitycollisiondetection="true"/>
-<ParticleEmitter particle="flamethrowersmoke" particlespersecond="10" anglemin="60" anglemax="120" velocitymin="500" velocitymax="1000"/>
-</StatusEffect>
-</PeriodicEffect>
-<Effect minstrength="0" maxstrength="2">
-  <StatusEffect target="Character" duration="1">
-    <sound file="Content/Sounds/FireSmall.ogg" range="500.0" loop="true" />
-  </StatusEffect>
-</Effect>
+  <StatusEffect target="Character">
+    <ReduceAffliction identifier="Burning" amount="0.5"/>
+    <Affliction identifier="FireDamage" strength="4" />
+   </StatusEffect>
+   <StatusEffect target="Character">
+    <Conditional inwater="true"/>
+    <ReduceAffliction identifier="Burning" amount="1000" />
+   </StatusEffect>
+   <StatusEffect target="Character" disabledeltatime="true" stackable="true" duration="1" checkconditionalalways="false">
+    <ParticleEmitter particle="flamethrower" particlespersecond="20" anglemin="60" anglemax="120" velocitymin="10" velocitymax="100" scalemin="0.1" scalemax="0.3" highqualitycollisiondetection="true"/>
+    <ParticleEmitter particle="flamethrowersmoke" particlespersecond="10" anglemin="60" anglemax="120" velocitymin="500" velocitymax="1000"/>
+   </StatusEffect>
+  </PeriodicEffect>
+  <Effect minstrength="0" maxstrength="2">
+    <StatusEffect target="Character" duration="1">
+      <sound file="Content/Sounds/FireSmall.ogg" range="500.0" loop="true" />
+    </StatusEffect>
+  </Effect>
 </Affliction>
 
 
@@ -232,6 +232,60 @@ affectmachines="true">
     <Affliction identifier="stun" amount="0.01"/>
   </StatusEffect>
  </Effect>
+</Affliction>
+
+
+
+<!-- BONK! Atomic Punch -->
+<Affliction
+name="BONK!"
+identifier="BONK"
+type="immunity"
+isbuff="true"
+limbspecific="false"
+description="Un-freakin-touchable"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="0"
+showinhealthscannerthreshold="0"
+maxstrength="10">
+<Effect minstrength="8" maxstrength="10"
+ minspeedmultiplier="0" maxspeedmultiplier="0">
+  <StatusEffect target="Character" interval="1" lockhands="true" duration="1.2">
+   <ReduceAffliction identifier="BONK" amount="1"/>
+  </StatusEffect>
+</Effect>
+<Effect minstrength="0" maxstrength="8" resistancefor="FlatDamage,MeleeDamage,ExpDamage,FireDamage,BulletDamage" minresistance="1" maxresistance="1"
+ minspeedmultiplier="1" maxspeedmultiplier="1">
+  <StatusEffect target="Character" interval="1" lockhands="true" duration="1.2">
+   <ReduceAffliction identifier="BONK" amount="1"/>
+  </StatusEffect>
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+    <ParticleEmitter particle="weldsmoke" color="255,150,50,25" copyentityangle="true"
+      anglemin="0" anglemax="0" particlespersecond="40" velocitymin="5" velocitymax="15"
+      scalemin="2" scalemax="3" DistanceMin="0" DistanceMax="50"/>
+  </StatusEffect>
+</Effect>
+</Affliction>
+
+
+<!-- Marked for Death / Minicrits for sale -->
+<Affliction
+name="Marked for Death"
+identifier="DeathMark"
+type="debuff"
+limbspecific="false"
+maxstrength="5"
+affectmachines="false">
+<Effect minstrength="0" maxstrength="5"
+  strengthchange="-1"
+  resistancefor="FlatDamage,MeleeDamage,ExpDamage,FireDamage,BulletDamage"
+  minresistance="-0.5"
+  maxresistance="-0.5">
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+    <ParticleEmitter particle="DeathMark" ScaleMultiplier="0.25,0.25" ParticlesPerSecond="20" CopyEntityAngle="True"/>
+  </StatusEffect>
+</Effect>
 </Affliction>
 
 
@@ -316,9 +370,141 @@ maxstrength="25">
 
 
 
+<!-- Heavy stuff -->
+
+
+<!-- Sandvich -->
+<Affliction
+name="Nomming"
+identifier="Nomming"
+type="immunity"
+isbuff="true"
+limbspecific="false"
+description="Dat was delicious!"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="0"
+showinhealthscannerthreshold="0"
+maxstrength="5">
+<icon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,58,67,56" origin="0.5,0.5" color="0,255,50,255"/>
+<Effect minstrength="0" maxstrength="5"
+ minspeedmultiplier="0" maxspeedmultiplier="0">
+  <StatusEffect target="Character" interval="1" lockhands="true" duration="1.2">
+   <ReduceAffliction identifier="FlatDamage" amount="50"/>
+   <ReduceAffliction identifier="Nomming" amount="1"/>
+  <sound file="%ModDir%/Sounds/Heavy/HeavyFoodEat.ogg" range="600.0"/>
+  </StatusEffect>
+</Effect>
+</Affliction>
+
+
+<!-- Dalokoh bar -->
+<Affliction
+name="Sweet Tooth"
+identifier="SweetTooth"
+type="immunity"
+isbuff="true"
+limbspecific="false"
+description="Dat was delicious!"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="0"
+showinhealthscannerthreshold="0"
+maxstrength="5">
+<icon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,0,76,56" origin="0.5,0.5" color="0,255,50,255"/>
+<Effect minstrength="0" maxstrength="5"
+ minspeedmultiplier="0" maxspeedmultiplier="0">
+  <StatusEffect target="Character" interval="1" lockhands="true" duration="1.2">
+   <Affliction identifier="Healing" amount="10"/>
+   <ReduceAffliction identifier="SweetTooth" amount="1"/>
+  <sound file="%ModDir%/Sounds/Heavy/HeavyFoodEat.ogg" range="600.0"/>
+  </StatusEffect>
+</Effect>
+</Affliction>
+
+<Affliction
+name="Brass Beast Spin"
+identifier="BrassBeastSpin"
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="1.0"
+showiconthreshold="0"
+showinhealthscannerthreshold="0"
+maxstrength="2">
+<Effect minstrength="0" maxstrength="3"
+  strengthchange="-1"
+  minspeedmultiplier="0.5"
+  maxspeedmultiplier="0.3" >
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true"/>
+</Effect>
+</Affliction>
+
+
+<Affliction
+name="Natasha Spin"
+identifier="NatashaSpin"
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="1.0"
+showiconthreshold="0"
+showinhealthscannerthreshold="0"
+maxstrength="2">
+<Effect minstrength="0" maxstrength="2"
+  strengthchange="-1"
+  minspeedmultiplier="0.5"
+  maxspeedmultiplier="0.3" >
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true"/>
+</Effect>
+</Affliction>
+
+
+<Affliction
+name="Natasha Slowdown"
+identifier="NatashaSlowdown"
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="1.0"
+showiconthreshold="0"
+showinhealthscannerthreshold="0"
+maxstrength="25">
+<Effect minstrength="0" maxstrength="3"
+  strengthchange="-10"
+  minspeedmultiplier="0.5"
+  maxspeedmultiplier="0.3" >
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true"/>
+</Effect>
+</Affliction>
+
+
+
 <!-- Medic stuff -->
 
-
+<Affliction
+name="UberSep"
+identifier="UberSep"
+description="Get them! RAUS, RAUS!"
+type="gaze"
+limbspecific="false"
+indicatorlimb="Torso"
+activationthreshold="0"
+showiconthreshold="5000"
+showicontoothersthreshold="5000"
+showinhealthscannerthreshold="0"
+treatmentthreshold="1"
+maxstrength="100"
+affectmachines="true">
+<Effect minstrength="0" maxstrength="100" resistancefor="FlatDamage,MeleeDamage,ExpDamage,FireDamage,BulletDamage" minresistance="1" maxresistance="1" minvitalityincrease="1000" maxvitalityincrease="1000" 
+minfacetint="255,75,0,50" maxfacetint="255,75,0,255" minbodytint="255,75,0,50" maxbodytint="255,75,0,255">
+<StatusEffect target="Character" disabledeltatime="true">
+  <ParticleEmitter particle="ElectricShock" CopyEntityAngle="True" AngleMin="0" AngleMax="360" VelocityMin="20" VelocityMax="40" DistanceMin="0" DistanceMax="50" ScaleMultiplier="0.3,0.3"
+EmitInterval="1" ParticleAmount="1" ParticlesPerSecond="6" ColorMultiplier="255,100,0,255" LifeTimeMultiplier="1" />
+  <ReduceAffliction identifier="UberSep" amount="2"/>
+</StatusEffect>
+</Effect>
+</Affliction>
 
 <Affliction
 name="Biotic Grenade Sep"

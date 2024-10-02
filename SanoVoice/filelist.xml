@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="SanoVoice" modversion="1.0.2" corepackage="False" steamworkshopid="2813627458" gameversion="0.17.16.0" expectedhash="4ED06CE4B82145755A8A62578D4482CC">
+<contentpackage name="SanoVoice" modversion="1.0.3" corepackage="False" steamworkshopid="2813627458" gameversion="1.5.9.1">
   <Other file="%ModDir%/Items/signalcomp.png" />
   <Other file="%ModDir%/Items/Sano_braindamage.ogg" />
   <Other file="%ModDir%/Items/Sano_braindead.ogg" />

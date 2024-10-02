@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Hedgehog Pet" modversion="1.0.2" corepackage="False" steamworkshopid="3059828697" gameversion="1.5.9.1">
+  <Item file="%ModDir%/HedgehogEgg.xml" />
+  <Other file="%ModDir%/hedgehog.png" />
+  <Other file="%ModDir%/HedgehogEgg.png" />
+  <Other file="%ModDir%/hedgehog_idle1.ogg" />
+  <Other file="%ModDir%/hedgehog_idle2.ogg" />
+  <Other file="%ModDir%/hedgehog_idle3.ogg" />
+  <Other file="%ModDir%/hedgehog_positive.ogg" />
+  <Other file="%ModDir%/hedgehog_negative.ogg" />
+  <Other file="%ModDir%/hedgehog_takeDamage1.ogg" />
+  <Other file="%ModDir%/hedgehog_takeDamage2.ogg" />
+  <Character file="%ModDir%/Hedgehog.xml" />
+</contentpackage>

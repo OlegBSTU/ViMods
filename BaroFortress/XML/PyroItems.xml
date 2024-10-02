@@ -122,7 +122,7 @@
       </Attack>
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-      <Sound file="%ModDir%/Sounds/Pyro/DragonFuryHit.ogg" type="OnUse" range="550" />
+      <Sound file="%ModDir%/Sounds/Pyro/DragonFuryShoot.ogg" type="OnUse" range="550" />
       <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
         <Conditional condition="gte 100" />
       </StatusEffect>

@@ -2,18 +2,32 @@
 
 <Items>
 
+<Item name="Medkit Spawner" identifier="MedkitSpawner" scale="0.15" sonarsize="2" tags="MedkitSpawner">
+ <Sprite texture="%ModDir%/Images/Medkit.png" depth="0.1" sourcerect="0,0,256,256" origin="0.5,0.5"/>
+<ItemContainer>
+  <StatusEffect type="OnNotContained" target="This" condition="1" setvalue="true" disabledeltatime="true">
+  <Conditional condition="eq 100"/>
+  <SpawnItem identifiers="Medkit" spawnposition="This" SpawnIfInventoryFull="true"/>
+  </StatusEffect>
+  <StatusEffect type="OnNotContained" target="This" condition="10"/>
+</ItemContainer>
+</Item>
+
+
+
 <Item name="Medkit" identifier="Medkit" scale="0.2" maxstacksize="1" sonarsize="2" hideinmenus="true">
-    <Sprite texture="%ModDir%/Images/Medkit.png" depth="0.1" sourcerect="0,0,256,256" origin="0.5,0.7" />
-    <Body width="50" height="40" density="25" />
+    <Sprite texture="%ModDir%/Images/Intel.png" depth="0.1" sourcerect="256,256,256,256" origin="0.5,0"/>
+    <DecorativeSprite texture="%ModDir%/Images/Medkit.png" sourcerect="0,0,256,256" depth="0.1" origin="0.5,0.8" offset="0,50" offsetanim="Sine" offsetanimspeed="0.5"/>
+    <Body width="75" height="256" density="25" />
     <Holdable>
         <StatusEffect type="OnPicked" target="This,Character">
-            <Affliction identifier="Healing" strength="450"/>
-            <RequiredAffliction identifier="damage" minstrength="15"/>
+            <ReduceAffliction identifier="FlatDamage" amount="300"/>
           </StatusEffect>
       <StatusEffect type="OnPicked" target="This">
         <sound file="%ModDir%/Sounds/MedkitPickup.ogg" range="300" />
         <RemoveItem/>
       </StatusEffect>
+      <StatusEffect type="OnNotContained" targettype="NearbyItems" range="300" targettags="MedkitSpawner" condition="0" setvalue="true" interval="1" duration="1"/> 
     </Holdable>
   </Item>
 
@@ -32,6 +46,39 @@
         <RemoveItem/>
       </StatusEffect>
     </Holdable>
+  </Item>
+
+
+
+  <Item name="Boxtrot" identifier="Boxtrot" category="Equipment" tags="clothing" scale="0.3">
+    <InventoryIcon texture="%ModDir%/Images/Spy/BoxtrotTaunt.png" sourcerect="0,0,96,68" origin="0.5,0.5" />
+    <Sprite name="Intel Sep" texture="%ModDir%/Images/Spy/BoxtrotTaunt.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+    <Body width="200" height="90" density="20" />
+    <Wearable slots="OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Foxtrot Head" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="Head"
+        hidelimb="true" inheritscale="true" scale="3" inheritorigin="false" origin="0.5,-0.1" hideotherwearables="true" inheritsourcerect="false" sourcerect="0,0,240,155"/>
+      <sprite name="Foxtrot Right Hand" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Left Hand" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Right Upper Arm" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Left Upper Arm" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Right Forearm" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="0,0,1,1" />
+      <sprite name="Foxtrot Left Forearm" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" SourceRect="0,0,1,1"  />
+      <sprite name="Foxtrot Torso" texture="%ModDir%/Images/Spy/Boxtrot.png" limb="Torso" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" inheritsourcerect="false" SourceRect="0,0,1,1" />
+      <StatValue stattype="SwimmingSpeed" value="-0.5" />
+      <StatValue stattype="WalkingSpeed" value="-0.5" />
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVisionAmount="2" PressureProtection="70000.0" setvalue="true" disabledeltatime="true">
+        <TriggerAnimation Type="Walk" path="%ModDir%/Animations/BoxtrotWalk.xml" priority="111" ExpectedSpecies="Human" />
+        <TriggerAnimation Type="Crouch" path="%ModDir%/Animations/BoxtrotCrouch.xml" priority="111" ExpectedSpecies="Human" />
+        <TriggerAnimation Type="Run" path="%ModDir%/Animations/BoxtrotRun.xml" priority="111" ExpectedSpecies="Human" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" interval="20" disabledeltatime="true">
+        <Sound file="Content/Characters/Orangeboy/ORANGEBOY_positive.ogg" range="250" loop="true"/>
+      </StatusEffect>
+
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Wearable>
   </Item>
 
 

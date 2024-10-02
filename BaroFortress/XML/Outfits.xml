@@ -6,28 +6,11 @@
     <Item name="" identifier="headset" scale="0.5" category="Equipment"
       tags="smallitem,mobileradio" description="" cargocontaineridentifier="metalcrate"
       impactsoundtag="impact_metal_light">
-      <PreferredContainer primary="crewcab" secondary="divingcab" />
-      <Price baSeprice="105">
-        <Price storeidentifier="merchantoutpost" minavailable="3" />
-        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="10" />
-        <Price storeidentifier="merchantresearch" minavailable="4" />
-        <Price storeidentifier="merchantmilitary" minavailable="6" />
-        <Price storeidentifier="merchantmine" minavailable="6" />
-      </Price>
       <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,0,64,64"
         origin="0.5,0.5" />
       <Sprite name="Headset" texture="Content/Items/Jobgear/headgears.png" depth="0.6"
-        sourcerect="28,321,49,62" origin="0.5,0.5" />
+        sourcerect="0,0,1,1" origin="0.5,0.5" />
       <Body radius="20" height="20" density="15" />
-      <Deconstruct time="10">
-        <Item identifier="plastic" amount="2" />
-        <Item identifier="copper" />
-      </Deconstruct>
-      <Fabricate suitablefabricators="fabricator" requiredtime="10">
-        <RequiredSkill identifier="mechanical" level="30" />
-        <RequiredItem identifier="plastic" />
-        <RequiredItem identifier="fpgacircuit" />
-      </Fabricate>
       <WifiComponent range="35000.0" LinkToChat="true" MinChatMessageInterval="0.0">
         <StatusEffect type="OnActive" targettype="This">
           <Conditional JamTimer="gt 0" targetitemcomponent="WifiComponent" />
@@ -48,70 +31,12 @@
           hideotherwearables="false" sourcerect="26,317,51,64" origin="0.5,0.6" />
       </Wearable>
 
-      <ItemContainer itempos="27,10" iteminterval="0,-4" hideitems="true" capacity="1"
-        maxstacksize="6" containedstateindicatorslot="0"
-        containedstateindicatorstyle="spear"
-        containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
+      <ItemContainer capacity="6" containedstateindicatorslot="0" hideitems="true" drawinventory="false">
         <Containable items="adminsounds" />
-        <SlotIcon slotindex="0" texture="%ModDir%/Images/Intel.png"
-          sourcerect="410,0,190,128" origin="0.5,0.5" />
       </ItemContainer>
+
     </Item>
   </Override>
-
-
-
-  <Item name="Medic Outfit Sep" identifier="MedicOutfitSep" category="Equipment"
-    tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
-    <InventoryIcon name="MedicOutfitSep" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
-      sourcerect="472,0,40,40" origin="0.5,0.5" />
-    <Sprite name="Medic Uniform 1" texture="Content/Items/Jobgear/MiscJobGear.png"
-      sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
-    <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-    <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
-      <sprite name="Medic Outfit Sep Torso" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
-        limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
-        inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Right Lower Arm"
-        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightForearm" hidelimb="true"
-        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Left Lower Arm"
-        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftForearm" hidelimb="true"
-        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Right Upper Arm"
-        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightArm" hidelimb="true"
-        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Left Upper Arm"
-        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftArm" hidelimb="true"
-        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Waist" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
-        limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-        inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Right Thigh"
-        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightThigh" hidelimb="true"
-        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Left Thigh"
-        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftThigh" hidelimb="true"
-        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Right Leg" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
-        limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-        inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Left Leg" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
-        limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-        inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Right Shoe"
-        texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightFoot" hidelimb="true"
-        inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <sprite name="Medic Outfit Sep Left Shoe" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
-        limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-        inheritsourcerect="true" />
-      <StatusEffect type="OnNotContained" target="This">
-        <Remove />
-      </StatusEffect>
-      <StatValue stattype="SwimmingSpeed" value="0.07" />
-      <StatValue stattype="WalkingSpeed" value="0.07" />
-    </Wearable>
-  </Item>
 
 
 
@@ -124,13 +49,25 @@
   <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
   <Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
     <sprite name="Scout Outfit Sep Torso" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
-      limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
+      limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true"
       inheritsourcerect="true" />
     <sprite name="Scout Outfit Sep Right Lower Arm"
-      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="RightForearm" hidelimb="false"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="RightForearm" hidelimb="true"
       inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
     <sprite name="Scout Outfit Sep Left Lower Arm"
-      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="LeftForearm" hidelimb="false"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="LeftForearm" hidelimb="true"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Right Upper Arm"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="RightArm" hidelimb="true"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Left Upper Arm"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="LeftArm" hidelimb="true"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Right Hand"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="RightHand" hidelimb="true"
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Scout Outfit Sep Left Hand"
+      texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="LeftHand" hidelimb="true"
       inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
     <sprite name="Scout Outfit Sep Waist" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
       limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
@@ -143,17 +80,18 @@
       inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
     <sprite name="Scout Outfit Sep Right Leg" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
       limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-      inheritsourcerect="true" />
+      inheritsourcerect="true"/>
     <sprite name="Scout Outfit Sep Left Leg" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
       limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-      inheritsourcerect="true" />
+      inheritsourcerect="true"/>
     <sprite name="Scout Outfit Sep Right Shoe"
       texture="%ModDir%/Images/Scout/ScoutOutfitSep.png" limb="RightFoot" hidelimb="true"
-      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      inherittexturescale="true" inheritorigin="true" inheritsourcerect="true"/>
     <sprite name="Scout Outfit Sep Left Shoe" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
       limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-      inheritsourcerect="true" />
-    <sprite name="Scout Outfit Sep Head" texture="Content/Items/Jobgear/headgears.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hidelimb="false" sourcerect="320,327,88,51" origin="0.45,1.0" />
+      inheritsourcerect="true"/>
+    <sprite name="Scout Outfit Sep Head" texture="%ModDir%/Images/Scout/ScoutOutfitSep.png"
+     limb="Head" hidelimb="true" alphaclipotherwearables="true" sourcerect="435,175,77,81" scale="0.35" origin="0.45,0.5" />
 
     <StatusEffect type="OnNotContained" target="This">
       <Remove />
@@ -161,56 +99,6 @@
     <StatValue stattype="SwimmingSpeed" value="0.33" />
     <StatValue stattype="WalkingSpeed" value="0.33" />
   </Wearable>
-</Item>
-
-
-
-<Item name="Scout Outfit Coal" identifier="ScoutOutfitCoal" category="Equipment"
-tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
-<InventoryIcon name="ScoutOutfitCoal" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
-  sourcerect="472,0,40,40" origin="0.5,0.5" />
-<Sprite name="ScoutOutfitCoal" texture="Content/Items/Jobgear/MiscJobGear.png"
-  sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
-<Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
-  <sprite name="Scout Outfit Coal Torso" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
-    limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
-    inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Right Lower Arm"
-    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="RightForearm" hidelimb="false"
-    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Left Lower Arm"
-    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="LeftForearm" hidelimb="false"
-    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Waist" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
-    limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-    inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Right Thigh"
-    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="RightThigh" hidelimb="true"
-    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Left Thigh"
-    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="LeftThigh" hidelimb="true"
-    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Right Leg" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
-    limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-    inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Left Leg" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
-    limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-    inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Right Shoe"
-    texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png" limb="RightFoot" hidelimb="true"
-    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Left Shoe" texture="%ModDir%/Images/Scout/ScoutOutfitCoal.png"
-    limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
-    inheritsourcerect="true" />
-  <sprite name="Scout Outfit Coal Head" texture="Content/Items/Jobgear/headgears.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hidelimb="false" sourcerect="320,327,88,51" origin="0.45,1.0" />
-
-  <StatusEffect type="OnNotContained" target="This">
-    <Remove />
-  </StatusEffect>
-  <StatValue stattype="SwimmingSpeed" value="0.33" />
-  <StatValue stattype="WalkingSpeed" value="0.33" />
-</Wearable>
 </Item>
 
 
@@ -259,10 +147,16 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
   <sprite name="Soldier Outfit Sep Left Shoe" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png"
     limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
     inheritsourcerect="true" />
-  <sprite name="Soldier Outfit Sep Head" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="1.1" hidelimb="false" sourcerect="462,53,53,45" origin="0.4,0.6" />
+    <sprite name="Soldier Outfit Sep Right Hand"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="RightHand" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Left Hand"
+    texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="LeftHand" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Soldier Outfit Sep Head" texture="%ModDir%/Images/Soldier/SoldierOutfitSep.png" limb="Head" inheritlimbdepth="false" alphaclipotherwearables="true" inheritscale="true" ignorelimbscale="true" scale="0.55" hidelimb="true" sourcerect="410,150,106,106" origin="0.4,0.55" />
   <sprite name="Concheror Sep" texture="%ModDir%/Images/Soldier/SoldierEquipment.png" sourcerect="0,0,124,400" limb="Torso" inherittexturescale="true" origin="1.18,0.83" />
     <StatusEffect type="OnWearing" targettype="Character">
-      <Affliction identifier="Healing" strength="4" />
+      <ReduceAffliction identifier="FlatDamage" amount="4"/>
     </StatusEffect>
   <StatusEffect type="OnNotContained" target="This">
     <Remove />
@@ -305,7 +199,7 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
     <sprite name="Pyro Outfit Left Shoe" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
     <sprite name="Pyro Outfit Right Shoe" texture="%ModDir%/Images/Pyro/PyroOutfitSep.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
     <StatusEffect type="OnWearing" target="Character" OxygenAvailable="1000.0" UseHullOxygen="false" />
-    <StatusEffect type="OnWearing" target="Character" ObstructVisionAmount="1" ObstructVision="true" PressureProtection="6650.0" LowPassMultiplier="0.2" setvalue="true" disabledeltatime="true">
+    <StatusEffect type="OnWearing" target="Character" ObstructVisionAmount="1" ObstructVision="true" PressureProtection="6650.0" LowPassMultiplier="0.5" setvalue="true" disabledeltatime="true">
       <TriggerAnimation Type="Walk" FileName="HumanWalkDivingSuit" priority="1" ExpectedSpecies="Human" />
       <TriggerAnimation Type="Run" FileName="HumanRunDivingSuit" priority="1" ExpectedSpecies="Human" />
       <Sound file="%ModDir%/Sounds/Pyro/PyroBreathing.ogg" range="250" loop="true" volume="10"/>
@@ -315,13 +209,242 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
     <StatValue stattype="SwimmingSpeed" value="0.2" />
     <StatValue stattype="WalkingSpeed" value="0.2" />
   </Wearable>
-  <aitarget maxsightrange="1500" />
+</Item>
+
+
+
+<Item name="Demo Outfit Sep" identifier="DemoOutfitSep" category="Equipment"
+tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+<InventoryIcon name="DemoOutfitSep" texture="%ModDir%/Images/Demo/DemoOutfitSep.png"
+  sourcerect="472,0,40,40" origin="0.5,0.5" />
+<Sprite name="DemoOutfitSep" texture="Content/Items/Jobgear/MiscJobGear.png"
+  sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
+<Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
+  <sprite name="Demo Outfit Sep Torso" texture="%ModDir%/Images/Demo/DemoOutfitSep.png"
+    limb="Torso" hidelimb="true"  inheritlimbdepth="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Right Lower Arm"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="RightForearm" hidelimb="false"
+    inherittexturescale="true" inheritorigin="true" inheritlimbdepth="false" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Left Lower Arm"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="LeftForearm" hidelimb="false"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Right Upper Arm"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="RightArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritlimbdepth="false" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Left Upper Arm"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="LeftArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Waist" texture="%ModDir%/Images/Demo/DemoOutfitSep.png"
+    limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Right Thigh"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="RightThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Left Thigh"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="LeftThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Right Leg" texture="%ModDir%/Images/Demo/DemoOutfitSep.png"
+    limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+    <sprite name="Demo Outfit Sep Right Shoe"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="RightFoot" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Left Shoe" texture="%ModDir%/Images/Demo/DemoOutfitSep.png"
+    limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+    <sprite name="Demo Outfit Sep Right Hand"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="RightHand" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Left Hand"
+    texture="%ModDir%/Images/Demo/DemoOutfitSep.png" limb="LeftHand" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Demo Outfit Sep Head" texture="%ModDir%/Images/Demo/DemoOutfitSep.png"
+     limb="Head" hidelimb="true" hideotherwearables="true" inheritlimbdepth="false" depth="0.9" sourcerect="435,165,60,88" scale="0.4" origin="0.45,0.5" />
+  <sprite name="Demo Outfit Sep Left Leg" texture="%ModDir%/Images/Demo/DemoOutfitSep.png"
+  limb="LeftLeg" hidelimb="true" inherittexturescale="true" sourcerect="101,141,34,103" origin="0.5,0.4"/>
+  <StatusEffect type="OnNotContained" target="This">
+    <Remove />
+  </StatusEffect>
+  <StatValue stattype="SwimmingSpeed" value="-0.07" />
+  <StatValue stattype="WalkingSpeed" value="-0.07" />
+  <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="expdamage" damagemultiplier="0.8" />
+</Wearable>
+</Item>
+
+
+
+<!-- Heavy exosuit-->
+<Item name="MASHA" identifier="MASHA" category="Diving,Equipment" scale="0.605" fireproof="true" description="" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
+  <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" sourcerect="468,206,40,40" origin="0.5,0.5" />
+  <Sprite name="H.E.A.V.Y Suit" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" sourcerect="2,266,203,244" depth="0.55" origin="0.5,0.5" />
+  <Body width="150" height="230" density="30" />
+  <Wearable slots="InnerClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false">
+    <StatusEffect type="OnNotContained" target="This">
+      <Remove />
+    </StatusEffect>
+    <sprite name="Heavy Exosuit Helmet Wearable" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hideotherwearables="true" sourcerect="0,0,1,1" origin="0.5,0.5" />
+    <sprite name="Exosuit Torso" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="Torso" scale="1.2" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.8" inheritlimbdepth="true" inheritsourcerect="false" sourcerect="167,1,203,193">
+      <LightComponent range="200.0" lightcolor="250,224,165,255" IsOn="true" allowingameediting="false" offset="-50,-50">
+        <LightTexture texture="Content/Lights/divinghelmetlight.png" origin="0.05, 0.5" size="1.0,1.0" />          
+      </LightComponent>
+    </sprite>
+    <sprite name="Heavy Exosuit Right Hand" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,160,64,48" />
+    <sprite name="Heavy Exosuit Left Hand" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,160,64,48" />
+    <sprite name="Heavy Exosuit Right Upper Arm" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="RightArm" depthlimb="Head" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,0,64,96" />
+    <sprite name="Heavy Exosuit Left Upper Arm" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,0,64,96" />
+    <sprite name="Heavy Exosuit Right Forearm" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,96,64,64" />
+    <sprite name="Heavy Exosuit Left Forearm" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,96,64,64"  />
+    <sprite name="Heavy Exosuit Waist" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="Waist" hidelimb="true" scale="1.2" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="182,196,178,53" />
+    <sprite name="Heavy Exosuit Right Thigh" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="0,0,96,112" />
+    <sprite name="Heavy Exosuit Left Thigh" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="0,0,96,112" />
+    <sprite name="Heavy Exosuit Right Leg" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritlimbdepth="true" inheritsourcerect="true" />
+    <sprite name="Heavy Exosuit Left Leg" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Heavy Exosuit Left Shoe" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="371,211,74,37" />
+    <sprite name="Heavy Exosuit Right Shoe" texture="%ModDir%/Images/Heavy/HeavyOutfitSep.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="371,211,74,37" />
+    <StatusEffect type="OnWearing" target="Character" OxygenAvailable="100000.0" UseHullOxygen="false" />
+    <StatValue stattype="SwimmingSpeed" value="-0.23" />
+    <StatValue stattype="WalkingSpeed" value="-0.23" />
+    <StatusEffect type="OnWearing" target="Character" LowPassMultiplier="0.5" HideFace="true" ObstructVisionAmount="0.5" PressureProtection="7000.0" setvalue="true" disabledeltatime="true">
+      <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="250" loop="true"/>
+      <Sound file="Content/Items/Diving/DivingSuitLoop2.ogg" range="250" loop="true"/>
+      <TriggerAnimation Type="Walk" FileName="HumanWalkExosuit" priority="1" ExpectedSpecies="Human" />
+      <TriggerAnimation Type="Run" FileName="HumanRunExosuit" priority="1" ExpectedSpecies="Human" />
+    </StatusEffect>
+    <sound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" type="OnWearing" range="500.0" volumeproperty="Speed" volume="0.2" loop="true" frequencymultiplier="0.5" />
+    <StatValue stattype="FlowResistance" value="1" />
+    <StatValue stattype="PropulsionSpeed" value="-0.75" />
+  </Wearable>
+</Item>
+
+
+
+<Item name="Medic Outfit Sep" identifier="MedicOutfitSep" category="Equipment"
+tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+<InventoryIcon name="MedicOutfitSep" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+  sourcerect="472,0,40,40" origin="0.5,0.5" />
+<Sprite name="Medic Uniform 1" texture="Content/Items/Jobgear/MiscJobGear.png"
+  sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
+<Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
+  <sprite name="Medic Outfit Sep Torso" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+    limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Right Lower Arm"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightForearm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Left Lower Arm"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftForearm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Right Upper Arm"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Left Upper Arm"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Waist" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+    limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Right Thigh"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Left Thigh"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Right Leg" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+    limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Left Leg" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+    limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Right Shoe"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightFoot" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Left Shoe" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+    limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+    <sprite name="Medic Outfit Sep Head" texture="%ModDir%/Images/Medic/MedicOutfitSep.png"
+    limb="Head" hidelimb="true" alphaclipotherwearables="true" sourcerect="435,169,70,80" scale="0.3" origin="0.5,0.6" />
+  <sprite name="Medic Outfit Sep Right Hand"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="RightHand" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Medic Outfit Sep Left Hand"
+    texture="%ModDir%/Images/Medic/MedicOutfitSep.png" limb="LeftHand" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <StatusEffect type="OnNotContained" target="This">
+    <Remove />
+  </StatusEffect>
+  <StatValue stattype="SwimmingSpeed" value="0.07" />
+  <StatValue stattype="WalkingSpeed" value="0.07" />
+</Wearable>
+</Item>
+
+
+
+<Item name="Sniper Outfit Sep" identifier="SniperOutfitSep" category="Equipment"
+tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+<InventoryIcon name="SniperOutfitSep" texture="%ModDir%/Images/Sniper/SniperOutfitSep.png"
+  sourcerect="472,0,40,40" origin="0.5,0.5" />
+<Sprite name="SniperOutfitSep" texture="Content/Items/Jobgear/MiscJobGear.png"
+  sourcerect="504,84,123,60" depth="0.6" origin="0.5,0.5" />
+<Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+<Wearable slots="InnerClothes" msg="ItemMsgPickUpSelect" PressureProtection="6650.0">
+  <sprite name="Sniper Outfit Sep Torso" texture="%ModDir%/Images/Sniper/SniperOutfitSep.png"
+    limb="Torso" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Waist" texture="%ModDir%/Images/Sniper/SniperOutfitSep.png"
+    limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Right Thigh"
+    texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="RightThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Left Thigh"
+    texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="LeftThigh" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Right Leg" texture="%ModDir%/Images/Sniper/SniperOutfitSep.png"
+    limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Left Leg" texture="%ModDir%/Images/Sniper/SniperOutfitSep.png"
+    limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Right Shoe"
+    texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="RightFoot" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Left Shoe" texture="%ModDir%/Images/Sniper/SniperOutfitSep.png"
+    limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true"
+    inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Head" texture="%ModDir%/Images/Sniper/SniperOutfitSep.png"
+    limb="Head" hidelimb="true" hideotherwearables="true" inheritlimbdepth="false" depth="0.9" sourcerect="414,175,100,84" scale="0.35" origin="0.4,0.55" />
+ <sprite name="Sniper Outfit Sep Right Upper Arm"
+    texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="RightArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Left Upper Arm"
+    texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="LeftArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+    <sprite name="Sniper Outfit Sep Right Upper Arm"
+    texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="RightArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Left Upper Arm"
+    texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="LeftArm" hidelimb="true"
+    inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Right Hand"
+  texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="RightHand" hidelimb="true"
+  inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <sprite name="Sniper Outfit Sep Left Hand"
+  texture="%ModDir%/Images/Sniper/SniperOutfitSep.png" limb="LeftHand" hidelimb="true"
+  inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+  <StatusEffect type="OnNotContained" target="This">
+    <Remove />
+  </StatusEffect>
+</Wearable>
 </Item>
 
 
 
 
-  <Item name="IntelSep" identifier="IntelSep" category="Equipment" tags="clothing" scale="0.3"
+
+<Item name="IntelSep" identifier="IntelSep" category="Equipment" tags="clothing" scale="0.3"
     cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
     <InventoryIcon texture="%ModDir%/Images/Intel.png" sourcerect="410,0,190,128" origin="0.5,0.5" />
     <Sprite name="Intel Sep" texture="%ModDir%/Images/Intel.png" sourcerect="0,350,100,350"
@@ -351,5 +474,4 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
       </StatusEffect>
     </Wearable>
   </Item>
-
 </Items>

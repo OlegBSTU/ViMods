@@ -219,7 +219,7 @@
     <MeleeWeapon slots="Any,RightHand" holdpos="40,-20" aimpos="20,10" handle1="-10,-20" controlpose="false" holdangle="0" reload="0.2" range="50" combatPriority="25" msg="ItemMsgPickUpSelect">
       <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureBlunt">
         <Affliction identifier="MeleeDamage" strength="9" />
-        <Affliction identifier="stun" strength="15" />
+        <Affliction identifier="DeathMark" strength="5" />
         <StatusEffect type="OnUse" target="UseTarget">
           <Conditional entitytype="eq Character" />
           <Sound file="%ModDir%/Sounds/Scout/BatMeleeHit.ogg" selectionmode="random" range="500" />
@@ -238,31 +238,27 @@
     <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="95,135,60,44" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="214,112,52,100" depth="0.55" origin="0.5,0.5" />
     <Body width="24" height="52" density="300" />
-    <Holdable slots="Any,RightHand" controlpose="true" holdpos="0,0" holdangle="0" handle1="-40,-120" aimpos="-25,50">
+    <Holdable slots="Any,RightHand" controlpose="true" holdpos="20,0" holdangle="0" handle1="0,0" aimpos="35,25" aimangle="16" aimable="false">
     <StatusEffect type="OnNotContained" target="This">
       <Remove />
     </StatusEffect>
 
-    <StatusEffect type="OnSecondaryUse" target="This" Condition="-100.0" disabledeltatime="true">
-        <Conditional Condition="gte 100" />
+    <StatusEffect type="OnSecondaryUse" target="This,Character" condition="0" setvalue="true" stackable="false">
+      <Conditional condition="gte 100"/>
+      <Affliction identifier="BONK" strength="15" />
     </StatusEffect>
-    <StatusEffect type="OnSecondaryUse" target="This,Character">
-      <Conditional Condition="gte 100" />
-      <Use/>
+    <StatusEffect type="OnSecondaryUse" target="This,Character" delay="0.2">
+      <Conditional condition="gte 100"/>
+      <Sound file="%ModDir%/Sounds/Scout/BonkCanDrink.ogg" type="OnUse" range="500"/>
     </StatusEffect>
-    <StatusEffect type="OnUse" target="This" setvalue="true">
+    <StatusEffect type="OnBroken" target="This" delay="1.5" stackable="false">
       <Sound file="%ModDir%/Sounds/Scout/BonkCanCrush.ogg" type="OnUse" range="500"/>
     </StatusEffect>
-    <StatusEffect type="OnUse" target="UseTarget" >
-      <Affliction identifier="haste" amount="5" />
-    </StatusEffect>
-    <StatusEffect type="OnContained" target="UseTarget" >
-        <Affliction identifier="haste" amount="5" />
-      </StatusEffect>
       <StatusEffect type="OnContained" targettype="This" IsOn="true" targetitemcomponent="LightComponent">
         <Conditional Condition="gte 100" />
       </StatusEffect>
     </Holdable>
+
     <LightComponent LightColor="255,200,50,255" Flicker="0" range="25" IsOn="true">
       <StatusEffect type="OnBroken" targettype="This" IsOn="false" delay="1">
       </StatusEffect>
@@ -270,7 +266,7 @@
         <Conditional condition="eq 95" />
         <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="100.0" />
       </StatusEffect>
-      <StatusEffect type="OnContained" targettype="This" Condition="5.0" />
+      <StatusEffect type="OnContained" targettype="This" Condition="3.3"/>
     </LightComponent>
    </Item>
 
