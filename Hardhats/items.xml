@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+<Item name="" identifier="WorkerHardhat" aliases="ballistichelmet" category="Equipment" tags="smallitem,helmet" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_metal_heavy" scale="0.325">
+  <PreferredContainer primary="secarmcab" amount="1" notcampaign="true" notpvp="true" />
+  <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostsupplycab,outpostarmcab" amount="1" spawnprobability="0.02" />
+  <PreferredContainer secondary="armcab" />
+  <Price baseprice="100">
+    <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+    <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
+    <Price storeidentifier="merchantresearch" sold="false" />
+    <Price storeidentifier="merchantmilitary" multiplier="1.2" minavailable="2" />
+    <Price storeidentifier="merchantmine" multiplier="0.7" minavailable="5" />
+    <Price storeidentifier="merchantarmory" multiplier="1.2" minavailable="2" />
+  </Price>
+  <Deconstruct time="5">
+    <Item identifier="plastic" />
+    <Item identifier="plastic" />
+  </Deconstruct>
+  <Fabricate suitablefabricators="fabricator" requiredtime="20">
+    <RequiredSkill identifier="mechanical" level="20" />
+    <Item identifier="plastic" />
+    <Item identifier="plastic" />
+  </Fabricate>
+  <Sprite name="Worker Hardhat" texture="%ModDir%/Hardhats.png" sourcerect="0,0,90,68" depth="0.6" origin="0.5,0.5" />
+  <Body radius="30" density="25" />
+  <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+    <damagemodifier afflictionidentifiers="lacerations,gunshotwound" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+    <damagemodifier afflictionidentifiers="bitewounds, blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+    <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+    <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" damagemultiplier="0.0" damagesound="" deflectprojectiles="true" />
+    <sprite name="Worker Hardhat Wearable" texture="%ModDir%/Hardhats.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,90,68" origin="0.5,0.7" />
+  </Wearable>
+</Item>
+
+<Item name="" identifier="ForemanHardhat" aliases="ballistichelmet" category="Equipment" tags="smallitem,helmet" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_metal_heavy" scale="0.325">
+  <PreferredContainer primary="secarmcab" amount="1" notcampaign="true" notpvp="true" />
+  <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostsupplycab,outpostarmcab" amount="1" spawnprobability="0.02" />
+  <PreferredContainer secondary="armcab" />
+  <Price baseprice="100">
+    <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+    <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
+    <Price storeidentifier="merchantresearch" sold="false" />
+    <Price storeidentifier="merchantmilitary" multiplier="1.2" minavailable="2" />
+    <Price storeidentifier="merchantmine" multiplier="0.7" minavailable="5" />
+    <Price storeidentifier="merchantarmory" multiplier="1.2" minavailable="2" />
+  </Price>
+  <Deconstruct time="5">
+    <Item identifier="plastic" />
+    <Item identifier="plastic" />
+  </Deconstruct>
+  <Fabricate suitablefabricators="fabricator" requiredtime="20">
+    <RequiredSkill identifier="mechanical" level="20" />
+    <Item identifier="plastic" />
+    <Item identifier="plastic" />
+  </Fabricate>
+  <Sprite name="Foreman Hardhat" texture="%ModDir%/Hardhats.png" sourcerect="90,0,90,68" depth="0.6" origin="0.5,0.5" />
+  <Body radius="30" density="25" />
+  <Wearable slots="Any,Head" armorvalue="20.0" msg="ItemMsgPickUpSelect">
+    <damagemodifier afflictionidentifiers="lacerations,gunshotwound" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+    <damagemodifier afflictionidentifiers="bitewounds, blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+    <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+    <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" damagemultiplier="0.0" damagesound="" deflectprojectiles="true" />
+    <sprite name="Foreman Hardhat Wearable" texture="%ModDir%/Hardhats.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="90,0,90,68" origin="0.5,0.7" />
+  </Wearable>
+</Item>
+
+</Items>

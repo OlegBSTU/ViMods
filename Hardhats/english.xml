@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+
+  <entityname.WorkerHardhat>Worker Hardhat</entityname.WorkerHardhat>
+  <entitydescription.WorkerHardhat>A cheap, light, but sturdy hardhat for construction workers and miners. Does a great job preventing blunt force trauma</entitydescription.WorkerHardhat>
+
+  <entityname.ForemanHardhat>Foreman Hardhat</entityname.ForemanHardhat>
+  <entitydescription.ForemanHardhat>A cheap, light, but sturdy hardhat for construction workers and miners. Does a great job preventing blunt force trauma. Is identical to the worker hardhat, the only difference is the color</entitydescription.ForemanHardhat>
+
+  </infotexts>

@@ -9,7 +9,7 @@
         <Conditional condition="gte 100" />
         <SpawnItem identifiers="ForceANatureShell" spawnposition="ThisInventory" />
       </StatusEffect>
-      <StatusEffect type="OnSecondaryUse" targettype="This" condition="71"></StatusEffect>
+      <StatusEffect type="OnSecondaryUse" targettype="This" condition="71"/>
       <StatusEffect type="OnContained" targettype="This">
         <Conditional condition="eq 72" />
         <Sound file="%ModDir%/Sounds/Scout/ForceNatureReload.ogg" type="OnUse" range="750" selectionmode="Random" />
@@ -234,7 +234,7 @@
 
 
 
-  <Item name="Bonk! Atomic Punch" identifier="BonkAtomicPunch" category="Weapon" maxstacksize="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.2" impactsoundtag="impact_metal_heavy">
+  <Item name="Bonk! Atomic Punch" identifier="BonkAtomicPunch" category="Weapon" maxstacksize="1" cargocontaineridentifier="metalcrate" tags="" Scale="0.3" impactsoundtag="impact_metal_heavy">
     <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="95,135,60,44" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="214,112,52,100" depth="0.55" origin="0.5,0.5" />
     <Body width="24" height="52" density="300" />
@@ -269,6 +269,85 @@
       <StatusEffect type="OnContained" targettype="This" Condition="3.3"/>
     </LightComponent>
    </Item>
+
+
+
+   <Item name="Madmilk Launcher Sep" identifier="MadmilkLauncherSep" category="Weapon" cargocontaineridentifier="metalcrate" tags="" Scale="1">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="153,133,56,45" origin="0.45,0.35" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="270,110,58,46" depth="0.55" origin="0.5,0.5" />
+    <Body width="25" height="25" density="0" />
+    <Holdable slots="Any,RightHand" controlpose="true" holdpos="35,10" handle1="0,0" aimpos="15,30" holdangle="0" aimangle="0"/>
+    <RangedWeapon barrelpos="0,0" reload="20" spread="0" unskilledspread="10" combatPriority="75"
+      drawhudwhenequipped="true" crosshairscale="0.2">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
+        <RequiredItems items="MadmilkSep" type="Contained"/>
+      </Attack>
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="%ModDir%/Sounds/Medic/BioticGrenadeThrown.ogg" type="OnUse" range="250" />
+      <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+        <Conditional condition="gte 100" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" condition="5" />
+      <RequiredItems items="MadmilkSep" type="Contained"/>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true">
+        <Containable items="MadmilkSep" hide="true">
+          <StatusEffect type="OnContaining" targettype="This" IsOn="true"
+            targetitemcomponent="LightComponent" />
+        </Containable>
+      </ItemContainer>
+      <StatusEffect type="OnContained" target="This">
+        <Conditional condition="gte 100" />
+        <SpawnItem identifiers="MadmilkSep" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <LightComponent LightColor="255,200,50,255" Flicker="0" range="25" IsOn="true">
+      <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
+      <StatusEffect type="OnContained" targettype="This">
+        <Conditional condition="eq 95" />
+        <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="50.0" />
+      </StatusEffect>
+    </LightComponent>
+  </Item>
+
+
+   <Item name="Madmilk Sep" identifier="MadmilkSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" Scale="1" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Scout/ScoutEquipmentSlots.png" sourcerect="153,133,56,45" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Scout/ScoutEquipment.png" sourcerect="270,110,58,46" depth="0.55" origin="0.5,0.5" />
+    <Body width="38" height="15" density="30" />
+    <Projectile characterusable="false" launchimpulse="12.0" sticktocharacters="false">
+      <Attack structuredamage="0" severlimbsprobability="0"/>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1"
+          velocitymin="0" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+        <ParticleEmitter particle="HealingTracer" ColorMultiplier="255,150,50,255"
+          EmitInterval="0.01" ParticleAmount="2" ParticlesPerSecond="2" anglemin="-5" anglemax="5"
+          particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.3" scalemax="0.3" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <sound file="%ModDir%/Sounds/JarExplosion.ogg" range="700" />
+        <Explosion range="300.0" ballastfloradamage="800" structuredamage="0" levelwalldamage="0" itemdamage="0" force="0" severlimbsprobability="0.0" shockwave="false" flames="false" smoke="false" flash="false"/>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" delay="10">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <ParticleEmitter particle="BaroFortressSplash" ScaleMultiplier="3,3" VelocityMin="50" VelocityMax="100" ParticleAmount="1" CopyEntityDir="False" ColorMultiplier="255,255,255,255" Angle="180"/>
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyCharacters" range="200">
+        <Conditional teamid="eq Team1"/>
+        <ReduceAffliction identifier="Burning" strength="100" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyCharacters" range="200">
+        <Conditional teamid="eq Team2"/>
+        <Affliction identifier="Madmilk" strength="100" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
 
 
 </Items>

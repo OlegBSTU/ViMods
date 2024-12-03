@@ -26,7 +26,7 @@
 
 
  <!-- Fuck this one item in particular, lost half of my 2 braincells trying to make it work. It spawns sandviches when OnUse and gets eaten when OnSecondaryUse. I found a way to merge these two by removing condition timers entirely from "hold to eat" and added "RequireAimToUse="false"" to make shit work. FINALLY SOME GOOD FUCKING FOOD"-->
-  <Item name="Sandvich Plate" identifier="Sandvich Plate" category="Weapon" Scale="0.2" RequireAimToUse="False">
+  <Item name="Sandvich Plate" identifier="SandvichPlate" category="Weapon" Scale="0.2" RequireAimToUse="False">
     <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,58,67,56" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" depth="0.1" sourcerect="0,0,140,68" origin="0.5,0.7" />
     <Body width="50" height="30" density="0" />
@@ -89,7 +89,7 @@
   It spawns sandviches when OnUse and gets eaten when OnSecondaryUse. 
   I found a way to merge these two by removing condition timers entirely from "hold to eat" and added "RequireAimToUse="false""
   to make shit work. FINALLY SOME GOOD FUCKING FOOD"-->
-  <Item name="Dalokoh Plate" identifier="Dalokoh Plate" category="Weapon" Scale="0.3" RequireAimToUse="False">
+  <Item name="Dalokoh Plate" identifier="DalokohPlate" category="Weapon" Scale="0.3" RequireAimToUse="False">
     <InventoryIcon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,0,76,56" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/Heavy/HeavyEquipment.png" depth="0.1" sourcerect="145,0,148,62" origin="0.5,0.7" />
     <Body width="50" height="30" density="0" />

@@ -173,7 +173,7 @@
 
       
 
-      <Item name="Splendid Screen" identifier="splendidscreen" category="Equipment" tags="" health="250" impactsoundtag="impact_metal_light" cargocontaineridentifier="metalcrate" damagedbyprojectiles="true" scale="0.5">
+      <Item name="Splendid Screen" identifier="SplendidScreen" category="Equipment" tags="" health="250" impactsoundtag="impact_metal_light" cargocontaineridentifier="metalcrate" damagedbyprojectiles="true" scale="0.5">
         <InventoryIcon texture="%ModDir%/Images/Demo/DemoEquipmentSlots.png" sourcerect="130,0,88,92" />
         <Sprite texture="%ModDir%/Images/Demo/DemoEquipment.png" sourcerect="124,4,48,200" origin="0.5,0.5" depth="0.55" />
         <Body width="300" height="150" density="20" />

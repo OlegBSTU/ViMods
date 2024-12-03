@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+
+  <entityname.WorkerHardhat>Каска рабочего</entityname.WorkerHardhat>
+  <entitydescription.WorkerHardhat>Дешёвый и лёгкий шлем для строителей и шахтёров. Отлично защищает голову от ударов тупым предметом.</entitydescription.WorkerHardhat>
+
+  <entityname.ForemanHardhat>Каска прораба</entityname.ForemanHardhat>
+  <entitydescription.ForemanHardhat>Дешёвый и лёгкий шлем для строителей и шахтёров. Отлично защищает голову от ударов тупым предметом. Идентична каске рабочего, и отличается только цветом</entitydescription.ForemanHardhat>
+
+  </infotexts>

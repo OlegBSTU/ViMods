@@ -124,31 +124,29 @@
 
 
 
-  <Item name="Huntsman Arrow" identifier="HuntsmanArrow" category="Weapon" maxstacksize="1" cargocontaineridentifier="metalcrate" allowasextracargo="true" Scale="0.3" tags="" impactsoundtag="impact_metal_light">
+  <Item name="Huntsman Arrow" identifier="HuntsmanArrow" category="Weapon" maxstacksize="1" Scale="0.3" damagedbyrepairtools="true" tags="arrow">
     <Sprite texture="%ModDir%/Images/Sniper/SniperEquipment.png" colormultiplier="255,255,255,255" sourcerect="206,273,180,24" depth="0.55" origin="0.5,0.5" />
     <Body width="90" height="12" density="5" />
         <Projectile characterusable="false" launchimpulse="30.0" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodeflective="true" sticktodoors="true">
         <Attack structuredamage="2" severlimbsprobability="0" disabledeltatime="true"/>
-        <StatusEffect type="OnImpact" target="This" disabledeltatime="true" Condition="0" setvalue="true" noninteractable="true" oneshot="true">
+
+        <StatusEffect type="OnImpact" target="This" disabledeltatime="true" oneshot="true">
           <sound file="%ModDir%/Sounds/Medic/CrossbowHit.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" disabledeltatime="true" delay="2">
+          <Remove/>
         </StatusEffect>
 
         <StatusEffect type="OnImpact" target="UseTarget" disabledeltatime="true">
           <Affliction identifier="BulletDamage" amount="80" />
         </StatusEffect>
         <StatusEffect type="OnImpact" target="This,UseTarget" disabledeltatime="true">
-          <Conditional hasstatustag="burning" />
-          <Affliction identifier="Burning" amount="5" />
+          <Conditional condition="eq 5" />
+          <Affliction identifier="BurningTF" amount="5" />
         </StatusEffect>
-
-
         <StatusEffect type="OnBroken" target="This" delay="2">
           <Remove />
         </StatusEffect>
-
-        <StatusEffect type="OnFire" target="This" setvalue="true" tag="burning" disabledeltatime="true"/>
-        <StatusEffect type="InWater" target="This" setvalue="true" tag="" disabledeltatime="true"/>
-
         <StatusEffect type="OnImpact" target="This,UseTarget">
           <Conditional entitytype="neq Character" />
           <Sound file="%ModDir%/Sounds/Sniper/ArrowHit.ogg" range="500"/>
@@ -161,10 +159,12 @@
         <StatusEffect type="OnNotContained" target="This" disabledeltatime="true">
           <ParticleEmitter particle="bubbles" particlespersecond="20" anglemin="-10" anglemax="10" scalemin="0.3" scalemax="0.7" velocitymin="5" velocitymax="50" copyentityangle="true"/>
         </StatusEffect>
+        <StatusEffect type="InWater" target="This" setvalue="true" condition="100" disabledeltatime="true"/>
         <StatusEffect type="OnNotContained" target="This" disabledeltatime="true">
-          <Conditional hasstatustag="burning" />
-          <ParticleEmitter particle="flamethrower" particlespersecond="80" scalemin="0.1" scalemax="0.1" anglemin="0" anglemax="0" velocitymin="50" velocitymax="200" highqualitycollisiondetection="true"/>
+          <Conditional condition="eq 5" />
+          <ParticleEmitter particle="flamethrower" particlespersecond="80" CopyEntityAngle="true" scalemin="0.1" scalemax="0.1" anglemin="0" anglemax="0" highqualitycollisiondetection="true"/>
         </StatusEffect>
+
         <StatusEffect type="OnNotContained" target="This" disabledeltatime="true" oneshot="true">
           <sound file="%ModDir%/Sounds/Sniper/ArrowActive.ogg" range="250" />
         </StatusEffect>
@@ -179,23 +179,24 @@
       <Body width="24" height="52" density="300" />
       <RangedWeapon reload="1" />
       <Holdable slots="Any,RightHand" controlpose="false" holdpos="0,0" holdangle="0" handle1="0,0" aimpos="35,25" aimangle="16" aimable="false">
-        <StatusEffect type="OnUse" target="This" condition="-99" disabledeltatime="true" checkconditionalalways="false">
-          <Conditional condition="gte 99" />
+        <StatusEffect type="OnUse" target="This" condition="-14.9" interval="1" duration="10.5" disabledeltatime="false" checkconditionalalways="false">
+          <Conditional condition="eq 100" />
         </StatusEffect>
-        <StatusEffect type="OnBroken" targettype="This,Character" condition="0.5" duration="205"/>
-          <StatusEffect type="OnUse" targettype="This,Character" disabledeltatime="true">
-            <Conditional condition="gte 96" />
-            <Affliction identifier="Healing" amount="75" />
-            <ParticleEmitter particle="shockwavesmall" amount="1" ScaleMultiplier="5,5" ColorMultiplier="255,150,50,255" />
+        <StatusEffect type="OnContained" target="This" condition="5"/>
+        <StatusEffect type="OnUse" targettype="This,Character" duration="10" interval="1" disabledeltatime="false">
+            <Conditional condition="eq 100" />
+            <ReduceAffliction identifier="BurningTF" strength="100" />
+            <Affliction identifier="Healing" amount="10" />
+            <ParticleEmitter particle="shockwave" amount="1" ScaleMultiplier="3,3" ColorMultiplier="255,150,50,255" />
             <sound file="%ModDir%/Sounds/Sniper/CamperUse.ogg" type="OnUse" range="300" />
-          </StatusEffect>
+        </StatusEffect>
         <StatusEffect type="OnNotContained" target="This">
           <Remove />
         </StatusEffect>
         <LightComponent LightColor="255,200,50,255" Flicker="0" range="25" IsOn="true">
           <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
-          <StatusEffect type="OnContained" targettype="This" delay="0.5">
-            <Conditional condition="gte 92" />
+          <StatusEffect type="OnContained" targettype="This" delay="0.5" comparison="AND">
+            <Conditional condition="eq 95" />
             <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="100.0" loop="false"/>
           </StatusEffect>
         </LightComponent>
@@ -271,14 +272,13 @@
       <InventoryIcon texture="%ModDir%/Images/Sniper/SniperEquipmentSlots.png" sourcerect="196,128,124,72" origin="0.5,0.5" />
       <Sprite texture="%ModDir%/Images/Sniper/SniperEquipment.png" sourcerect="0,0,68,276" depth="0.55" origin="0.5,0.5" />
       <Body width="65" height="15" density="25" />
-      <MeleeWeapon slots="Any,RightHand" holdpos="40,-20" aimpos="20,10" handle1="-10,-20" controlpose="false" holdangle="0" reload="0.7" range="100" combatPriority="25" msg="ItemMsgPickUpSelect">
+      <MeleeWeapon slots="Any,RightHand" holdpos="40,-20" aimpos="20,10" handle1="0,-30" controlpose="false" holdangle="0" reload="0.7" range="100" combatPriority="25" msg="ItemMsgPickUpSelect">
         <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureSlash">
           <Affliction identifier="MeleeDamage" strength="65" />
           <Affliction identifier="stun" strength="0.1" />
           <sound file="%ModDir%/Sounds/Pyro/AxeHitCharacter.ogg" type="OnUse" range="700" />
           <StatusEffect type="OnUse" target="UseTarget" comparison="or">
-            <!-- PLACEHOLDER-->
-            <Conditional Burning="gte 0.1"/>
+            <Conditional Jarate="gte 0.1"/>
             <sound file="%ModDir%/Sounds/Crit.ogg" type="OnUse" range="1000" />
             <Affliction identifier="MeleeDamage" strength="130" />
           </StatusEffect>
@@ -295,11 +295,11 @@
 
 
     
-    <Item name="Jarate Launcher Sep" identifier="Jarate Launcher Sep" category="Weapon" cargocontaineridentifier="metalcrate" tags="" Scale="0.25">
+    <Item name="Jarate Launcher Sep" identifier="JarateLauncherSep" category="Weapon" cargocontaineridentifier="metalcrate" tags="" Scale="0.25">
     <InventoryIcon texture="%ModDir%/Images/Sniper/SniperEquipmentSlots.png" sourcerect="150,0,76,84" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/Sniper/SniperEquipment.png" sourcerect="70,152,120,140" depth="0.55" origin="0.5,0.5" />
     <Body width="25" height="25" density="0" />
-    <Holdable slots="Any,RightHand" controlpose="true" holdpos="35,10" handle1="0,0" aimpos="35,10" holdangle="0" aimangle="90"/>
+    <Holdable slots="Any,RightHand" controlpose="true" holdpos="35,10" handle1="0,0" aimpos="15,30" holdangle="0" aimangle="0"/>
     <RangedWeapon barrelpos="0,0" reload="20" spread="0" unskilledspread="10" combatPriority="75"
       drawhudwhenequipped="true" crosshairscale="0.2">
       <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
@@ -316,15 +316,11 @@
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
       </StatusEffect>
-      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true"
-        containedstateindicatorstyle="bullet" containedstateindicatorslot="0"
-        containedspritedepth="0.56">
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true">
         <Containable items="JarateSep" hide="true">
           <StatusEffect type="OnContaining" targettype="This" IsOn="true"
             targetitemcomponent="LightComponent" />
         </Containable>
-        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64"
-          origin="0.5,0.5" />
       </ItemContainer>
       <StatusEffect type="OnContained" target="This">
         <Conditional condition="gte 100" />
@@ -335,13 +331,12 @@
       <StatusEffect type="OnBroken" targettype="This" IsOn="false" />
       <StatusEffect type="OnContained" targettype="This">
         <Conditional condition="eq 95" />
-        <sound file="%ModDir%/Sounds/SecondaryReadyOverwatch.ogg" range="50.0" />
+        <sound file="%ModDir%/Sounds/SecondaryReady.ogg" range="50.0" />
       </StatusEffect>
     </LightComponent>
-    <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
   </Item>
 
-  <Item name="Jarate Sep" identifier="JarateSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="bioticgrenade" Scale="0.25" impactsoundtag="impact_metal_light">
+  <Item name="Jarate Sep" identifier="JarateSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" Scale="0.25" impactsoundtag="impact_metal_light">
     <InventoryIcon texture="%ModDir%/Images/Sniper/SniperEquipmentSlots.png" sourcerect="150,0,76,84" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/Sniper/SniperEquipment.png" sourcerect="70,152,120,140" depth="0.55" origin="0.5,0.5" />
     <Body width="38" height="15" density="30" />
@@ -356,9 +351,7 @@
       </StatusEffect>
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
         <sound file="%ModDir%/Sounds/JarExplosion.ogg" range="700" />
-        <Explosion range="300.0" ballastfloradamage="800" structuredamage="0" levelwalldamage="0" itemdamage="0" force="0" severlimbsprobability="0.0" shockwave="false" flames="false" smoke="false" flash="false">
-          <Affliction identifier="BioticGrenadeSep" strength="1" />
-        </Explosion>
+        <Explosion range="300.0" ballastfloradamage="800" structuredamage="0" levelwalldamage="0" itemdamage="0" force="0" severlimbsprobability="0.0" shockwave="false" flames="false" smoke="false" flash="false"/>
       </StatusEffect>
       <StatusEffect type="OnNotContained" target="This" delay="10">
         <Remove />
@@ -366,6 +359,14 @@
       <StatusEffect type="OnBroken" target="This">
         <ParticleEmitter particle="BaroFortressSplash" ScaleMultiplier="3,3" VelocityMin="50" VelocityMax="100" ParticleAmount="1" CopyEntityDir="False" ColorMultiplier="150,150,50,255" Angle="180"/>
         <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyCharacters" range="200">
+        <Conditional teamid="eq Team1"/>
+        <ReduceAffliction identifier="BurningTF" strength="100" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyCharacters" range="200">
+        <Conditional teamid="eq Team2"/>
+        <Affliction identifier="Jarate" strength="100" />
       </StatusEffect>
     </Projectile>
   </Item>

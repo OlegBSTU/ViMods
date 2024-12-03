@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+
+          <!-- Scout -->
+
+  <entityname.ForceANature>Неумолимая сила</entityname.ForceANature>
+  <entitydescription.ForceANature>Любой охотник скажет вам, что самая разочаровывающая часть охоты — это когда подстреленный ползун просто ПАДАЕТ НА ЗЕМЛЮ, а не ОТЛЕТАЕТ НАЗАД в бездну. Теперь это в прошлом. Всему, во что попадает эта крошка, лучше ПАКОВАТЬ ЧЕМОДАНЫ, потому что грядет веселье!</entitydescription.ForceANature>
+
+  <entityname.GuillotineLauncher>Летающая гильотина</entityname.GuillotineLauncher>
+  <entitydescription.GuillotineLauncher>Говорят, этот тесак был украден у самой тёти Дорис! Она сама, понятное дело, об этом не расскажет. На острой стороне тесак острее</entitydescription.GuillotineLauncher>
+
+  <entityname.HolyMackerel>Поддай леща</entityname.HolyMackerel>
+  <entitydescription.HolyMackerel>Надоело когда вам говорят что можно использовать как оружие, а что - нет? Никогда больше! Эта рыбина ПРОСТО МОНСТР.</entitydescription.HolyMackerel>
+
+  <entityname.FanOWar>Веер войны</entityname.FanOWar>
+  <entitydescription.FanOWar>А убивать этим - военное преступление?</entitydescription.FanOWar>
+
+  <entityname.Winger>Окрылённый</entityname.Winger>
+  <entitydescription.Winger>Однозначно даст вам крылья - вне зависимости от того, стреляют из него по вам или стреляете вы сами</entitydescription.Winger>
+
+  <entityname.MadmilkSep>Зломолоко (С)</entityname.MadmilkSep>
+  <entitydescription.MadmilkSep>Нам постоянно твердят, что молоко полезно для здоровья. Но чего они не знают, так это то, что молоко берется из Молохов, бережно выращенных в условиях радиационного заражения. Наше молоко имеет изумительный вкус, и оно уж точно даст вам сил, чтобы вы смогли надрать кому-нибудь задницу!</entitydescription.MadmilkSep>
+
+  <entityname.BonkAtomicPunch>Бонк! Атомный залп</entityname.BonkAtomicPunch>
+  <entitydescription.BonkAtomicPunch>Бонк! полон радиации, которая, как всем известно, известна известностью давать людям суперсилы.</entitydescription.BonkAtomicPunch>
+
+
+
+          <!-- Soldier -->
+
+  <entityname.DirectHit>Прямое попадание</entityname.DirectHit>
+  <entitydescription.DirectHit>Ангелам не нужны крылья! Им нужны РАКЕТЫ! Этот ракетомёт предназначен для тех редких солдатов, способных попасть в цель, а не куда-то приблизительно около рядом</entitydescription.DirectHit>
+
+  <entityname.CowManglerSep>Линчеватель скота 5000</entityname.CowManglerSep>
+  <entitydescription.CowManglerSep>Смертоносен во всех смыслах, эта штука способна расщеплять ползунов, рапторов, людей и даже Поджигателей!</entitydescription.CowManglerSep>
+
+  <entityname.PanicAttack>Паническая атака</entityname.PanicAttack>
+  <entitydescription.PanicAttack>Лучшая защита - 10 отборных дробин в лицо</entitydescription.PanicAttack>
+
+  <entityname.ConcherorSep>Завоеватель (С)</entityname.ConcherorSep>
+  <entitydescription.ConcherorSep>Если ты уверен что впереди тебя ждёт победа - вступай в бой!, Сунь Цзу так сказал, а уж он знал об этом деле на много больше тебя, дурная твоя башка, так что молчи и СЛУШАЙ! Сунь Цзо придумал эту стратегию победы и хрена с два кто-нибудь смог его завалить!</entitydescription.ConcherorSep>
+
+  <entityname.DisciplinaryAction>Дисциплинарное взыскание</entityname.DisciplinaryAction>
+  <entitydescription.DisciplinaryAction>Кто из вас, дуболомы, нас подвёл??</entitydescription.DisciplinaryAction>
+
+
+
+          <!-- Pyro -->
+
+  <entityname.Flamethrower>Огнемёт</entityname.Flamethrower>
+  <entitydescription.Flamethrower>Зачистка гнезда ползунов или барбекю, битва насмерть или огненное шоу - это инструмент на все случаи жизни!</entitydescription.Flamethrower>
+
+  <entityname.FlareGun>Ракетница</entityname.FlareGun>
+  <entitydescription.FlareGun>У огнемётов есть один значимый минус - их дальность. Хотите избавиться от этих противных снайперов? Зажарьте их с хрустящей корочкой</entitydescription.FlareGun>
+
+  <entityname.DragonsFury>Ярость дракона</entityname.DragonsFury>
+  <entitydescription.DragonsFury>Швыряет кирпичи И огонь одновременно. Вдвое смертельней, вдвое сложнее попасть!</entitydescription.DragonsFury>
+
+  <entityname.Axetinguisher>Огнетопор</entityname.Axetinguisher>
+  <entitydescription.Axetinguisher>У поджигателей есть два уязвимости - их низкая эффективная дальность ограниченность средств для борьбы под водой. Как раз со вторым огнетопор прекрасно справляется! А что самое интересное, он работает и на горящие цели!</entitydescription.Axetinguisher>
+
+  <entityname.ThermalThrust>Термальная тяга</entityname.ThermalThrust>
+  <entitydescription.ThermalThrust>Смерть с небес! Да начнётся огненный дождь!</entitydescription.ThermalThrust>
+
+
+
+          <!-- Demo -->
+
+  <entityname.GrenadeLauncherSep>Гранатомёт (С)</entityname.GrenadeLauncherSep>
+  <entitydescription.GrenadeLauncherSep>КА-БУУУУМ!</entitydescription.GrenadeLauncherSep>
+
+  <entityname.LochnLoadSep>Подкидыш (S)</entityname.LochnLoadSep>
+  <entitydescription.LochnLoadSep>Ищете надежный способ избавиться от соперников? Устали от оружия с одним стволом? Хотите делать врагам по-настоящему больно? Теперь вы можете решить все эти проблемы и множество других с помощью новейшего образца нашего фирменного взрывоопасного оружия!</entitydescription.LochnLoadSep>
+
+  <entityname.SplendidScreen>Роскошное прикрытие</entityname.SplendidScreen>
+  <entitydescription.SplendidScreen>ЭАААААААААААААААААААААААААААААААААААААААААААААААААААААААА</entitydescription.SplendidScreen>
+
+  <entityname.UllapoolCaber>Аллапульское бревно</entityname.UllapoolCaber>
+  <entitydescription.UllapoolCaber>Трезвые люди их кидают...</entitydescription.UllapoolCaber>
+
+  <entityname.Eyelander>Одноглазый горец</entityname.Eyelander>
+  <entitydescription.Eyelander>Баловство с огнестрелом, луками, камнями и прочей дальнобойной ерундой не помогает убивать. Чтобы кого-нибудь убить, нужно взять самый большой меч, который только удастся найти, подбежать к засранцу в упор, и красиво отрубить к чертовой матери его тупую башку. Ну или другую конечность</entitydescription.Eyelander>
+
+  <entityname.JumperLauncher>Тренировочная липучка</entityname.JumperLauncher>
+  <entitydescription.JumperLauncher>Особая липучка, не наносящая урона, как раз для ваших прыжках на липучках!</entitydescription.JumperLauncher>
+
+  <entityname.StickyLauncherSep>Липучкомёт (С)</entityname.StickyLauncherSep>
+  <entitydescription.StickyLauncherSep>Гранаты катятся и скачут, это так неудобно! С этим вы можете быть уверены - ваши гранаты взорвутся там где надо и когда вам надо!</entitydescription.StickyLauncherSep>
+
+
+
+          <!-- Heavy -->
+
+  <entityname.SandvichPlate>Бутерброд</entityname.SandvichPlate>
+  <entitydescription.SandvichPlate>Бутерброд делает меня сильнее!</entitydescription.SandvichPlate>
+
+  <entityname.DalokohPlate>Плитка 'Далокош'</entityname.DalokohPlate>
+  <entitydescription.DalokohPlate>Это было вкусно!</entitydescription.DalokohPlate>
+  
+  <entityname.BrassBeast>Латунный монстр</entityname.BrassBeast>
+  <entitydescription.BrassBeast>Кто отправил этих сосунков воевать?! Больше урон, медленнее перемещение и раскрутся, крутой вид</entitydescription.BrassBeast>
+
+  <entityname.Natasha>Наташа</entityname.Natasha>
+  <entitydescription.Natasha>Бегите и прячтесь, деьки! Меньше урон, замедляет цель</entitydescription.Natasha>
+
+  <entityname.FistsOfSteel>Стальные кулаки</entityname.FistsOfSteel>
+  <entitydescription.FistsOfSteel>Мои кулаки из СТАЛИ!</entitydescription.FistsOfSteel>
+
+  <entityname.GoldenFryingPan>Золотая сковорода</entityname.GoldenFryingPan>
+  <entitydescription.GoldenFryingPan>Я - пулемётчик, а это - лучше, чем пулемёт!</entitydescription.GoldenFryingPan>
+
+
+
+          <!-- MEDIC -->
+
+  <entityname.QuickfixSep>Быстроправ (С)</entityname.QuickfixSep>
+  <entitydescription.QuickfixSep>Военные историки по достоинству ценят оригинальную лечебную пушку — всегда пригодится, даже несмотря на закоротившую функцию неуязвимости лечимого. Но эта конкретная - усилена инопланетными технологиями, позволяющими ей больше никогда не ломаться!</entitydescription.QuickfixSep>
+
+  <entityname.SolemnVow>Священная клятва</entityname.SolemnVow>
+  <entitydescription.SolemnVow>Любители искусства будут лелеять бюст Гиппократа, вспоминая то время, когда Медик все еще думал, что не причинять вреда — это хорошая идея.</entitydescription.SolemnVow>
+
+  <entityname.CrossbowSep>Арбалет крестоносца (С)</entityname.CrossbowSep>
+  <entitydescription.CrossbowSep>Эта штука, может, и выглядит как старинный арбалет. Но это просто шприцемёт и не более! Убивает врагов, лечит союзников, ну не красота ли?</entitydescription.CrossbowSep>
+
+  <entityname.BioticGrenadeLauncherSep>Биотическая граната (С)</entityname.BioticGrenadeLauncherSep>
+  <entitydescription.BioticGrenadeLauncherSep>Эта граната была создана с использованием инопланетной нанотехнологии, обнаруженной в руинах. Вещество внутри крайне опасно и вызывает страшные ожоги при контакте с человеческой кожей, ненадолго предотвращая любое лечение пострадавшего, но только если до этого это вещество не ввести внутрь. В таком случае она лечит внешние раны. Однако же эффект временный из-за недолгой времени жизни наноботов внутри</entitydescription.BioticGrenadeLauncherSep>
+
+  <entityname.DartGun>Усыпляющий дротикомёт</entityname.DartGun>
+  <entitydescription.DartGun>А помните раньше шприцемёты были большими и тяжёлыми? Это всё ещё так! Зато это небольшое устройство крайне компактно и позволяет стрелять маленькими дротиками с мощным снотворным на основе дементонита. Имеет звуковой и световой индикатор чтобы вы всегда знали когда он перезарядился!!</entitydescription.DartGun>
+  
+
+
+          <!-- Sniper -->
+
+  <entityname.AWPerHand>Слонобой</entityname.AWPerHand>
+  <entitydescription.AWPerHand>Эта сомнительная полуавтоматическая красавица со скользящим затвором запрещена в тысячах стран, и недаром: ей действительно можно поранить кого-нибудь.</entitydescription.AWPerHand>
+       
+  <entityname.Huntsman>Охотник</entityname.Huntsman>
+  <entitydescription.Huntsman>Мне даже не придётся напрягаться, презренные ничтожества!</entitydescription.Huntsman>
+
+  <entityname.CozyCamper>Cozy Camper</entityname.CozyCamper>
+  <entitydescription.CozyCamper>Спокойно, спокойно.. Лечит некоторое время после применения, при этом не даёт использующему гореть</entitydescription.CozyCamper>
+
+  <entityname.SniperSMG>Sniper SMG</entityname.SniperSMG>
+  <entitydescription.SniperSMG>Мать честная, парнишка, да на тебе живого места нет от моих пуль.</entitydescription.SniperSMG>
+
+  <entityname.Bushwacka>Кустолом</entityname.Bushwacka>
+  <entitydescription.Bushwacka>И мы быстренько всех покромсали... Наносит увеличенный урон по целям под эффектом банкате или веера войны</entitydescription.Bushwacka>
+
+  <entityname.JarateLauncherSep>Банкате (С)</entityname.JarateLauncherSep>
+  <entitydescription.JarateLauncherSep>Сбросить бомбы! Облитые цели получают увеличенный урон</entitydescription.JarateLauncherSep>
+
+          <!-- OUTFITS -->
+
+  <entityname.ScoutOutfitSep>Одежда Оазведчика (С)</entityname.ScoutOutfitSep>
+  <entitydescription.ScoutOutfitSep>Травка зеленеет, солнышко блестит... А я, брат, делаю людям больно</entitydescription.ScoutOutfitSep>
+
+  <entityname.SoldierOutfitSep>Одежда Солдата (С)</entityname.SoldierOutfitSep>
+  <entitydescription.SoldierOutfitSep>ДУРНИ!</entitydescription.SoldierOutfitSep>
+
+  <entityname.PyroOutfitSep>Скафандр Поджигателя (С)</entityname.PyroOutfitSep>
+  <entitydescription.PyroOutfitSep>Кто-то может сказать что нанявший психа с огнемётом для боевых действий в подводных локациях это не самый яркий умом человек... Но те, кто так считают, могут очень даже ярко загореться. Имеет почти неограниченный запас кислорода, но ухудшает видимость</entitydescription.PyroOutfitSep>
+
+  <entityname.DemoOutfitSep>Separatist Demo Outfit (С)</entityname.DemoOutfitSep>
+  <entitydescription.DemoOutfitSep>Всего один проводок, один кусок пластика, одна коробка бесподобного UEX, один резкий ревок... и ХЛОБЫСЬ!!</entitydescription.DemoOutfitSep>
+
+  <entityname.HeavyOutfitSep>Экзокостюм 'МАША' (С)</entityname.HeavyOutfitSep>
+  <entitydescription.HeavyOutfitSep>Механизированный Автономный Шагоходный Аппарат - лучший в своём роде экзокостюм для ваших повседневных наёмнических нужд! Идёт в комплекте с головы-изменить-размер-инатором!</entitydescription.HeavyOutfitSep>
+
+  <entityname.SniperOutfitSep>Одежда Снайпера (С)</entityname.SniperOutfitSep>
+  <entitydescription.SniperOutfitSep>Мне нравится быть снайпером! Интересная работа на свежем воздухе. И прибыльная к тому же. В конце концов, если на всей Европе останется 2 человека, один из них захочет убить другого</entitydescription.SniperOutfitSep>
+
+  <entityname.MedicOutfitSep>Одежда Медика (С)</entityname.MedicOutfitSep>
+  <entitydescription.MedicOutfitSep>А теперь... Попрактикуемся в медицине</entitydescription.MedicOutfitSep>
+
+
+  <entityname.IntelSep>Разведданные сепаратистов</entityname.IntelSep>
+  <entitydescription.IntelSep>Мы захватили вражеские разведданные!</entitydescription.IntelSep>
+
+
+          <!-- AFFLICTIONS -->
+  
+
+  <afflictionname.FlatDamage>Урон</afflictionname.FlatDamage>
+  <afflictiondescription.FlatDamage>Универсальный урон</afflictiondescription.FlatDamage>
+
+  <afflictionname.Healing>Сверхлечение</afflictionname.Healing>
+  <afflictiondescription.Healing>Превращается в лечение</afflictiondescription.Healing>
+
+  <afflictionname.BurningTF>Горение</afflictionname.BurningTF>
+  <afflictiondescription.BurningTF>ОГОНЬ ОГОНЬ ОГОНЬ!</afflictiondescription.BurningTF>
+
+  <afflictionname.GuillotineBleeding>Кровотечение</afflictionname.GuillotineBleeding>
+  <afflictiondescription.GuillotineBleeding>Ух ух ах ух ух ох ух</afflictiondescription.GuillotineBleeding>
+
+  <afflictionname.BONK>Бонк! Атомный залп</afflictionname.BONK>
+  <afflictiondescription.BONK>Дьявольски неуловимый</afflictiondescription.BONK>
+
+  <afflictionname.DeathMark>Метка смерти</afflictionname.DeathMark>
+  <afflictiondescription.DeathMark>Персонаж получает увеличенный урон</afflictiondescription.DeathMark>
+
+  <afflictionname.Madmilk>Облит зломолоком</afflictionname.Madmilk>
+  <afflictiondescription.Madmilk>Полученный этим персонажем урон лечит атакующего</afflictiondescription.Madmilk>
+
+  <afflictionname.Discipline>Дисциплина</afflictionname.Discipline>
+  <afflictiondescription.Discipline>Дополнительная скорость</afflictiondescription.Discipline>
+
+  <afflictionname.ShieldDash>Рывок щитом</afflictionname.ShieldDash>
+  <afflictiondescription.ShieldDash>Если вы видите этот текст - сообщите об этом авторам мода</afflictiondescription.ShieldDash>
+
+  <afflictionname.EyelanderLimbs>Коллекция конечностей</afflictionname.EyelanderLimbs>
+  <afflictiondescription.EyelanderLimbs>Дополнительная скорость и максимаьное здоровье за каждый удар</afflictiondescription.EyelanderLimbs>
+
+  <afflictionname.Nomming>Трапеза</afflictionname.Nomming>
+  <afflictiondescription.Nomming>Это было вкусно!</afflictiondescription.Nomming>
+
+  <afflictionname.SweetTooth>Сладкоежка</afflictionname.SweetTooth>
+  <afflictiondescription.SweetTooth>Это было вкусно!</afflictiondescription.SweetTooth>
+
+  <afflictionname.BrassBeastSpin>Раскрутка 'Латунного монстра'</afflictionname.BrassBeastSpin>
+  <afflictiondescription.BrassBeastSpin>Если вы видите этот текст - сообщите об этом авторам мода</afflictiondescription.BrassBeastSpin>
+
+  <afflictionname.NatashaSpin>Раскрутка 'Наташи'</afflictionname.NatashaSpin>
+  <afflictiondescription.NatashaSpin>Если вы видите этот текст - сообщите об этом авторам мода</afflictiondescription.NatashaSpin>
+
+  <afflictionname.NatashaSlowdown>Замедление 'Наташи'</afflictionname.NatashaSlowdown>
+  <afflictiondescription.NatashaSlowdown>Замедлен пулемётом "Наташа"</afflictiondescription.NatashaSlowdown>
+
+  <afflictionname.UberSep>Убер-заряжен</afflictionname.UberSep>
+  <afflictiondescription.UberSep>Взять из! Раус, раус!</afflictiondescription.UberSep>
+
+  <afflictionname.BioticGrenadeAntiheal>Лечение заблокировано</afflictionname.BioticGrenadeAntiheal>
+  <afflictiondescription.BioticGrenadeAntiheal>Получение лечения от сверхлечения невозможно</afflictiondescription.BioticGrenadeAntiheal>
+
+  <afflictionname.Jarate>Облит банкате</afflictionname.Jarate>
+  <afflictiondescription.Jarate>Персонаж получает дополнительный урон</afflictiondescription.Jarate>
+
+  <afflictionname.KazotskyKick>Вприсядку</afflictionname.KazotskyKick>
+  <afflictiondescription.KazotskyKick>Танцуем, господа! Танцуем, будто пули не свистят возле нас!</afflictiondescription.KazotskyKick>
+
+
+  </infotexts>
