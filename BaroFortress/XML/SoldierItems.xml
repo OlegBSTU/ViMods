@@ -157,7 +157,7 @@
         <sound file="%ModDir%/Sounds/Soldier/ManglerExplosionCharged.ogg" range="2000" />
         <Explosion range="800.0" ballastfloradamage="800" structuredamage="200" levelwalldamage="200" itemdamage="0" force="2000" severlimbsprobability="1" shockwave="true" flames="true" smoke="false" flash="true">
           <Affliction identifier="ExpDamage" strength="80" />
-          <Affliction identifier="Burning" strength="5" />
+          <Affliction identifier="BurningTF" strength="5" />
           <ParticleEmitter particle="EmpBlast"/> 
         </Explosion>
       </StatusEffect>
@@ -283,15 +283,14 @@
     <Body width="65" height="15" density="25" />
     <MeleeWeapon slots="Any,RightHand" holdpos="40,-20" aimpos="20,10" handle1="0,-40" controlpose="false" holdangle="0" reload="0.7" range="150" combatPriority="25" msg="ItemMsgPickUpSelect">
       <Attack targetimpulse="2" itemdamage="0" structuredamage="2" structuresoundtype="StructureBlunt">
-        <Affliction identifier="MeleeDamage" strength="49" />
         <Affliction identifier="Discipline" strength="5" />
-        <StatusEffect type="OnUse" target="This,Character">
-          <Conditional targettype="UseTarget" entitytype="Character"/>
-          <Affliction identifier="Discipline" strength="5" />
-        </StatusEffect>
       </Attack>
       <StatusEffect type="OnUse" target="This">
         <Sound file="%ModDir%/Sounds/Soldier/DisciplineHit.ogg" type="OnUse" selectionmode="random" range="750" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="UseTarget">
+        <Conditional teamid="eq Team2"/>
+        <Affliction identifier="MeleeDamage" strength="40" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Character,UseTarget">
         <Conditional entitytype="Character"/>

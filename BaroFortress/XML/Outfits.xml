@@ -205,7 +205,7 @@ tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
       <Sound file="%ModDir%/Sounds/Pyro/PyroBreathing.ogg" range="250" loop="true" volume="10"/>
     </StatusEffect>
     <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="FireDamage" damagemultiplier="0.8" damagesound="LimbArmor"/>
-    <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="Burning,OxygenLow" damagemultiplier="0" damagesound=""/>
+    <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="BurningTF,OxygenLow" damagemultiplier="0" damagesound=""/>
     <StatValue stattype="SwimmingSpeed" value="0.2" />
     <StatValue stattype="WalkingSpeed" value="0.2" />
   </Wearable>

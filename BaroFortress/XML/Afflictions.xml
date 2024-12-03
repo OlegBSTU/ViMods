@@ -20,7 +20,6 @@
 <Affliction
 name="Damage"
 identifier="FlatDamage"
-description="One shouldn't see this text. Report it to mod developers"
 type="damage"
 limbspecific="false"
 indicatorlimb="Torso"
@@ -40,13 +39,12 @@ MedicalSkillGain="0">>
 <Affliction
 name="Explosion Damage"
 identifier="ExpDamage"
-description="One shouldn't see this text. Report it to mod developers"
 type="damage"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="0"
-showiconthreshold="1"
-showicontoothersthreshold="1"
+showiconthreshold="5000"
+showicontoothersthreshold="5000"
 showinhealthscannerthreshold="5000"
 treatmentthreshold="5000"
 maxstrength="1000"
@@ -64,14 +62,13 @@ affectmachines="true">
 <Affliction
 name="Fire Damage"
 identifier="FireDamage"
-description="One shouldn't see this text. Report it to mod developers"
 type="damage"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="0"
-showiconthreshold="1"
-showicontoothersthreshold="1"
-showinhealthscannerthreshold="1"
+showiconthreshold="5000"
+showicontoothersthreshold="5000"
+showinhealthscannerthreshold="5000"
 treatmentthreshold="5000"
 maxstrength="1000"
 affectmachines="true">
@@ -88,13 +85,12 @@ affectmachines="true">
 <Affliction
 name="Bullet Damage"
 identifier="BulletDamage"
-description="One shouldn't see this text. Report it to mod developers"
 type="damage"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="0"
-showiconthreshold="1"
-showicontoothersthreshold="1"
+showiconthreshold="5000"
+showicontoothersthreshold="5000"
 showinhealthscannerthreshold="5000"
 treatmentthreshold="5000"
 maxstrength="1000"
@@ -112,13 +108,12 @@ affectmachines="true">
 <Affliction
 name="Melee Damage"
 identifier="MeleeDamage"
-description="One shouldn't see this text. Report it to mod developers"
 type="damage"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="0"
-showiconthreshold="1"
-showicontoothersthreshold="1"
+showiconthreshold="5000"
+showicontoothersthreshold="5000"
 showinhealthscannerthreshold="5000"
 treatmentthreshold="5000"
 maxstrength="1000"
@@ -136,14 +131,13 @@ affectmachines="true">
 <Affliction
 name="Overheal"
 identifier="Healing"
-description="One shouldn't see this text. Report it to mod developers"
 type="gaze"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="0"
 showiconthreshold="1"
 showicontoothersthreshold="1"
-showinhealthscannerthreshold="5000"
+showinhealthscannerthreshold="0"
 treatmentthreshold="1"
 maxstrength="1000"
 affectmachines="true">
@@ -176,22 +170,23 @@ maxvitalityincrease="250">
 
 <Affliction
 name="Burning"
-identifier="Burning"
+identifier="BurningTF"
 description=""
 limbspecific="false"
 type="gaze"
 isbuff="false"
+showicontoothersthreshold="1"
 showiconthreshold="1"
 showinhealthscannerthreshold="1"
 maxstrength="10">
 <PeriodicEffect mininterval="0.5" maxinterval="0.5" disabledeltatime="true">
   <StatusEffect target="Character">
-    <ReduceAffliction identifier="Burning" amount="0.5"/>
+    <ReduceAffliction identifier="BurningTF" amount="0.5"/>
     <Affliction identifier="FireDamage" strength="4" />
    </StatusEffect>
    <StatusEffect target="Character">
     <Conditional inwater="true"/>
-    <ReduceAffliction identifier="Burning" amount="1000" />
+    <ReduceAffliction identifier="BurningTF" amount="1000" />
    </StatusEffect>
    <StatusEffect target="Character" disabledeltatime="true" stackable="true" duration="1" checkconditionalalways="false">
     <ParticleEmitter particle="flamethrower" particlespersecond="20" anglemin="60" anglemax="120" velocitymin="10" velocitymax="100" scalemin="0.1" scalemax="0.3" highqualitycollisiondetection="true"/>
@@ -214,15 +209,13 @@ maxstrength="10">
 <Affliction
 name="Guillotine Bleeding"
 identifier="GuillotineBleeding"
-description="One shouldn't see this text. Report it to mod developers"
 type="damage"
 limbspecific="false"
 indicatorlimb="Torso"
-activationthreshold="0"
-showiconthreshold="1"
+activationthreshold="1"
 showicontoothersthreshold="1"
+showiconthreshold="1"
 showinhealthscannerthreshold="1"
-treatmentthreshold="5000"
 maxstrength="6"
 affectmachines="true">
 <Effect minstrength="0" maxstrength="6">
@@ -243,11 +236,11 @@ identifier="BONK"
 type="immunity"
 isbuff="true"
 limbspecific="false"
-description="Un-freakin-touchable"
 indicatorlimb="Torso"
 activationthreshold="0"
-showiconthreshold="0"
-showinhealthscannerthreshold="0"
+showicontoothersthreshold="1"
+showiconthreshold="1"
+showinhealthscannerthreshold="1"
 maxstrength="10">
 <Effect minstrength="8" maxstrength="10"
  minspeedmultiplier="0" maxspeedmultiplier="0">
@@ -276,7 +269,10 @@ identifier="DeathMark"
 type="debuff"
 limbspecific="false"
 maxstrength="5"
-affectmachines="false">
+affectmachines="false"
+showicontoothersthreshold="1"
+showiconthreshold="1"
+showinhealthscannerthreshold="1">
 <Effect minstrength="0" maxstrength="5"
   strengthchange="-1"
   resistancefor="FlatDamage,MeleeDamage,ExpDamage,FireDamage,BulletDamage"
@@ -284,6 +280,29 @@ affectmachines="false">
   maxresistance="-0.5">
   <StatusEffect target="Character" disabledeltatime="true" stackable="true">
     <ParticleEmitter particle="DeathMark" ScaleMultiplier="0.25,0.25" ParticlesPerSecond="20" CopyEntityAngle="True"/>
+  </StatusEffect>
+</Effect>
+</Affliction>
+
+
+<!-- Madmilk / Vampirism but target-based-->
+<Affliction
+name="Drenched in madmilk"
+identifier="Madmilk"
+type="debuff"
+limbspecific="false"
+maxstrength="10"
+affectmachines="false"
+showicontoothersthreshold="1"
+showiconthreshold="1"
+showinhealthscannerthreshold="1">
+<Effect minstrength="0" maxstrength="10" strengthchange="-1">
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+    <ParticleEmitter particle="BaroFortressDrip" copyentityangle="true" anglemin="-75" anglemax="-105" distancemin="-80" distancemax="30" particlespersecond="20" velocitymin="25" velocitymax="50" scalemin="1.7" scalemax="2" ColorMultiplier="255,255,255,255"/>
+  </StatusEffect>
+    <StatusEffect target="character" disabledeltatime="true" stackable="false">
+    <Conditional InWater="true"/>
+    <Effect strengthchange="-3" />
   </StatusEffect>
 </Effect>
 </Affliction>
@@ -300,9 +319,10 @@ affectmachines="false">
  type="gaze"
  limbspecific="false"
  indicatorlimb="Torso"
- activationthreshold="1.0"
- showiconthreshold="0"
- showinhealthscannerthreshold="0"
+ activationthreshold="1"
+ showicontoothersthreshold="1"
+ showiconthreshold="1"
+ showinhealthscannerthreshold="1"
  maxstrength="2">
  <Effect minstrength="0" maxstrength="3"
    strengthchange="-1"
@@ -328,9 +348,10 @@ identifier="ShieldDash"
 type="gaze"
 limbspecific="false"
 indicatorlimb="Torso"
-activationthreshold="0"
-showiconthreshold="0"
-showinhealthscannerthreshold="0"
+activationthreshold="1"
+showicontoothersthreshold="5000"
+showiconthreshold="5000"
+showinhealthscannerthreshold="5000"
 maxstrength="3">
 <Effect minstrength="0" maxstrength="3"
   strengthchange="-1"
@@ -353,9 +374,10 @@ type="gaze"
 limbspecific="true"
 
 indicatorlimb="Head"
-activationthreshold="0"
-showiconthreshold="0"
-showinhealthscannerthreshold="0"
+activationthreshold="1"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="1"
 maxstrength="25">
 <Effect minstrength="0" maxstrength="25"
   minspeedmultiplier="1.00" maxspeedmultiplier="1.4" 
@@ -380,11 +402,11 @@ identifier="Nomming"
 type="immunity"
 isbuff="true"
 limbspecific="false"
-description="Dat was delicious!"
 indicatorlimb="Torso"
 activationthreshold="0"
-showiconthreshold="0"
-showinhealthscannerthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
 maxstrength="5">
 <icon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,58,67,56" origin="0.5,0.5" color="0,255,50,255"/>
 <Effect minstrength="0" maxstrength="5"
@@ -405,11 +427,11 @@ identifier="SweetTooth"
 type="immunity"
 isbuff="true"
 limbspecific="false"
-description="Dat was delicious!"
 indicatorlimb="Torso"
 activationthreshold="0"
-showiconthreshold="0"
-showinhealthscannerthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="5000"
 maxstrength="5">
 <icon texture="%ModDir%/Images/Heavy/HeavyEquipmentSlots.png" sourcerect="0,0,76,56" origin="0.5,0.5" color="0,255,50,255"/>
 <Effect minstrength="0" maxstrength="5"
@@ -429,8 +451,9 @@ type="gaze"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="1.0"
-showiconthreshold="0"
-showinhealthscannerthreshold="0"
+showiconthreshold="5000"
+showicontoothersthreshold="5000"
+showinhealthscannerthreshold="5000"
 maxstrength="2">
 <Effect minstrength="0" maxstrength="3"
   strengthchange="-1"
@@ -448,8 +471,9 @@ type="gaze"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="1.0"
-showiconthreshold="0"
-showinhealthscannerthreshold="0"
+showiconthreshold="5000"
+showicontoothersthreshold="5000"
+showinhealthscannerthreshold="5000"
 maxstrength="2">
 <Effect minstrength="0" maxstrength="2"
   strengthchange="-1"
@@ -467,8 +491,9 @@ type="gaze"
 limbspecific="false"
 indicatorlimb="Torso"
 activationthreshold="1.0"
-showiconthreshold="0"
-showinhealthscannerthreshold="0"
+showiconthreshold="1"
+showicontoothersthreshold="1"
+showinhealthscannerthreshold="1">
 maxstrength="25">
 <Effect minstrength="0" maxstrength="3"
   strengthchange="-10"
@@ -485,13 +510,12 @@ maxstrength="25">
 <Affliction
 name="UberSep"
 identifier="UberSep"
-description="Get them! RAUS, RAUS!"
 type="gaze"
 limbspecific="false"
 indicatorlimb="Torso"
-activationthreshold="0"
-showiconthreshold="5000"
-showicontoothersthreshold="5000"
+activationthreshold="1"
+showiconthreshold="1"
+showicontoothersthreshold="1"
 showinhealthscannerthreshold="0"
 treatmentthreshold="1"
 maxstrength="100"
@@ -506,37 +530,20 @@ EmitInterval="1" ParticleAmount="1" ParticlesPerSecond="6" ColorMultiplier="255,
 </Effect>
 </Affliction>
 
-<Affliction
-name="Biotic Grenade Sep"
-identifier="BioticGrenadeSep"
-description="One shouldn't see this text. Report it to mod developers"
-type="damage"
-limbspecific="false"
-indicatorlimb="Torso"
-activationthreshold="0"
-showiconthreshold="1"
-showicontoothersthreshold="1"
-showinhealthscannerthreshold="5000"
-treatmentthreshold="5000"
-maxstrength="1000"
-affectmachines="true">
-</Affliction>
-
 
 
 <Affliction
 name="Biotic Grenade Extra Heal"
 identifier="BioticGrenadeExtraHeal"
-description=""
-type="gaze"
+type="buff"
 limbspecific="false"
 indicatorlimb="Torso"
 maxstrength="6"
 showiconthreshold="1"
 showicontoothersthreshold="1"
-showinhealthscannerthreshold="5000"
+showinhealthscannerthreshold="1"
 affectmachines="true">
-    <Effect minstrength="0" maxstrength="100"
+    <Effect minstrength="0" maxstrength="6"
     minscreenblur="0.0" maxscreenblur="0.2"
   strengthchange="-1"
   resistancefor="Healing" minresistance="-0.3" maxresistance="-0.3">
@@ -545,7 +552,7 @@ affectmachines="true">
     <Effect strengthchange="-3" />
   </StatusEffect>
   <StatusEffect target="Character" disabledeltatime="true" stackable="true">
-    <ParticleEmitter particle="BaroFortressDrip" color="255,150,50,255" copyentityangle="true"
+    <ParticleEmitter particle="BaroFortressDrip" color="100,255,50,255" copyentityangle="true"
       anglemin="0" anglemax="-180" particlespersecond="100" velocitymin="50" velocitymax="200"
       scalemin="0.3" scalemax="0.6" />
   </StatusEffect>
@@ -558,13 +565,13 @@ affectmachines="true">
 name="Biotic Grenade Antiheal"
 identifier="BioticGrenadeAntiheal"
 description=""
-type="gaze"
+type="damage"
 limbspecific="false"
 indicatorlimb="Torso"
 maxstrength="6"
 showiconthreshold="1"
 showicontoothersthreshold="1"
-showinhealthscannerthreshold="5000"
+showinhealthscannerthreshold="1"
 affectmachines="true">
 <Effect minstrength="0" maxstrength="100"
   minscreenblur="0.2"  maxscreenblur="0.9"
@@ -584,17 +591,32 @@ affectmachines="true">
 
 
 
+<!-- Sniper stuff -->
+
+<!-- Jarate / Minicrits for sale-->
 <Affliction
-name="Crossbow Sep"
-identifier="CrossbowSep"
-description=""
-type="gaze"
-isbuff="false"
+name="Drenched in jarate"
+identifier="Jarate"
+type="debuff"
 limbspecific="false"
+maxstrength="10"
+affectmachines="false"
 showiconthreshold="1"
 showicontoothersthreshold="1"
-showinhealthscannerthreshold="5000"
-maxstrength="2">
+showinhealthscannerthreshold="1">
+<Effect minstrength="0" maxstrength="10"
+  strengthchange="-1"
+  resistancefor="FlatDamage,MeleeDamage,ExpDamage,FireDamage,BulletDamage"
+  minresistance="-0.3"
+  maxresistance="-0.3">
+  <StatusEffect target="Character" disabledeltatime="true" stackable="true">
+    <ParticleEmitter particle="BaroFortressDrip" copyentityangle="true" anglemin="-75" anglemax="-105" distancemin="-80" distancemax="30" particlespersecond="20" velocitymin="25" velocitymax="50" scalemin="1.7" scalemax="2" ColorMultiplier="200,200,50,255"/>
+  </StatusEffect>
+    <StatusEffect target="character" disabledeltatime="true" stackable="false">
+    <Conditional InWater="true"/>
+    <Effect strengthchange="-3" />
+  </StatusEffect>
+</Effect>
 </Affliction>
 
 
@@ -608,7 +630,10 @@ maxstrength="2">
     identifier="KazotskyKick"
     type="gaze"
     limbspecific="false"
-    maxstrength="1">
+    maxstrength="1"
+    showiconthreshold="1"
+    showicontoothersthreshold="1"
+    showinhealthscannerthreshold="1">
   <Effect minstrength="0" maxstrength="1">
     <StatusEffect target="Character" duration="1">
       <TriggerAnimation Type="Walk" path="%ModDir%/Animations/KazotskyKickWalk.xml" priority="111" ExpectedSpecies="Human" />

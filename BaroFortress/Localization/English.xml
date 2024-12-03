@@ -1,39 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
 
+          <!-- Scout -->
+
+  <entityname.ForceANature>Force-A-Nature</entityname.ForceANature>
+  <entitydescription.ForceANature>Any outdoorsman will tell you the most frustrating part of hunting is when a crawler simply FALLS DOWN when shot, and doesn't FLY BACK DOWN into the abyss. Those days are over. Anything this baby hits better PACK A LUNCH, 'cause it is going for a ride!</entitydescription.ForceANature>
+
+  <entityname.GuillotineLauncher>Guillotine</entityname.GuillotineLauncher>
+  <entitydescription.GuillotineLauncher>They say, this cleaver was stolen from Aunt Doris herself! She would never admit it, though. Is sharper on the sharper edge</entitydescription.GuillotineLauncher>
+
+  <entityname.HolyMackerel>Holy Mackerel</entityname.HolyMackerel>
+  <entitydescription.HolyMackerel>Tired of people telling you what you can or cannot use as a weapon? Those days are over! This fish is PURE ACTION! Warning: it's very fishy.</entitydescription.HolyMackerel>
+
+  <entityname.FanOWar>Fan o' War</entityname.FanOWar>
+  <entitydescription.FanOWar>Does killing with it count as a warcrime?</entitydescription.FanOWar>
+
+  <entityname.Winger>Winger</entityname.Winger>
+  <entitydescription.Winger>Will indead give you wings - whether you're the attacker, or the attacked</entitydescription.Winger>
+
+  <entityname.MadmilkSep>Madmilk (S)</entityname.MadmilkSep>
+  <entitydescription.MadmilkSep>They always say that milk does a body good. What they don't know is that we've carefully infused our milk molochs with some sweet wholesome thermonuclear radiation. Our milk tastes great and it will also give you the strength to kick ass!</entitydescription.MadmilkSep>
+
+  <entityname.BonkAtomicPunch>Bonk! Atomic Punch</entityname.BonkAtomicPunch>
+  <entitydescription.BonkAtomicPunch>Bonk! is fulla radiation, which as we all know is pretty great for givin' people superpowers.</entitydescription.BonkAtomicPunch>
+
+
+
+          <!-- Soldier -->
+
+  <entityname.DirectHit>Direct Hit</entityname.DirectHit>
+  <entitydescription.DirectHit>Angels don't need wings. They need rockets. This one is designed for more experienced soldiers to hit targets and not vaguely near them.</entitydescription.DirectHit>
+
+  <entityname.CowManglerSep>Cow Mangler 5000</entityname.CowManglerSep>
+  <entitydescription.CowManglerSep>A deadly device by any measure, the Cow Mangler will quantum disentangle Crawlers, Mudraptors, Humans and even Pyros!</entitydescription.CowManglerSep>
+
+  <entityname.PanicAttack>Panic Attack</entityname.PanicAttack>
+  <entitydescription.PanicAttack>It protecc, it attacc, but most importantly, it fires 10 deadly pellets per shot</entitydescription.PanicAttack>
+
+  <entityname.ConcherorSep>Concheror (S)</entityname.ConcherorSep>
+  <entitydescription.ConcherorSep>if fighting is sure to result in victory then you must fight sun tzu said that and i'd say he knows a little more about fighting than you do pal because he invented it!</entitydescription.ConcherorSep>
+
+  <entityname.DisciplinaryAction>Disciplinary Action</entityname.DisciplinaryAction>
+  <entitydescription.DisciplinaryAction>Which of you numbnuts let us down?</entitydescription.DisciplinaryAction>
+
+
+
+          <!-- Pyro -->
+
+  <entityname.Flamethrower>Flamethrower</entityname.Flamethrower>
+  <entitydescription.Flamethrower>Crawler nest eradication or barbeque, deathmatch or fireshow, this tool is jack of all trades!</entitydescription.Flamethrower>
+
+  <entityname.FlareGun>Flare Gun</entityname.FlareGun>
+  <entitydescription.FlareGun>Flamethrowers have one major issue: their range. Wanna get rid of these pesky snipers? Burn 'em</entitydescription.FlareGun>
+
+  <entityname.DragonsFury>Dragons Fury</entityname.DragonsFury>
+  <entitydescription.DragonsFury>Throws bricks AND fire at the same time. Twice as lethal, twice as hard to use</entitydescription.DragonsFury>
+
+  <entityname.Axetinguisher>Axetinguisher</entityname.Axetinguisher>
+  <entitydescription.Axetinguisher>Pyros have two serious problems - their effective range and limited underwater combat options. Axetinguisher solves the former! But not just water, BUT FIRE TOO!</entitydescription.Axetinguisher>
+
+  <entityname.ThermalThrust>Thermal Thrust</entityname.ThermalThrust>
+  <entitydescription.ThermalThrust>Death from above! Rain fire from the skies!</entitydescription.ThermalThrust>
+
+
+
+          <!-- Demo -->
+
+  <entityname.GrenadeLauncherSep>Grenade Launcher (S)</entityname.GrenadeLauncherSep>
+  <entitydescription.GrenadeLauncherSep>KA-BOOM!</entitydescription.GrenadeLauncherSep>
+
+  <entityname.LochnLoadSep>Loch n Load (S)</entityname.LochnLoadSep>
+  <entitydescription.LochnLoadSep>Looking for a good way to eliminate the competition? Tired of having a weapon with a measly single barrel? Want to hit your enemies where it hurts? Now you can have all of those things and more with our latest in a long line of home-baked explosive goods!</entitydescription.LochnLoadSep>
+
+  <entityname.SplendidScreen>Splendid Screen</entityname.SplendidScreen>
+  <entitydescription.SplendidScreen>WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH</entitydescription.SplendidScreen>
+
+  <entityname.UllapoolCaber>Ullapool Caber</entityname.UllapoolCaber>
+  <entitydescription.UllapoolCaber>A sober person would throw it...</entitydescription.UllapoolCaber>
+
+  <entityname.Eyelander>Eyelander</entityname.Eyelander>
+  <entitydescription.Eyelander>You don't kill a man by mucking about with rifles, arrows, rocks, or other long-distance rubbish. You kill him by grabbing the biggest bloody sword you can find, running up nice and close to him, and chopping the dumb bastard’s head off. Or some other limb</entitydescription.Eyelander>
+
+  <entityname.JumperLauncher>Jumper Bomb</entityname.JumperLauncher>
+  <entitydescription.JumperLauncher>A special no-damage stickybomb for stickybomb jumps!</entitydescription.JumperLauncher>
+
+  <entityname.StickyLauncherSep>Sticky Launcher (S)</entityname.StickyLauncherSep>
+  <entitydescription.StickyLauncherSep>Grenades roll and bounce, it's so inconsistent! Make sure they explode where you want them, when you want them!</entitydescription.StickyLauncherSep>
+
+
+
+          <!-- Heavy -->
+
+  <entityname.SandvichPlate>Sandvich</entityname.SandvichPlate>
+  <entitydescription.SandvichPlate>Sandvich make me strooong!</entitydescription.SandvichPlate>
+
+  <entityname.DalokohPlate>Dalokoh Bar</entityname.DalokohPlate>
+  <entitydescription.DalokohPlate>That vas delicious</entitydescription.DalokohPlate>
+  
+  <entityname.BrassBeast>Brass Beast</entityname.BrassBeast>
+  <entitydescription.BrassBeast>Who send all these babies to fight!? Higher damage, slower movement, dope looks</entitydescription.BrassBeast>
+
+  <entityname.Natasha>Natasha</entityname.Natasha>
+  <entitydescription.Natasha>Run and hide, babies! Lower damage, applies slowness to those hit</entitydescription.Natasha>
+
+  <entityname.FistsOfSteel>Fists of Steel</entityname.FistsOfSteel>
+  <entitydescription.FistsOfSteel>My fists! They are made of STEEL</entitydescription.FistsOfSteel>
+
+  <entityname.GoldenFryingPan>Golden Frying Pan</entityname.GoldenFryingPan>
+  <entitydescription.GoldenFryingPan>I am Heavy Weapons Guy, and this is my new weapon</entitydescription.GoldenFryingPan>
+
+
+
           <!-- MEDIC -->
 
   <entityname.QuickfixSep>Quickfix (S)</entityname.QuickfixSep>
   <entitydescription.QuickfixSep>War historians will appreciate the original medigun - still handy even though the invuln function shorted out after its first use. This one, though, is reinforced with alien tech, allowing it not to short out anymore!</entitydescription.QuickfixSep>
 
   <entityname.SolemnVow>Solemn Vow</entityname.SolemnVow>
-  <entitydescription.SolemnVow>Art lovers will cherish this bust of Hippocrates, commemorating a time when the Medic still thought doing no harm was a good idea</entitydescription.SolemnVow>
+  <entitydescription.SolemnVow>Art lovers will cherish this bust of Hippocrates, commemorating a time when the Medic still thought doing no harm was a good idea.</entitydescription.SolemnVow>
 
   <entityname.CrossbowSep>Crusader's Crossbow (S)</entityname.CrossbowSep>
-  <entitydescription.CrossbowSep>This thing might look like an old crossbow of before. However, it's nothing more than a regular syringe gun!</entitydescription.CrossbowSep>
+  <entitydescription.CrossbowSep>This thing might look like an old crossbow of before. However, it's nothing more than a regular syringe gun! Kills enemies, heals allies, isn't it a thing of beauty?</entitydescription.CrossbowSep>
 
   <entityname.BioticGrenadeLauncherSep>Biotic Grenade (S)</entityname.BioticGrenadeLauncherSep>
   <entitydescription.BioticGrenadeLauncherSep>This grenade was reverse-engineered from some alien nanobot tech first found in ruins. The substance inside is extremely volatile and burns the human skin, preventing any healing of tissues, but only if this substance was not injected beforehand, in which case it instead heals external wounds. Nanobots break down shortly after being activated though - making effects temporary</entitydescription.BioticGrenadeLauncherSep>
 
   <entityname.DartGun>Sleep Dart Gun</entityname.DartGun>
   <entitydescription.DartGun>Remember when syringe guns were very bulky and heavy? They still are! This small device, though, is very compact and allows shooting small darts containing an extremely powerful dementonite-based drug to sedate those hit for a short duration. Has a light and sound indicator so you'll always know when it's ready!</entitydescription.DartGun>
+  
+
+
+          <!-- Sniper -->
+
+  <entityname.AWPerHand>AWPer Hand</entityname.AWPerHand>
+  <entitydescription.AWPerHand>This controversial bolt-action beaut is banned in thousands of countries, and with good reason: You could really hurt someone with this thing.</entitydescription.AWPerHand>
+       
+  <entityname.Huntsman>Huntsman</entityname.Huntsman>
+  <entitydescription.Huntsman>This is gonna be a real piece of piss, you bloody fruit shop owners!</entitydescription.Huntsman>
+
+  <entityname.CozyCamper>Cozy Camper</entityname.CozyCamper>
+  <entitydescription.CozyCamper>Steady, steady... Heals you over the duration after use, while extinguishing any flames</entitydescription.CozyCamper>
+
+  <entityname.SniperSMG>Sniper SMG</entityname.SniperSMG>
+  <entitydescription.SniperSMG>Bloody hell, they're awful!</entitydescription.SniperSMG>
+
+  <entityname.Bushwacka>Bushwacka</entityname.Bushwacka>
+  <entitydescription.Bushwacka>A little of the ol' 'chop-chop! Crits on targets under jarate or fan o war effects</entitydescription.Bushwacka>
+
+  <entityname.JarateLauncherSep>Jarate (S)</entityname.JarateLauncherSep>
+  <entitydescription.JarateLauncherSep>Heads up! Targets take increased damage while soaked in it</entitydescription.JarateLauncherSep>
+
+
+
+
 
           <!-- OUTFITS -->
 
-  <entityname.MedicOutfitSep>Separatist Medic Outfit</entityname.MedicOutfitSep>
+  <entityname.ScoutOutfitSep>Scout Outfit (S)</entityname.ScoutOutfitSep>
+  <entitydescription.ScoutOutfitSep>While providing zero to none protection, this outfit is very lightweight, allowing Scout to run for his life with ease!</entitydescription.ScoutOutfitSep>
+
+  <entityname.SoldierOutfitSep>Soldier Outfit (S)</entityname.SoldierOutfitSep>
+  <entitydescription.SoldierOutfitSep>MAGGOTS!</entitydescription.SoldierOutfitSep>
+
+  <entityname.PyroOutfitSep>Pyro Outfit (S)</entityname.PyroOutfitSep>
+  <entitydescription.PyroOutfitSep>Some would say hiring someone with a flamethrower to kill people in underwater locations is not the brightest thing one could do... These "some" would burn brighter for sure. Has a near-unlimited oxygen supply, but worsens vision</entitydescription.PyroOutfitSep>
+
+  <entityname.DemoOutfitSep>Demo Outfit (S)</entityname.DemoOutfitSep>
+  <entitydescription.DemoOutfitSep>One crossed wire, one piece of plastic, one UEX pack, one errant twitch... And KABLOOIE!</entitydescription.DemoOutfitSep>
+
+  <entityname.HeavyOutfitSep>MASHA Exosuit (S)</entityname.HeavyOutfitSep>
+  <entitydescription.HeavyOutfitSep>Mechanized Autonomous Subnautical Heavy Armor - top tier exosuit for your everyday merk needs! Comes equipped with compact head-size-increase-inator!</entitydescription.HeavyOutfitSep>
+
+  <entityname.SniperOutfitSep>Sniper Outfit (S)</entityname.SniperOutfitSep>
+  <entitydescription.SniperOutfitSep>Snipin's a good job, mate! It's challengin' work, outta doors. I guarantee you'll not go hungry. 'Cause at the end of the day, long as there's two people left on Europa, someone is gonna want someone dead.</entitydescription.SniperOutfitSep>
+
+  <entityname.MedicOutfitSep>Medic Outfit (S)</entityname.MedicOutfitSep>
   <entitydescription.MedicOutfitSep>The original Medic cape was too uncomfortable to wear after any contact with water, making it unsuitable for aquatic operations on Europa. This outfit doesn't look as good, but is still extremely badass and is also compatible with mediguns, allowing Medics to fully utilize their potentials</entitydescription.MedicOutfitSep>
 
-  <entityname.ScoutOutfitSep>Separatist Scout Outfit</entityname.ScoutOutfitSep>
-  <entitydescription.ScoutOutfitSep>While prooviding zero to none protection, this outfit is very lightweight, allowing Scout to run for his life with ease!</entitydescription.ScoutOutfitSep>
-
   <entityname.IntelSep>Separatist Intelligence</entityname.IntelSep>
-  <entitydescription.IntelSep>This suitcase is filled to the brim with top secret separatist documents! Now run...</entitydescription.IntelSep>
+  <entitydescription.IntelSep>We have captured the enemy intelligence!</entitydescription.IntelSep>
+
+
+
+
 
           <!-- AFFLICTIONS -->
   
-<!--
-  <afflictionname.jarate>Jarate? NOOO</afflictionname.jarate>
-  <afflictiondescription.jarate>It's like you have just been covered in sulfuric acid, but IT STINKS SO BAD!</afflictiondescription.jarate>
--->
+  <afflictionname.FlatDamage>Damage</afflictionname.FlatDamage>
+  <afflictiondescription.FlatDamage>General damage</afflictiondescription.FlatDamage>
+
+  <afflictionname.Healing>Overheal</afflictionname.Healing>
+  <afflictiondescription.Healing>Gets converted into health</afflictiondescription.Healing>
+
+  <afflictionname.BurningTF>Burning</afflictionname.BurningTF>
+  <afflictiondescription.BurningTF>FIRE FIRE FIRE</afflictiondescription.BurningTF>
+
+  <afflictionname.GuillotineBleeding>Bleeding</afflictionname.GuillotineBleeding>
+  <afflictiondescription.GuillotineBleeding>Oof oh oh oof oh ouch oof</afflictiondescription.GuillotineBleeding>
+
+  <afflictionname.BONK>BONK! Atomic Punch</afflictionname.BONK>
+  <afflictiondescription.BONK>Un-freakin-touchable!</afflictiondescription.BONK>
+
+  <afflictionname.DeathMark>Marked for Death</afflictionname.DeathMark>
+  <afflictiondescription.DeathMark>This character is taking extra damage</afflictiondescription.DeathMark>
+
+  <afflictionname.Madmilk>Drenched in Madmilk</afflictionname.Madmilk>
+  <afflictiondescription.Madmilk>Damage taken by this character heals the attacker</afflictiondescription.Madmilk>
+
+  <afflictionname.Discipline>Discipline</afflictionname.Discipline>
+  <afflictiondescription.Discipline>Extra speed</afflictiondescription.Discipline>
+
+  <afflictionname.ShieldDash>Shield Dash</afflictionname.ShieldDash>
+  <afflictiondescription.ShieldDash>Report it to mod authors if you see this text</afflictiondescription.ShieldDash>
+
+  <afflictionname.EyelanderLimbs>Eyelander Limbs Taken</afflictionname.EyelanderLimbs>
+  <afflictiondescription.EyelanderLimbs>Extra speed and max health per hit</afflictiondescription.EyelanderLimbs>
+
+  <afflictionname.Nomming>Nomming</afflictionname.Nomming>
+  <afflictiondescription.Nomming>Dat was delicious!</afflictiondescription.Nomming>
+
+  <afflictionname.SweetTooth>Sweet Tooth</afflictionname.SweetTooth>
+  <afflictiondescription.SweetTooth>Dat was delicious!</afflictiondescription.SweetTooth>
+
+  <afflictionname.BrassBeastSpin>Brass Beast Spin</afflictionname.BrassBeastSpin>
+  <afflictiondescription.BrassBeastSpin>Report it to mod authors if you see this text</afflictiondescription.BrassBeastSpin>
+
+  <afflictionname.NatashaSpin>Natasha Beast Spin</afflictionname.NatashaSpin>
+  <afflictiondescription.NatashaSpin>Report it to mod authors if you see this text</afflictiondescription.NatashaSpin>
+
+  <afflictionname.NatashaSlowdown>Natasha Slowdown</afflictionname.NatashaSlowdown>
+  <afflictiondescription.NatashaSlowdown>Slowed with Natasha minigun</afflictiondescription.NatashaSlowdown>
+
+  <afflictionname.UberSep>Über-charged</afflictionname.UberSep>
+  <afflictiondescription.UberSep>Get them! RAUS, RAUS!</afflictiondescription.UberSep>
+
+  <afflictionname.BioticGrenadeAntiheal>Healing Disabled</afflictionname.BioticGrenadeAntiheal>
+  <afflictiondescription.BioticGrenadeAntiheal>You cannot receive healing from overhealing</afflictiondescription.BioticGrenadeAntiheal>
+
+  <afflictionname.Jarate>Drenched in Jarate</afflictionname.Jarate>
+  <afflictiondescription.Jarate>This character is taking extra damage</afflictiondescription.Jarate>
+
+  <afflictionname.KazotskyKick>Kazotsky Kick</afflictionname.KazotskyKick>
+  <afflictiondescription.KazotskyKick>Let us dance, gentlemen! Dance like no one's shooting at us!</afflictiondescription.KazotskyKick>
 
   </infotexts>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Hardhats" modversion="1.0.0" corepackage="False" steamworkshopid="3363457568" gameversion="1.6.19.1">
+  <Item file="%ModDir%/items.xml" />
+  <Other file="%ModDir%/hardhats.png" />
+  <Text file="%ModDir%/russian.xml" />
+  <Text file="%ModDir%/english.xml" />
+</contentpackage>

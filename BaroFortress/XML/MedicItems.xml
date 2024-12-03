@@ -48,7 +48,6 @@
       sticktoitems="true" sticktostructures="true" sticktodeflective="true" sticktodoors="true"
       sticktolighttargets="true">
       <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
-        <Affliction identifier="CrossbowSep" strength="1" />
         <StatusEffect type="OnUse" target="UseTarget">
           <Conditional entitytype="neq Character" />
           <Sound file="%ModDir%/Sounds/Medic/CrossbowHit.ogg" range="500"/>
@@ -74,6 +73,15 @@
         <ParticleEmitter particle="HealingParticles" ColorMultiplier="255,150,50,255"
           DistanceMin="50" DistanceMax="250" anglemin="-5" anglemax="5" particleamount="5"
           velocitymin="-10" velocitymax="-100" scalemin="2" scalemax="2" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" range="200">
+        <Conditional teamid="eq Team1"/>
+        <ReduceAffliction identifier="FlatDamage" strength="60" />
+        <Sound file="%ModDir%/Sounds/Medic/CrossbowHeal.ogg" selectionmode="random" range="250" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" range="200">
+        <Conditional teamid="neq Team1"/>
+        <Affliction identifier="FlatDamage" strength="40"/>
       </StatusEffect>
       <StatusEffect type="OnImpact" target="This" condition="0.0" setvalue="true" />
     </Projectile>
@@ -198,20 +206,15 @@
 
 
 
-  <Item name="BioticGrenadeLauncherSep" identifier="BioticGrenadeLauncherSep" category="Weapon"
-    cargocontaineridentifier="metalcrate"
-    tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.4"
-    impactsoundtag="impact_metal_light">
-    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="0,160,120,120"
-      origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/Medic/MedicEquipmentExtra.png" sourcerect="0,38,62,38"
-      depth="0.55" origin="0.5,0.5" />
+  <Item name="Biotic Grenade Launcher Sep" identifier="BioticGrenadeLauncherSep" category="Weapon" cargocontaineridentifier="metalcrate" tags="" Scale="0.5">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="0,168,123,114" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipmentExtra.png" sourcerect="0,38,64,34" depth="0.55" origin="0.5,0.5" />
     <Body width="25" height="25" density="0" />
-    <Holdable slots="Any,RightHand" controlpose="true" holdpos="35,10" handle1="0,0" aimpos="35,10" />
+    <Holdable slots="Any,RightHand" controlpose="true" holdpos="35,10" handle1="0,0" aimpos="15,30" holdangle="0" aimangle="0"/>
     <RangedWeapon barrelpos="0,0" reload="20" spread="0" unskilledspread="10" combatPriority="75"
       drawhudwhenequipped="true" crosshairscale="0.2">
       <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0">
-        <RequiredItems items="BioticGrenadeSep" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredItems items="BioticGrenadeSep" type="Contained"/>
       </Attack>
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
@@ -220,19 +223,15 @@
         <Conditional condition="gte 100" />
       </StatusEffect>
       <StatusEffect type="OnContained" targettype="This" condition="5" />
-      <RequiredItems items="BioticGrenadeSep" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredItems items="BioticGrenadeSep" type="Contained"/>
       <StatusEffect type="OnNotContained" target="This">
         <Remove />
       </StatusEffect>
-      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true"
-        containedstateindicatorstyle="bullet" containedstateindicatorslot="0"
-        containedspritedepth="0.56">
+      <ItemContainer capacity="1" maxstacksize="1" drawinventory="false" hideitems="true">
         <Containable items="BioticGrenadeSep" hide="true">
           <StatusEffect type="OnContaining" targettype="This" IsOn="true"
             targetitemcomponent="LightComponent" />
         </Containable>
-        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64"
-          origin="0.5,0.5" />
       </ItemContainer>
       <StatusEffect type="OnContained" target="This">
         <Conditional condition="gte 100" />
@@ -246,40 +245,45 @@
         <sound file="%ModDir%/Sounds/SecondaryReadyOverwatch.ogg" range="50.0" />
       </StatusEffect>
     </LightComponent>
-    <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
-    <StatusHUD drawhudwhenequipped="true" />
   </Item>
 
 
-
-  <Item name="BioticGrenadeSep" identifier="BioticGrenadeSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" tags="bioticgrenade" Scale="0.4" impactsoundtag="impact_metal_light">
-    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="0,160,120,120" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/Images/Medic/MedicEquipmentExtra.png" sourcerect="0,38,62,38" depth="0.55" origin="0.5,0.5" />
+   <Item name="Biotic Grenade Sep" identifier="BioticGrenadeSep" category="Weapon" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/Medic/MedicEquipmentSlots.png" sourcerect="0,168,56,45" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/Medic/MedicEquipmentExtra.png" sourcerect="0,38,64,34" depth="0.55" origin="0.5,0.5" />
     <Body width="38" height="15" density="30" />
     <Projectile characterusable="false" launchimpulse="12.0" sticktocharacters="false">
-      <Attack structuredamage="40" severlimbsprobability="0"/>
+      <Attack structuredamage="0" severlimbsprobability="0"/>
       <StatusEffect type="OnActive" target="This">
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1"
           velocitymin="0" velocitymax="50" scalemin="0.25" scalemax="0.5" />
-        <ParticleEmitter particle="HealingTracer" ColorMultiplier="255,0,255,255"
+        <ParticleEmitter particle="HealingTracer" ColorMultiplier="255,150,50,255"
           EmitInterval="0.01" ParticleAmount="2" ParticlesPerSecond="2" anglemin="-5" anglemax="5"
           particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.3" scalemax="0.3" />
       </StatusEffect>
       <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
-        <sound file="%ModDir%/Sounds/Medic/BioticGrenadeHit.ogg" range="2000" />
-        <Explosion range="300.0" ballastfloradamage="800" structuredamage="0" levelwalldamage="0" itemdamage="0" force="0" severlimbsprobability="0.0" shockwave="false" flames="false" smoke="false" flash="false">
-          <Affliction identifier="BioticGrenadeSep" strength="1" />
-        </Explosion>
+        <sound file="%ModDir%/Sounds/Medic/BioticGrenadeHit.ogg" range="700" />
+        <Explosion range="300.0" ballastfloradamage="800" structuredamage="0" levelwalldamage="0" itemdamage="0" force="0" severlimbsprobability="0.0" shockwave="false" flames="false" smoke="false" flash="false"/>
       </StatusEffect>
       <StatusEffect type="OnNotContained" target="This" delay="10">
         <Remove />
       </StatusEffect>
       <StatusEffect type="OnBroken" target="This">
-        <ParticleEmitter particle="BaroFortressSplash" ScaleMultiplier="3,3" VelocityMin="50" VelocityMax="100" ParticleAmount="1" CopyEntityDir="False" ColorMultiplier="255,0,255,255" Angle="180"/>
+        <ParticleEmitter particle="BaroFortressSplash" ScaleMultiplier="3,3" VelocityMin="50" VelocityMax="100" ParticleAmount="1" CopyEntityDir="False" ColorMultiplier="200,50,200,255" Angle="180"/>
         <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyCharacters" range="200">
+        <Conditional teamid="eq Team1"/>
+        <Affliction identifier="BioticGrenadeExtraHeal" strength="100" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyCharacters" range="200">
+        <Conditional teamid="neq Team1"/>
+        <Affliction identifier="BioticGrenadeAntiheal" strength="100" />
+        <Affliction identifier="FlatDamage" strength="40"/>
       </StatusEffect>
     </Projectile>
   </Item>
+
 
 
 
@@ -398,10 +402,4 @@
       </StatusEffect>
     </Projectile>
   </Item>
-
-
-  <!-- <ParticleEmitter particle="BaroFortressDrip" AngleMax="360" ScaleMin="2" ScaleMax="3"
-  ScaleMultiplier="1,1" EmitInterval="0.5" ParticleAmount="1" ParticlesPerSecond="1"
-  ColorMultiplier="255,50,255,255" />-->
-
 </Items>
