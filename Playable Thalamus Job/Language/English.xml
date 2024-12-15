@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <jobName.ThalamusJob>Thalamis</jobName.ThalamusJob>
+  <jobdescription.ThalamusJob>Once human, once husk, now - a sentient plant, called Thalamis</jobdescription.ThalamusJob>
+
+
+
+
+  <talenttree.Thalamus_Nest>Nest</talenttree.Thalamus_Nest>
+  <talenttree.Thalamus_Adaptation>Adaptation</talenttree.Thalamus_Adaptation>
+  <talenttree.Thalamus_Threat>Threat</talenttree.Thalamus_Threat>
+
+
+
+
+  <talentName.friendlyvine>Friendly Vine</talentName.friendlyvine>
+  <talentdescription.friendlyvine>Thalamis appearance becomes less disturbing, and its crewmates no longer suffer psychosis because of it</talentdescription.friendlyvine>
+
+  <talentName.oilyskin>Oily Skin</talentName.oilyskin>
+  <talentdescription.oilyskin>Swim speed increased by 20%</talentdescription.oilyskin>
+  
+    <talentName.toxicbehaviour>Toxic Behaviour</talentName.toxicbehaviour>
+  <talentdescription.toxicbehaviour>Instead of being completely immune to acid damage, you now heal from it</talentdescription.toxicbehaviour>
+
+    <talentName.overgrowth>Overgrowth</talentName.overgrowth>
+  <talentdescription.overgrowth>Vitality increased by 20%</talentdescription.overgrowth>
+
+    <talentName.rootforyou>Root for You</talentName.rootforyou>
+  <talentdescription.rootforyou>You no longer can be pushed by water currents</talentdescription.rootforyou>
+
+    <talentName.innerpores>Inner Pores</talentName.innerpores>
+  <talentdescription.innerpores>You can hold onto your water and keep yourself hydrated for longer</talentdescription.innerpores>
+
+
+    <talentName.calmingpheromones>Calming Pheromones</talentName.calmingpheromones>
+  <talentdescription.calmingpheromones>Makes your crewmates less susceptible to psychosis, including your own</talentdescription.calmingpheromones>
+
+    <talentName.greenthumb>Green Thumb</talentName.greenthumb>
+  <talentdescription.greenthumb>You can now craft special fertilizers and good ol' fertilizer, but cheaper</talentdescription.greenthumb>
+
+    <talentName.innernature>Inner Nature</talentName.innernature>
+  <talentdescription.innernature>You can now craft a diving suit to keep yourself hydrated for as long as you don't take it off. It's a little heavier due to all the water</talentdescription.innernature>
+
+    <talentName.powervine>Power Vine</talentName.powervine>
+  <talentdescription.powervine>You are now immune to electrocution, and gain a small buff from it</talentdescription.powervine>
+
+    <talentName.kelpme>Kelp Me</talentName.kelpme>
+  <talentdescription.kelpme>Your closest crewmate gains extra 15 points in mechanics, electrical and medicine</talentdescription.kelpme>
+
+    <talentName.natureconservation>Nature Conservation</talentName.natureconservation>
+  <talentdescription.natureconservation>After having your vitality dropped to below 0, you gain 75% resistance and are paralyzed</talentdescription.natureconservation>
+
+
+    <talentName.powerplant>Powerplant</talentName.powerplant>
+  <talentdescription.powerplant>You can craft a power generating mountable gland, which constantly emits a small current. Stronger underwater, limit of 2</talentdescription.powerplant>
+
+    <talentName.luringgland>Luring gland</talentName.luringgland>
+  <talentdescription.luringgland>You can craft a luring mountable gland, which can be turned on and off manually or with signals and emits a decoy noise</talentdescription.luringgland>
+
+    <talentName.lightbulb>Light Bulb</talentName.lightbulb>
+  <talentdescription.lightbulb>You can craft a light bulb, a portable mountable light source. Can emit light in inventory. Stronger underwater</talentdescription.lightbulb>
+
+    <talentName.capacitorbulb>Capacitor Bulb</talentName.capacitorbulb>
+  <talentdescription.capacitorbulb>You can craft a capacitor bulb, an energy-storing mountable. Limit of 2, is 2 times weaker that a battery cell</talentdescription.capacitorbulb>
+
+    <talentName.wrappinggland>Wrapping Gland</talentName.wrappinggland>
+  <talentdescription.wrappinggland>You can craft a mountable wrapping gland. Can only be held in both hands. Treats bleeding of everyone around it, and slows hostiles. Needs power. Stronger undderwater. Limit of 2</talentdescription.wrappinggland>
+
+    <talentName.thunderbulb>Thunder Bulb</talentName.thunderbulb>
+  <talentdescription.thunderbulb>You can craft a mountable thunder bulb. Can only be held in both hands. Electrocutes everyone around it, requires power. Limit of 2</talentdescription.thunderbulb>
+
+    <talentName.pumpinggland>Pumping Bulb</talentName.pumpinggland>
+  <talentdescription.pumpinggland>You can craft a mountable pumping bulb. Can only be held in both hands. Does not require power, but is more powerful when powered. Can be signal-controlled, limit of 2</talentdescription.pumpinggland>
+  
+    <talentName.buyoancegland>Buyoance Bulb</talentName.buyoancegland>
+  <talentdescription.buyoancegland>You can craft a mountable buyoance bulb. Can only be held in both hands. Does not require power, but is more powerful when powered. Can be signal-controlled, limit of 2</talentdescription.buyoancegland>
+
+
+    <talentName.breatheitin>Breate in in</talentName.breatheitin>
+  <talentdescription.breatheitin>Disables need for hydration, but you also lose benefits of being hydrated. Glands/bulbs are not affected</talentdescription.breatheitin>
+
+    <talentName.torchplant>Torchplant</talentName.torchplant>
+  <talentdescription.torchplant>You gain 25% resistance to fire damage</talentdescription.torchplant>
+
+    <talentName.houseplant>Houseplant</talentName.houseplant>
+  <talentdescription.houseplant>You can use fertilizer to heal yourself faster. Becomes even more powerful if you are hydrated and without "breathe in in" trait</talentdescription.houseplant>
+
+    <talentName.endoskeleton>Endoskeleton</talentName.endoskeleton>
+  <talentdescription.endoskeleton>Increases walking speed by 20%, decreases swimming speed by 10%</talentdescription.endoskeleton>
+
+    <talentName.gardenerdidit>Gardener did it!</talentName.gardenerdidit>
+  <talentdescription.gardenerdidit>You can now craft a ballast-flora killing spray. Never aim at thalamis crewmates</talentdescription.gardenerdidit>
+
+    <talentName.slipperycarapace>Slippery Carapace</talentName.slipperycarapace>
+  <talentdescription.slipperycarapace>There's a 10% chance to stun the attacker for 1 second</talentdescription.slipperycarapace>
+
+    <talentName.wisetree>Wise Tree</talentName.wisetree>
+  <talentdescription.wisetree>You now gain 50% more experience</talentdescription.wisetree>
+
+    <talentName.nestmind>Nest Mind</talentName.nestmind>
+  <talentdescription.nestmind>Your crew, including you, gains 25% more experience</talentdescription.nestmind>
+
+
+    <talentName.biotuned>Biotuned</talentName.biotuned>
+  <talentdescription.biotuned>Your non-thalamis crewmates gain slow regeneration when you're around</talentdescription.biotuned>
+
+    <talentName.foresttitan>Forest Titan</talentName.foresttitan>
+  <talentdescription.foresttitan>Increases your character in size by giving it an exosuit that CANT BE TAKEN OFF. It gives 50% damage resistance from all sources but fire and cuts, makes you immune to flowing water and slows you down by 20%. Does not need power. </talentdescription.foresttitan>
+
+    <talentName.gardenwarfare>Garden Warfare</talentName.gardenwarfare>
+  <talentdescription.gardenwarfare>You can now craft new seeds and weapons. All plants must be planted in water. Refer to mod page if you need extra info</talentdescription.gardenwarfare>
+
+    <talentName.lateblooming>Late Blooming</talentName.lateblooming>
+  <talentdescription.lateblooming>You gain 10%+ movement and swinging speed when below 50% vitality, this caps at 25% speed at 10% vitality</talentdescription.lateblooming>
+
+    <talentName.plantsvszombies>Plants vs Zombies</talentName.plantsvszombies>
+  <talentdescription.plantsvszombies>Husks around you are up to 50% slowed (gradually) and after some time get paralized</talentdescription.plantsvszombies>
+
+    <talentName.stomped>Stomped</talentName.stomped>
+  <talentdescription.stomped>When your health is at -75, disables your regeneration and paralizes you, but gives 90% resistance to all damage</talentdescription.stomped>
+
+    <talentName.organicfuels>Organic Fuel</talentName.organicfuels>
+  <talentdescription.organicfuels>Upon dying, explode in flames. Can start a fire</talentdescription.organicfuels>
+
+    <talentName.corrosive>Corrosive</talentName.corrosive>
+  <talentdescription.corrosive>Upon dying, explode in a cloud of highly corrosive acid</talentdescription.corrosive>
+
+    <talentName.immuneresponse>Immune Response</talentName.immuneresponse>
+  <talentdescription.immuneresponse>Upon dying, release 3 terminal cells to attack any non-thalamis they can find</talentdescription.immuneresponse>
+
+
+</infotexts>

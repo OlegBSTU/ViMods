@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Character specifiertags="true" skincolors="(#7abf6f, 100); (#5aa14f, 100); (#2a5224, 100); (#0a2606, 100); (#3f403a, 100); (#484a3a, 100); (#4c4f33, 100); (#8b943d, 100); (#b85c16, 100); (#4d2303, 100); (#594042, 100); (#ad4e6c, 100); (#09022e, 100); (#1f3763, 100); (#008a63, 100); (#a6a6a6, 100)" haircolors="(#ffffff, 100); (#cf5b5b, 100); (#bf7934, 100); (#b3a330, 100); (#55a623, 100); (#298a80, 100); (#0a57a8, 100); (#080e78, 100); (#47108f, 100); (#8f1071, 100); (#000000, 100)" facialhaircolors="(#ffffff, 100); (#cf5b5b, 100); (#bf7934, 100); (#b3a330, 100); (#55a623, 100); (#298a80, 100); (#0a57a8, 100); (#080e78, 100); (#47108f, 100); (#8f1071, 100); (#000000, 100)" SpeciesName="ThalamusHuman" Tags="" SpeciesTranslationOverride="" DisplayName="" Group="human" Humanoid="true" HasInfo="True" CanInteract="True" CanClimb="True" ForceSlowClimbing="False" Husk="False" HuskedSpecies="" NonHuskedSpecies="" UseHuskAppendage="False" NeedsAir="False" NeedsWater="False" UseHumanAI="True" IsMachine="False" CanSpeak="False" ShowHealthBar="True" UseBossHealthBar="False" Noise="150" Visibility="150" BloodDecal="fruitsplatter_brown" BleedParticleAir="mudrapeggbrownchunks" BleedParticleWater="whitegoosplash" BleedParticleMultiplier="1" CanEat="True" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="True" SonarDisruption="0" DistantSonarRange="0" DisableDistance="25000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
+  <names path="%ModDir%/Names.xml" />
+  <ragdolls folder="default" />
+  <animations folder="default" />
+  <damageemitter drawontop="True" Particle="whitegoosplash" AngleMin="0" AngleMax="360" ScaleMin="0.25" ScaleMax="0.5" VelocityMin="50" VelocityMax="300" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <bloodemitter Particle="mudrapeggbrownchunks" AngleMin="0" AngleMax="0" ScaleMin="1" ScaleMax="0.1" VelocityMin="0" VelocityMax="0" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <bloodemitter Particle="whitegoosplash" AngleMin="0" AngleMax="0" ScaleMin="1" ScaleMax="1" VelocityMin="0" VelocityMax="0" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="1" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <gibemitter Particle="fruitchunks" AngleMin="0" AngleMax="360" ScaleMin="1" ScaleMax="1" VelocityMin="200" VelocityMax="700" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="20" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <gibemitter Particle="mudrapeggbrownchunks" AngleMin="0" AngleMax="360" ScaleMin="0.1" ScaleMax="0.5" VelocityMin="50" VelocityMax="500" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <sound File="%ModDir%/Sounds/ThalamusJobDamage1.ogg" State="Damage" Range="500" Volume="1"/>
+  <sound File="%ModDir%/Sounds/ThalamusJobDamage2.ogg" State="Damage" Range="500" Volume="1"/>
+  <sound File="%ModDir%/Sounds/ThalamusJobDamage3.ogg" State="Damage" Range="500" Volume="1"/>
+  <sound File="%ModDir%/Sounds/ThalamusJobDamage4.ogg" State="Damage" Range="500" Volume="1"/>
+  <sound File="%ModDir%/Sounds/ThalamusJobDamage5.ogg" State="Damage" Range="500" Volume="1"/>
+  <sound File="%ModDir%/Sounds/ThalamusJobDamage6.ogg" State="Damage" Range="500" Volume="1"/>
+  <sound File="%ModDir%/Sounds/ThalamusJobIdle1.ogg" State="Idle" Range="500" Volume="0.5"/>
+  <sound File="%ModDir%/Sounds/ThalamusJobIdle2.ogg" State="Idle" Range="500" Volume="0.5"/>
+  <sound File="%ModDir%/Sounds/ThalamusJobIdle3.ogg" State="Idle" Range="500" Volume="0.5"/>
+
+  <StatusEffect type="OnDeath" target="This" targetlimb="Torso">
+    <sound File="%ModDir%/Sounds/ThalamusJobDeath.ogg" State="Damage" Range="500" Volume="2"/>
+    </StatusEffect>
+
+  <health Vitality="150" DoesBleed="True" CrushDepth="Infinity" UseHealthWindow="True" BleedingReduction="0" BurnReduction="-2" ConstantHealthRegeneration="1" HealthRegenerationWhenEating="0" StunImmunity="False" PoisonImmunity="False" PoisonVulnerability="2" EmpVulnerability="0" ApplyMovementPenalties="True" DieFromBeheading="False" AllowSeveringLegs="False" ApplyAfflictionColors="True" Immunities="">
+    <MedUISilhouette texture="%ModDir%/Extras/MedUI_Silhouette.png" columns="8" rows="2" sourcerect="0,0,1008,748" />
+    <MedUIExtra texture="%ModDir%/Extras/MedUIExtra.png" columns="4" rows="4" sourcerect="0,0,1024,1024" />
+    <Limb name="Head">
+      <Sprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="1,0,126,374" highlightarea="41,0,45,54" />
+      <Highlightsprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="1,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+    <Limb name="Torso">
+      <Sprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="631,0,126,374" highlightarea="29,56,70,134" />
+      <Highlightsprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="631,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="2.0" />
+    </Limb>
+    <Limb name="LeftArm">
+      <Sprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="379,0,126,374" highlightarea="1,69,27,140" />
+      <Highlightsprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="379,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+    <Limb name="RightArm">
+      <Sprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="127,0,126,374" highlightarea="100,69,27,140" />
+      <Highlightsprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="127,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+    <Limb name="LeftLeg">
+      <Sprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="505,0,126,374" highlightarea="3,180,57,194" />
+      <Highlightsprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="505,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+    <Limb name="RightLeg">
+      <Sprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="253,0,126,374" highlightarea="68,180,57,194" />
+      <Highlightsprite texture="%ModDir%/Extras/MedUIAtlas.png" sourcerect="253,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+  </health>
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, HealthInterface" AccessibleWhenAlive="True" Commonness="1" />
+  <Heads>
+    <Head tags="head1" sheetindex="0,0" />
+    <Head tags="head2" sheetindex="1,0" />
+    <Head tags="head3" sheetindex="0,1" />
+    <Head tags="head4" sheetindex="0,0" />
+  </Heads>
+  <HeadAttachments>
+    <Wearable type="Hair">
+      <sprite name="Thalamus Hair 1" texture="%ModDir%/ThalamusHairs.png" sheetindex="0,0" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 2" texture="%ModDir%/ThalamusHairs.png" sheetindex="1,0" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 3" texture="%ModDir%/ThalamusHairs.png" sheetindex="2,0" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 4" texture="%ModDir%/ThalamusHairs.png" sheetindex="3,0" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 5" texture="%ModDir%/ThalamusHairs.png" sheetindex="0,1" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 6" texture="%ModDir%/ThalamusHairs.png" sheetindex="1,1" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 7" texture="%ModDir%/ThalamusHairs.png" sheetindex="2,1" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 8" texture="%ModDir%/ThalamusHairs.png" sheetindex="3,1" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 9" texture="%ModDir%/ThalamusHairs.png" sheetindex="0,2" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 10" texture="%ModDir%/ThalamusHairs.png" sheetindex="1,2" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 11" texture="%ModDir%/ThalamusHairs.png" sheetindex="2,2" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 12" texture="%ModDir%/ThalamusHairs.png" sheetindex="3,2" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 13" texture="%ModDir%/ThalamusHairs.png" sheetindex="0,3" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 14" texture="%ModDir%/ThalamusHairs.png" sheetindex="1,3" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 15" texture="%ModDir%/ThalamusHairs.png" sheetindex="2,3" />
+    </Wearable>
+    <Wearable type="Hair" replacewhenwearinghat="1">
+      <sprite name="Thalamus Hair 16" texture="%ModDir%/ThalamusHairs.png" sheetindex="3,3" />
+    </Wearable>
+
+    <Wearable type="Beard" replacewhenwearinghat="1">
+      <sprite name="Thalamus Beard 1" texture="%ModDir%/ThalamusBeards.png" sheetindex="0,0" />
+    </Wearable>
+    <Wearable type="Beard" replacewhenwearinghat="1">
+      <sprite name="Thalamus Beard 2" texture="%ModDir%/ThalamusBeards.png" sheetindex="1,0" />
+    </Wearable>
+    <Wearable type="Beard" replacewhenwearinghat="1">
+      <sprite name="Thalamus Beard 3" texture="%ModDir%/ThalamusBeards.png" sheetindex="0,1" />
+    </Wearable>
+    <Wearable type="Beard" replacewhenwearinghat="1">
+      <sprite name="Thalamus Beard 4" texture="%ModDir%/ThalamusBeards.png" sheetindex="1,1" />
+    </Wearable>
+  </HeadAttachments>
+</Character>
