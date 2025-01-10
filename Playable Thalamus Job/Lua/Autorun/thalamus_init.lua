@@ -1,6 +1,9 @@
 ---@diagnostic disable: undefined-global
 if CLIENT then return end
 
+local Path = table.pack(...)[1]
+dofile(Path .. "/Lua/Scripts/helperfunctions.lua")
+dofile(Path .. "/Lua/Scripts/ondamaged.lua")
 local characterID = "ThalamusHuman"
 local jobID = "ThalamusJob"
 
