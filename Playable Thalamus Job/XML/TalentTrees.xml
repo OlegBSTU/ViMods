@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TalentTrees>
+  <TalentTree jobidentifier="ThalamusJob">
+    <SubTree identifier="Thalamus_primary" nameidentifier="talenttree.primary" type="primary">
+      <TalentOptions requiredtalents="2" maxchosentalents="6">
+        <TalentOption identifier="friendlyvine" />
+        <TalentOption identifier="oilyskin" />
+        <TalentOption identifier="toxicbehaviour" />
+        <TalentOption identifier="overgrowth" />
+        <TalentOption identifier="rootforyou" />
+        <TalentOption identifier="innerpores" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="2" maxchosentalents="6">
+        <TalentOption identifier="calmingpheromones" />
+        <TalentOption identifier="greenthumb" />
+        <TalentOption identifier="innernature" />
+        <TalentOption identifier="powervine" />
+        <TalentOption identifier="kelpme" />
+        <TalentOption identifier="natureconservation" />
+      </TalentOptions>
+    </SubTree>
+    <SubTree identifier="Thalamus_Nest" type="specialization" requires="Thalamus_primary" blocks="Thalamus_Adaptation,Thalamus_Threat">
+      <TalentOptions>
+        <TalentOption identifier="powerplant" />
+        <TalentOption identifier="luringgland" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="lightbulb" />
+        <TalentOption identifier="capacitorbulb" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="wrappinggland" />
+        <TalentOption identifier="thunderbulb" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="pumpinggland" />
+        <TalentOption identifier="buyoancegland" />
+      </TalentOptions>
+    </SubTree>
+    <SubTree identifier="Thalamus_Adaptation" type="specialization" requires="Thalamus_primary" blocks="Thalamus_Nest,Thalamus_Threat">
+      <TalentOptions>
+        <TalentOption identifier="breatheitin" />
+        <TalentOption identifier="torchplant" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="houseplant" />
+        <TalentOption identifier="endoskeleton" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="gardenwarfare" />
+        <TalentOption identifier="talenttree" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="wisetree" />
+        <TalentOption identifier="nestmind" />
+      </TalentOptions>
+    </SubTree>
+    <SubTree identifier="Thalamus_Threat" type="specialization" requires="Thalamus_primary" blocks="Thalamus_Adaptation,Thalamus_Nest">
+      <TalentOptions>
+        <TalentOption identifier="biotuned" />
+        <TalentOption identifier="foresttitan" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="gardenerdidit" />
+        <TalentOption identifier="lateblooming" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="plantsvszombies" />
+        <TalentOption identifier="stomped" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="organicfuels" />
+        <TalentOption identifier="corrosive" />
+        <TalentOption identifier="immuneresponse" />
+      </TalentOptions>
+    </SubTree>
+  </TalentTree>
+</TalentTrees>

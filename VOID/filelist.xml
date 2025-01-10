@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="VOID" modversion="2.0.136" corepackage="False" gameversion="1.7.7.0">
+  <LocationTypes file="%ModDir%/Map/LocationTypes.xml" />
+  <Text file="%ModDir%/Text/English.xml" />
+  <MapGenerationParameters file="%ModDir%/Map/MapGenerationParameters.xml" />
+  <OutpostConfig file="%ModDir%/Map/OutpostGeneration.xml" />
+  <OutpostModule file="%ModDir%/DOCKVOID.sub" />
+</contentpackage>

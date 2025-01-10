@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Catharsis" modversion="1.0.12" corepackage="False" steamworkshopid="3399279452" gameversion="1.7.7.0">
+  <Submarine file="%ModDir%/Cathexis.sub" />
+  <Submarine file="%ModDir%/Catharsis.sub" />
+</contentpackage>

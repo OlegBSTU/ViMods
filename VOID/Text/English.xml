@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="English" nowhitespace="false" translatedname="English">
+  <Override>
+    <!-- Locations -->
+    <locationname.void> </locationname.void>
+    <locationnameformat.void>VOID</locationnameformat.void>
+    <locationname.voidstart> </locationname.voidstart>
+    <locationnameformat.voidstart>VOID123</locationnameformat.voidstart>
+
+    <locationname.city> </locationname.city>
+    <locationnameformat.city>VOID</locationnameformat.city>
+    <locationchange.city.changeto.VOID></locationchange.city.changeto.VOID>
+    <locationname.outpost> </locationname.outpost>
+    <locationnameformat.outpost>VOID</locationnameformat.outpost>
+    <locationnameformat.outpost>VOID</locationnameformat.outpost>
+    <locationchange.outpost.changeto.city></locationchange.outpost.changeto.city>
+    <locationchange.outpost.changeto.city></locationchange.outpost.changeto.city>
+    <locationname.military> </locationname.military>
+    <locationnameformat.military></locationnameformat.military>
+    <locationnameformat.military>VOID</locationnameformat.military>
+    <locationnameformat.military>VOID</locationnameformat.military>
+    <locationnameformat.military>VOID</locationnameformat.military>
+    <locationname.research> </locationname.research>
+    <locationnameformat.research>VOID</locationnameformat.research>
+    <locationnameformat.research>VOID</locationnameformat.research>
+    <locationnameformat.research>VOID</locationnameformat.research>
+    <locationnameformat.research>VOID</locationnameformat.research>
+    <locationname.mine> </locationname.mine>
+    <locationnameformat.mine>VOID</locationnameformat.mine>
+    <locationnameformat.mine>VOID</locationnameformat.mine>
+    <locationnameformat.mine>VOID</locationnameformat.mine>
+    <locationnameformat.mine>VOID</locationnameformat.mine>
+    <locationname.ruins>Alien Ruins</locationname.ruins>
+    <locationnameformat.ruins>[name] Ruins</locationnameformat.ruins>
+    <locationname.explored></locationname.explored>
+    <locationnameformat.explored>VOID</locationnameformat.explored>
+    <cave>VOID</cave>
+    <locationdescription.none></locationdescription.none>
+    <locationdescription.city></locationdescription.city>
+    <locationdescription.outpost></locationdescription.outpost>
+    <locationdescription.military></locationdescription.military>
+    <locationdescription.research></locationdescription.research>
+    <locationdescription.mine></locationdescription.mine>
+
+
+    <!-- Loading Screen -->
+    <loading>Ĺ̷̡̲͘ö̷̙̼́̈́a̵͈͆̕ḏ̷̓̐i̷͖̼͂ņ̵̃g̵̻͎̎.̴͔̝̃͝.̶̲̫̄.̸̱̯́̾</loading>
+    <startserverbutton>Don't</startserverbutton>
+
+    <!-- Pause menu -->
+    <pausemenuresume>Suffering</pausemenuresume>
+    <pausemenusettings>Settings</pausemenusettings>
+    <pausemenuretry>Retry</pausemenuretry>
+    <pausemenusavequit>Flee</pausemenusavequit>
+    <pausemenuquit>Surrender</pausemenuquit>
+    <pausemenuquitverification>Are you sure you want to return to the main menu? All your unsaved progress will be lost.</pausemenuquitverification>
+    <pausemenuretryverification>Are you sure you want to stop the mission and load the previous save file? All your unsaved progress will be lost.</pausemenuretryverification>
+    <pausemenuquitverificationeditor>Are you sure you want to return to the main menu? All your unsaved progress will be lost.</pausemenuquitverificationeditor>
+    <pausemenusaveandquitverification>If you quit now, you will lose the progress you've made during the round, and you'll have to start the mission from the beginning when continuing the campaign. Are you sure you want to quit?</pausemenusaveandquitverification>
+    <pausemenusaveandreturntoserverlobbyverification>Are you sure you want to save the game and return to the server lobby?</pausemenusaveandreturntoserverlobbyverification>
+    <pausemenusaveandreturntomainmenuverification>Are you sure you want to save the game and return to the main menu?</pausemenusaveandreturntomainmenuverification>
+
+    <!-- Game modes -->
+    <gamemode.singleplayercampaign>Last Human</gamemode.singleplayercampaign>
+    <gamemode.multiplayercampaign>Last Crew</gamemode.multiplayercampaign>
+    <gamemodedescription.singleplayercampaign>You are responsible for everyone's demise. Now it's your time to perish</gamemodedescription.singleplayercampaign>
+    <gamemodedescription.multiplayercampaign>You are responsible for everyone's demise. Now it's your time to perish</gamemodedescription.multiplayercampaign>
+
+    <!-- Round summary -->
+    <roundsummaryprogress>[sub] has made its way through the VOID.</roundsummaryprogress>
+    <roundsummaryreturn>[sub] has returned to the previous location.</roundsummaryreturn>
+    <roundsummarygameover>The VOID has claimed [sub] and its crew, the last humans alive</roundsummarygameover>
+    <roundsummarycrewstatus>Crew status</roundsummarycrewstatus>
+    <roundsummaryroundhasended>The VOID is hungry</roundsummaryroundhasended>
+    <roundsummaryleaving>[sub] is entering the VOID.</roundsummaryleaving>
+    <roundsummaryprogresstoemptylocation>[sub] has made its way through VOID.</roundsummaryprogresstoemptylocation>
+    <roundsummaryreturntoemptylocation>[sub] is returning back through [location].</roundsummaryreturntoemptylocation>
+
+    <!-- Generic -->
+    <tutorial.tryagainheader>You surrendered to The Curse</tutorial.tryagainheader>
+
+    <!-- Campaign meta texts -->
+    <campaignstart1>You reached the end. You wake up with a terrible headache on a cold submarine floor exactly 147 minutes after defeating the Jove. You don't know what happened, but it was something so horrible your mind cannot process it. One thing you know for sure: you are the last people in the world still alive, and every single outpost is now gone. And it was your fault. And you too, will soon perish </campaignstart1>
+    <campaignstart2>Your mind crumbles under the weight of the ocean</campaignstart2>
+    <campaignstart3>Now what?</campaignstart3>
+    <campaignending1>ENODNU BE TONNAC DIOV, EREH TUB ECNEIDUA EHT? EMOC OT WON S'TAHW, GNUS SI GHOS EHT</campaignending1>
+    <campaignending2>As your mind fails, you, charmed with the final verse of The Song, end your own life, and The Curse is finally lifted. But what is an ocean void, but hollow tears of millions?</campaignending2>
+    <campaignending3>Void consumes you, erasing your very existence. You never are, and never were. You hear a newborn baby in the distance. Crying</campaignending3>
+
+    <eventtext.alienwriting.3_1>SONG ENDS — AUDIENCE GONE\nVEIL SHIFTING\nNO VOID COMES</eventtext.alienwriting.3_1>
+    <EventText.ancientencounter.c1>Out of the corner of your eye, you see something appear. It is in the shape of a man, but it seems to somehow not be completely there. Its features shift as fast as you can make them out.\nLike a soft caress, it grows vines of thoughts in your head that gently wrap around your brain.\n“You cannot undo it. Now leave.”</EventText.ancientencounter.c1>
+    <EventText.ancientencounter.o1>”YOU!”</EventText.ancientencounter.o1>
+    <EventText.ancientencounter.o1.c1>“We warned. Dare not listen. You dare dream“</EventText.ancientencounter.o1.c1>
+    <EventText.ancientencounter.o1.o1>”It's a human who killed your God and we'll kill many more if necessary!”</EventText.ancientencounter.o1.o1>
+    <EventText.ancientencounter.o1.o1.c1>”Dream can't die. Ice can't melt”</EventText.ancientencounter.o1.o1.c1>
+    <EventText.ancientencounter.o1.o1.o1>”No curse can stop us”</EventText.ancientencounter.o1.o1.o1>
+    <EventText.ancientencounter.o1.o1.o1.c1>“Song continues, now Void sings too. Beauty in ruins, old as forgotten“</EventText.ancientencounter.o1.o1.o1.c1>
+    <EventText.ancientencounter.o1.o1.o1.o1>”...”</EventText.ancientencounter.o1.o1.o1.o1>
+    <EventText.ancientencounter.o1.o1.o1.o1.c1>“The audience. The listeners. The worshippers. The prisoners“</EventText.ancientencounter.o1.o1.o1.o1.c1>
+    <EventText.ancientencounter.o1.o1.o1.o1.o1>”Just shut the hell up already!”</EventText.ancientencounter.o1.o1.o1.o1.o1>
+    <EventText.ancientencounter.o1.o1.o1.o1.o1.c1>“Presense corrupts, and motion emerges. “</EventText.ancientencounter.o1.o1.o1.o1.o1.c1>
+    <EventText.ancientencounter.o1.o1.o1.o1.o1.o1>Stop it!</EventText.ancientencounter.o1.o1.o1.o1.o1.o1>
+    <EventText.ancientencounter.o1.o1.o1.o1.o1.o1.c1>Tears in reality but the reality tears</EventText.ancientencounter.o1.o1.o1.o1.o1.o1.c1>
+    <EventText.ancientencounter.o1.o1.o1.o1.o1.o1.o1>I shall remove the curse, no matter the cost!</EventText.ancientencounter.o1.o1.o1.o1.o1.o1.o1>
+    <EventText.ancientencounter.o1.o1.o2>Try to cut the "vines"</EventText.ancientencounter.o1.o1.o2>
+    <EventText.ancientencounter.o1.o1.o2.c1>You feel the entity's disappointment. It lets go, but you still feel its presense</EventText.ancientencounter.o1.o1.o2.c1>
+    <EventText.ancientencounterfinal>“Our song has been sung, but you wish to repeat it. But you do not" </EventText.ancientencounterfinal>
+
+    <breakingnews></breakingnews>
+    <randomnews1></randomnews1>
+    <randomnews2></randomnews2>
+    <randomnews3></randomnews3>
+    <randomnews4></randomnews4>
+    <randomnews5></randomnews5>
+    <randomnews6></randomnews6>
+    <randomnews7></randomnews7>
+    <randomnews8></randomnews8>
+    <randomnews9></randomnews9>
+    <randomnews10></randomnews10>
+    <randomnews11></randomnews11>
+    <randomnews12></randomnews12>
+    <randomnews13></randomnews13>
+    <randomnews14></randomnews14>
+    <randomnews15></randomnews15>
+    <randomnews16></randomnews16>
+    <randomnews17></randomnews17>
+    <randomnews18></randomnews18>
+    <randomnews19></randomnews19>
+    <randomnews20></randomnews20>
+    <randomnews21></randomnews21>
+    <randomnews22></randomnews22>
+    <randomnews23></randomnews23>
+    <randomnews24></randomnews24>
+    <randomnews25></randomnews25>
+    <randomnews26></randomnews26>
+    <randomnews27></randomnews27>
+    <randomnews28></randomnews28>
+    <randomnews29></randomnews29>
+    <randomnews30></randomnews30>
+    <randomnews31></randomnews31>
+    <randomnews32></randomnews32>
+    <randomnews33></randomnews33>
+    <randomnews34></randomnews34>
+
+  </Override>
+</infotext>

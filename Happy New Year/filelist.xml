@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Merry Christmas" modversion="1.0.0" corepackage="False" steamworkshopid="3396598949" gameversion="1.7.7.0">
+  <Item file="%ModDir%/items.xml" />
+  <Text file="%ModDir%/russian.xml" />
+  <Text file="%ModDir%/english.xml" />
+</contentpackage>
