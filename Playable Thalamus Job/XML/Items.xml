@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- GLANDS-->
+
+  <Item name="" identifier="generatinggland" category="Thalamus" Tags="thalamus,thalamis" scale="0.8" damagedbyexplosions="true" GrabWhenSelected="true" damagedbymeleeweapons="true"
+    damagedbyprojectiles="true" damagedbyrepairtools="true" health="50">
+    <Body width="80" height="80" density="0" />
+    <Sprite name="generatinggland" texture="%ModDir%/Sprites/Glands.png" depth="0.8" sourcerect="0,0,100,114" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="20" />
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem identifier="saltbulb" amount="3" />
+      <RequiredItem identifier="thorium" amount="1" />
+      <RequiredItem identifier="fulgurium" amount="1" />
+    </Fabricate>
+    <PowerTransfer>
+      <StatusEffect type="InWater" target="This" Charge="100.0" />
+      <StatusEffect type="Always" target="This" Charge="100.0" />
+    </PowerTransfer>
+    <PowerContainer capacity="200" maxrechargespeed="200.0" maxoutput="200.0" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachKnife" PickingTime="10.0" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true" canbepicked="true">
+      <RequiredItem items="sharptool" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireAcid" locked="false" allowingameediting="true">
+      <RequiredItem items="sulphuricacid" type="Equipped" />
+      <output name="power_out" displayname="connection.powerout" />
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <AiTarget sightrange="500.0" static="True" />
+      <StatusEffect type="OnBroken" target="This">
+        <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0"
+          particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+        <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        <sound file="Content/Sounds/Damage/Gore2.ogg" range="500" dontmuffle="true" />
+        <Remove />
+      </StatusEffect>
+    </ConnectionPanel>
+    <LightComponent AllowInGameEditing="false" lightcolor="50,128,128,50" castshadows="false" canbeselected="false" range="200.0" IsOn="true" powerconsumption="0" />
+  </Item>
+
+
+  <Item name="" identifier="luringgland" category="Thalamus" Tags="thalamus,thalamis, decoy, depthchargeammo" scale="0.6" damagedbyexplosions="true" damagedbymeleeweapons="true"
+    damagedbyprojectiles="true" damagedbyrepairtools="true" indestructible="true" health="200">
+    <Sprite name="luringgland" texture="%ModDir%/Sprites/Glands.png" depth="0.55" sourcerect="114,22,121,84" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="35" />
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="phosphorus" amount="3" />
+      <RequiredItem identifier="flashpowder" amount="1" />
+      <RequiredItem identifier="tobaccobud" amount="1" />
+    </Fabricate>
+    <Body width="128" height="85" density="10" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+    <AiTarget maxsoundrange="10000" maxsightrange="6000" />
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.16,0.15" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+      <TickBox text="luringgland.prime">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true" targetitemcomponent="Projectile">
+          <Use />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+    <Projectile characterusable="false" launchimpulse="2.0">
+      <!-- Turns lights on and make destructible after launch-->
+      <StatusEffect type="OnUse" target="This" IsOn="true" Indestructible="false" duration="10">
+        <sound file="%ModDir%/Sounds/LuringGland.ogg" range="5000.0" loop="true" volume="1" />
+      </StatusEffect>
+      <!-- Self-destruction after 45 seconds-->
+      <StatusEffect type="OnUse" target="This" IsOn="false" delay="3" setvalue="true" condition="-200" />
+      <!-- Effects when taking damage-->
+      <StatusEffect type="OnBroken" target="this">
+        <sound file="Content/Sounds/Damage/Gore2.ogg" range="1000" dontmuffle="true" />
+        <Explosion range="700.0" structuredamage="200" itemdamage="200" ballastfloradamage="200" force="5.0" severlimbsprobability="0" debris="true" decal="explosion" decalsize="1.0"
+          camerashake="15" camerashakerange="15"
+          flashrange="5" flashduration="2.0"
+          screencolor="255,255,255,255" screencolorrange="500" screencolorduration="2.0" penetration="0.5">
+          <Affliction identifier="burn" strength="300" />
+          <Affliction identifier="stun" strength="100" />
+          <Affliction identifier="blind" strength="150" />
+          <Affliction identifier="sensoryoverload" strength="150" />
+        </Explosion>
+        <Explosion range="2000" force="30.0" smoke="false" sparks="true" empstrength="2.5" applyfireeffects="false" ignorecover="false">
+          <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
+        </Explosion>
+        <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="2" scalemax="2" />
+        <particleemitter particle="whitegoosplash" particleamount="50" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0"
+          particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+        <particleemitter particle="brownchunks" particleamount="100" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+      </StatusEffect>
+      <!-- Remove when broken -->
+      <StatusEffect type="OnBroken" target="This" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+
+
+  <Item name="" identifier="lightbulb" category="Thalamus" Tags="thalamus,thalamis,smallitem,light" scale="0.8">
+    <Body width="80" height="80" density="0" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="10" />
+      <RequiredSkill identifier="electrical" level="5" />
+      <RequiredItem identifier="chlorine" amount="1" />
+      <RequiredItem identifier="phosphorus" amount="1" />
+      <RequiredItem identifier="creepingorange" amount="1" />
+    </Fabricate>
+    <Sprite name="lightbulb" texture="%ModDir%/Sprites/Glands.png" depth="0.8" sourcerect="0,0,100,114" />
+    <LightComponent lightcolor="0.1,0.8,0.2,0.5" range="500.0" allowingameediting="false">
+      <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+      <sprite texture="%ModDir%/Sprites/Glands.png" sourcerect="784,528,64,96" />
+    </LightComponent>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachKnife" PickingTime="1.0" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true"
+      canbepicked="true">
+      <RequiredItem items="sharptool" type="Equipped" />
+    </Holdable>
+  </Item>
+
+  <Item name="" identifier="capacitorbulb" category="Thalamus" Tags="thalamus,thalamis" scale="0.8" damagedbyexplosions="true" GrabWhenSelected="true" damagedbymeleeweapons="true"
+    damagedbyprojectiles="true" damagedbyrepairtools="true" health="50">
+    <Body width="80" height="80" density="0" />
+    <Sprite name="capacitorbulb" texture="%ModDir%/Sprites/Glands.png" depth="0.8" sourcerect="320,20,100,80" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="20" />
+      <RequiredSkill identifier="electrical" level="35" />
+      <RequiredItem identifier="fulgurium" amount="1" />
+      <RequiredItem identifier="yeastshroom" amount="1" />
+    </Fabricate>
+    <PowerContainer capacity="1000" maxrechargespeed="800.0" maxoutput="20000000.0" rechargespeed="800" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachKnife" PickingTime="10.0" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true"
+      canbepicked="true">
+      <RequiredItem items="sharptool" type="Equipped" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireAcid" locked="false" allowingameediting="true">
+      <RequiredItem items="sulphuricacid" type="Equipped" />
+      <output name="power_out" displayname="connection.powerout" />
+      <input name="power_in" displayname="connection.powerin" />
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <AiTarget sightrange="500.0" static="True" />
+      <StatusEffect type="OnBroken" target="This">
+        <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0"
+          particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+        <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        <sound file="Content/Sounds/Damage/Gore2.ogg" range="500" dontmuffle="true" />
+        <Remove />
+      </StatusEffect>
+    </ConnectionPanel>
+    <LightComponent AllowInGameEditing="false" lightcolor="50,128,128,50" castshadows="false" canbeselected="false" range="200.0" IsOn="true" powerconsumption="0" />
+  </Item>
+
+
+  <Item name="" identifier="wrappinggland" category="Thalamus" Tags="thalamus,thalamis" scale="0.8" damagedbyexplosions="true" damagedbymeleeweapons="true" damagedbyprojectiles="true"
+    damagedbyrepairtools="true" health="300">
+    <Body width="80" height="80" density="0" />
+    <Sprite name="wrappinggland" texture="%ModDir%/Sprites/Glands.png" depth="0.8" sourcerect="0,0,100,114" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="35" />
+      <RequiredSkill identifier="electrical" level="10" />
+      <RequiredItem identifier="fiberplant" amount="1" />
+      <RequiredItem identifier="elastinplant" amount="1" />
+      <RequiredItem identifier="antibloodloss2" amount="1" />
+    </Fabricate>
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachKnife" PickingTime="10.0" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true" canbepicked="true">
+      <RequiredItem items="sharptool" type="Equipped" />
+    </Holdable>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="capacitorbulb">
+        <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+      </Containable>
+      <StatusEffect type="OnUse" target="Contained" Condition="-0.5" disabledeltatime="true">
+        <RequiredItem items="capacitorbulb" type="Contained" />
+      </StatusEffect>
+    </ItemContainer>
+
+  </Item>
+
+
+  <Item name="" identifier="thunderbulb" category="Thalamus" Tags="thalamus,thalamis" scale="0.8" damagedbyexplosions="true" GrabWhenSelected="true" damagedbymeleeweapons="true"
+    damagedbyprojectiles="true" damagedbyrepairtools="true" health="150">
+    <Body width="80" height="80" density="0" />
+    <Sprite name="thunderbulb" texture="%ModDir%/Sprites/Glands.png" depth="0.8" sourcerect="140,150,80,80" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="20" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem identifier="fulgurium" amount="1" />
+      <RequiredItem identifier="badcreepingorange" amount="1" />
+      <RequiredItem identifier="alienblood" amount="1" />
+    </Fabricate>
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachKnife" PickingTime="10.0" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true" canbepicked="true">
+      <RequiredItem items="sharptool" type="Equipped" />
+    </Holdable>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="capacitorbulb">
+        <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+      </Containable>
+    </ItemContainer>
+    <ElectricalDischarger duration="0.1" outdoorsonly="false" powerconsumption="15000" range="150" rangemultiplierinwalls="1.5" voltage="0">
+      <Attack targetimpulse="50">
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="electricshock" strength="40" />
+      </Attack>
+      <StatusEffect type="OnUse" target="Contained" Condition="-0.5" disabledeltatime="true">
+        <RequiredItem items="capacitorbulb" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" interval="2">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge1.ogg" range="2000" selectionmode="random" />
+        <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" range="2000" />
+        <ParticleEmitter particle="risingbubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="50" velocitymax="100" scalemin="1" scalemax="2" />
+        <Explosion range="500.0" camerashake="5" stun="0" force="0.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This">
+        <Conditional Voltage="gt 0.8" />
+        <ParticleEmitter particle="ElectricShock" anglemin="0" anglemax="360" DistanceMin="10" DistanceMax="25" ParticleAmount="1" ScaleMin="0.03" ScaleMax="0.05" />
+      </StatusEffect>
+    </ElectricalDischarger>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireAcid" locked="false" allowingameediting="true">
+      <RequiredItem items="sulphuricacid" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <AiTarget sightrange="500.0" static="True" />
+      <StatusEffect type="OnBroken" target="This">
+        <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0"
+          particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+        <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        <sound file="Content/Sounds/Damage/Gore2.ogg" range="500" dontmuffle="true" />
+        <Remove />
+      </StatusEffect>
+    </ConnectionPanel>
+    <LightComponent AllowInGameEditing="false" lightcolor="50,128,128,50" castshadows="false" canbeselected="false" range="200.0" IsOn="true" powerconsumption="0" />
+  </Item>
+
+  <Item name="" identifier="pumpinggland" category="Thalamus" Tags="thalamus,thalamis" scale="0.3" damagedbyexplosions="true" damagedbymeleeweapons="true" damagedbyprojectiles="true"
+    damagedbyrepairtools="true" health="300">
+    <Body width="80" height="80" density="0" />
+    <Sprite name="pumpinggland" texture="%ModDir%/Sprites/Glands.png" depth="0.8" sourcerect="0,0,100,114" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+      <RequiredSkill identifier="medical" level="20" />
+      <RequiredSkill identifier="electrical" level="20" />
+      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredItem identifier="raptorbane" amount="1" />
+      <RequiredItem identifier="rubber" amount="3" />
+    </Fabricate>
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachKnife" PickingTime="10.0" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true" canbepicked="true">
+      <RequiredItem items="sharptool" type="Equipped" />
+    </Holdable>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="capacitorbulb">
+        <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+      </Containable>
+    </ItemContainer>
+    <Pump canbeselected="true" maxflow="50" PowerConsumption="60.0" MinVoltage="0" IsOn="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+      <sound file="Content/Items/Pump/Pump.ogg" type="OnActive" range="500.0" volumeproperty="CurrFlow" volume="0.005" loop="true" />
+      <sound file="Content/Items/Pump/PumpBroken.ogg" type="Always" range="500.0" volumeproperty="CurrentBrokenVolume" volume="0.004" loop="true" />
+      <PumpInEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="180" anglemax="180" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="0.6" />
+      <PumpInEmitter particle="watersplash" particlespersecond="50" position="7,-51" anglemin="180" anglemax="180" velocitymin="200" velocitymax="400" scalemin="0.5" scalemax="0.6" />
+      <PumpOutEmitter particle="bubbles" particlespersecond="5" position="7,-51" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
+      <StatusEffect type="Always" target="This" intervaL="2" maxflow="150"  setvalue="true">
+        <Conditional Voltage="gte 0.8" />
+        <particleemitter particle="whitegoosplash" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" intervaL="2" setvalue="true" maxflow="75">
+        <Conditional Voltage="lt 0.8" />
+        <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+      </StatusEffect>
+        <StatusEffect type="OnActive" target="Contained" intervaL="1" condition="-5">
+      </StatusEffect>
+    </Pump>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="sulphuricacid" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="set_active" displayname="connection.setstate" />
+      <input name="set_speed" displayname="connection.setpumpingspeed" />
+    </ConnectionPanel>
+  </Item>
+
+
+
+  <Item name="" identifier="buyoancegland" category="Thalamus" Tags="thalamus,thalamis" scale="0.3" damagedbyexplosions="true" damagedbymeleeweapons="true" damagedbyprojectiles="true"
+    damagedbyrepairtools="true" health="300">
+    <Sprite name="buyoancegland" texture="%ModDir%/Sprites/Glands.png" depth="0.8" sourcerect="0,0,100,114" />
+    
+  </Item>
+
+
+
+</Items>

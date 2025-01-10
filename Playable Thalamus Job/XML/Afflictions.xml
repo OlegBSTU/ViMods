@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+
+  <Affliction
+    name="Scorched Tissue"
+    identifier="scorchedtissue"
+    description="The area is blistered and charred, with some parts peeling off"
+    type="burn"
+    causeofdeathdescription="Burned to death"
+    selfcauseofdeathdescription="You have burned to death."
+    limbspecific="true"
+    maxstrength="200"
+    burnoverlayalpha="1"
+    healcostmultiplier="2.25"
+    WeaponsSkillGain="1.0">
+    <Description
+      textidentifier="afflictiondescription.scorchedtissue.low"
+      minstrength="0" maxstrength="30" />
+    <Description
+      textidentifier="afflictiondescription.scorchedtissue.med"
+      minstrength="30" maxstrength="60" />
+    <Description
+      textidentifier="afflictiondescription.scorchedtissue.high"
+      minstrength="60" maxstrength="200" />
+    <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true"
+      minvitalitydecrease="0" maxvitalitydecrease="2" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Deep tissue injury"
+    identifier="explosiondamage_thalamis"
+    description=""
+    type="damage"
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="true"
+    maxstrength="200"
+    damageoverlayalpha="1"
+    WeaponsSkillGain="1.0">
+    <Description
+      textidentifier="afflictiondescription.explosiondamage.low"
+      minstrength="0" maxstrength="40" />
+    <Description
+      textidentifier="afflictiondescription.explosiondamage.med"
+      minstrength="40" maxstrength="200" />
+    <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true"
+      minvitalitydecrease="0" maxvitalitydecrease="2" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,0,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Organis damage"
+    identifier="organisdamage"
+    description=""
+    type="damage"
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="false"
+    indicatorlimb="Torso"
+    maxstrength="200"
+    affectmachines="false"
+    damageoverlayalpha="0"
+    damageparticles="false"
+    MedicalSkillGain="0.1">
+    <Description
+      textidentifier="afflictiondescription.organisdamage.self"
+      target="Self" />
+    <Description
+      textidentifier="afflictiondescription.organisdamage"
+      target="OtherCharacter " />
+    <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true"
+      minvitalitydecrease="0" maxvitalitydecrease="2" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Gunshot wound"
+    identifier="gunshotwound_thalamis"
+    description="The entry site is a small, dark, bruised hole oozing a little thalamis sap. The exit wound however is a large ragged mess of exposed tissue and pouring sap."
+    type="damage"
+    causeofdeathdescription="Shot to death"
+    selfcauseofdeathdescription="You have died of gunshot wounds."
+    limbspecific="true"
+    maxstrength="200"
+    karmachangeonapplied="-1"
+    damageoverlayalpha="2"
+    WeaponsSkillGain="1.0">
+    <Description
+      textidentifier="afflictiondescription.gunshotwound_thalamis.low"
+      minstrength="0" maxstrength="40" />
+    <Description
+      textidentifier="afflictiondescription.gunshotwound_thalamis.med"
+      minstrength="40" maxstrength="200" />
+    <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true"
+      minvitalitydecrease="0" maxvitalitydecrease="2"
+      dialogflag="GunshotWound" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,768,128,128" color="195,60,60,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Bruised Tissue"
+    identifier="bruisedtissue"
+    description=""
+    type="damage"
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="true"
+    maxstrength="200"
+    damageoverlayalpha="0.5"
+    WeaponsSkillGain="1.0">
+    <Description
+      textidentifier="afflictiondescription.bruisedtissue.low"
+      minstrength="0"
+      maxstrength="40" />
+    <Description
+      textidentifier="afflictiondescription.bruisedtissue.med"
+      minstrength="40"
+      maxstrength="200" />
+    <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true"
+      minvitalitydecrease="0"
+      maxvitalitydecrease="2" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,896,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Cuts"
+    identifier="cuts"
+    description=""
+    type="damage"
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
+    limbspecific="true"
+    maxstrength="200"
+    damageoverlayalpha="2"
+    WeaponsSkillGain="1.0">
+    <Description
+      textidentifier="afflictiondescription.cuts.low"
+      minstrength="0" maxstrength="40" />
+    <Description
+      textidentifier="afflictiondescription.cuts.med"
+      minstrength="40" maxstrength="200" />
+    <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true"
+      minvitalitydecrease="0" maxvitalitydecrease="2" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Gnawed"
+    identifier="gnawed"
+    description=""
+    type="damage"
+    causeofdeathdescription="Mauled to death"
+    selfcauseofdeathdescription="You have been gnawed to death."
+    limbspecific="true"
+    maxstrength="200"
+    damageoverlayalpha="2">
+    <Description
+      textidentifier="afflictiondescription.gnawed.low"
+      minstrength="0"
+      maxstrength="40" />
+    <Description
+      textidentifier="afflictiondescription.gnawed.med"
+      minstrength="40"
+      maxstrength="200" />
+    <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true"
+      minvitalitydecrease="0"
+      maxvitalitydecrease="2" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,512,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+
+  <Bloodloss
+    identifier="saploss"
+    type="bloodloss"
+    causeofdeathdescription="Sapped to death"
+    selfcauseofdeathdescription="You have sapped to death."
+    limbspecific="false"
+    indicatorlimb="Torso"
+    activationthreshold="5"
+    karmachangeonapplied="-0.1"
+    maxstrength="100"
+    affectmachines="false"
+    healcostmultiplier="1.5">
+    <Description
+      textidentifier="afflictiondescription.saploss.low.self"
+      target="Self"
+      minstrength="0" maxstrength="30" />
+    <Description
+      textidentifier="afflictiondescription.saploss.high.self"
+      target="Self"
+      minstrength="30" maxstrength="100" />
+    <Description
+      textidentifier="afflictiondescription.saploss.low"
+      target="OtherCharacter"
+      minstrength="0" maxstrength="30" />
+    <Description
+      textidentifier="afflictiondescription.saploss.high"
+      target="OtherCharacter"
+      minstrength="30" maxstrength="100" />
+    <Effect minstrength="0" maxstrength="5" strengthchange="-0.1" />
+    <Effect minstrength="5" maxstrength="45" multiplybymaxvitality="true" strengthchange="-0.1"
+      minvitalitydecrease="0" maxvitalitydecrease="0.75"
+      dialogflag="Bloodloss" />
+    <Effect minstrength="45" maxstrength="100" multiplybymaxvitality="true" strengthchange="-0.1"
+      minvitalitydecrease="0.75" maxvitalitydecrease="2"
+      minscreenblur="0.0" maxscreenblur="6.0"
+      minchromaticaberration="0.0" maxchromaticaberration="2.0"
+      minbodytint="255,0,0,0" maxbodytint="255,0,0,150"
+      dialogflag="Bloodloss" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,768,128,128" color="139,60,42,255" origin="0,0" />
+  </Bloodloss>
+
+  <Affliction
+    name="Hydrated"
+    identifier="hydrated"
+    description="Water absorbed"
+    type="haste"
+    isbuff="true"
+    limbspecific="false"
+    maxstrength="200"
+    MedicalSkillGain="0.01">
+    <Effect minstrength="0" maxstrength="200" strengthchange="-1"
+      minspeedmultiplier="0.8" maxspeedmultiplier="1.2">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="-0.2" maxvalue="0.35" />
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Distressed"
+    identifier="distressed_thalamis"
+    description="You just interacted with the thalamis and it was creepy"
+    type="gaze"
+    isbuff="false"
+    limbspecific="false"
+    maxstrength="100"
+    MedicalSkillGain="0.01">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-1" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Charged"
+    identifier="charged_thalamis"
+    description="Electrical shock powered the thalamis machinery, boosting it into overdrive"
+    type="haste"
+    isbuff="true"
+    limbspecific="false"
+    maxstrength="100"
+    MedicalSkillGain="0.01">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-1" minspeedmultiplier="0" maxspeedmultiplier="1.3">
+      <StatValue stattype="MeleeAttackSpeed" minvalue="0" maxvalue="0.35" />
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Stomped"
+    identifier="stomped_thalamis"
+    description="After taking serious damage, thalamis entered its dormant, more resilient and durable form, but health regeneration is disabled"
+    type="resistance"
+    isbuff="true"
+    limbspecific="false"
+    maxstrength="100"
+    MedicalSkillGain="0.01">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+    <Affliction
+    name="Biotuned"
+    identifier="biotuned_thalamis"
+    description="Natural regeneration is severely enhanced. Does it have drawbacks?"
+    type="resistance"
+    isbuff="true"
+    limbspecific="false"
+    maxstrength="2"
+    MedicalSkillGain="0.01">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+  <Affliction
+    name="Husk Anabiosis"
+    identifier="sedatingspores"
+    description="The patient is in deep anabiosis, for unclear reasons"
+    type="debuff"
+    isbuff="true"
+    limbspecific="false"
+    maxstrength="100"
+    MedicalSkillGain="0.01">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+</Afflictions>

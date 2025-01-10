@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 if CLIENT then return end
 
 local characterID = "ThalamusHuman"
@@ -14,52 +15,51 @@ local function MoveInvSlot(oldCharacter, newCharacter, invSlot)
 	end
 end
 
+
 local function RespawnCharacter(character)
-	print("Respawning " .. character.Name .. " as " .. jobID)
+	print(string.format("Respawning %s as %s", character.Name, jobID))
 
 	Entity.Spawner.AddCharacterToSpawnQueue(characterID, character.WorldPosition, function(newCharacter)
 		local client = nil
-		for key, value in pairs(Client.ClientList) do
+		for _, value in pairs(Client.ClientList) do
 			if value.Character == character then
 				client = value
 			end
 		end
 
-		MoveInvSlot(character, newCharacter, InvSlotType.Card)
-		MoveInvSlot(character, newCharacter, InvSlotType.Headset)
-		MoveInvSlot(character, newCharacter, InvSlotType.Head)
-
-		Entity.Spawner.AddEntityToRemoveQueue(character)
-
 		if client == nil then
 			return
 		end
 
-		newCharacter.TeamID = character.TeamID
+		-- Transfer items
+		MoveInvSlot(character, newCharacter, InvSlotType.Card)
+		MoveInvSlot(character, newCharacter, InvSlotType.Headset)
+		MoveInvSlot(character, newCharacter, InvSlotType.Head)
 
+		-- Set TeamID to prevent guards kill our «vessel»
+		newCharacter.TeamID = character.TeamID
 		client.SetClientCharacter(newCharacter)
 
-		local info = CharacterInfo(characterID, client.Name, client.Name)
-		info.Job = Job(JobPrefab.Get(jobID))
-		info.Head = client.CharacterInfo.Head
-		info.Head.HairIndex = 0
-		info.Head.BeardIndex = 0
-		info.Head.MoustacheIndex = 0
-		info.Head.FaceAttachmentIndex = 0
-
+		-- Change character information
+		local info = CharacterInfo(characterID, client.Name)
 		newCharacter.Info = info
+		info.Job = Job(JobPrefab.Get(jobID), false)
+
+		-- Remove the old character
+		Entity.Spawner.AddEntityToRemoveQueue(character)
 	end)
 end
+
 
 Hook.Add("character.created", "convertJobs", function(character)
 	Timer.Wait(function()
 		if character.HasJob(jobID) and character.IsHuman then
 			RespawnCharacter(character)
 		elseif not character.IsHuman and character.Name == characterID then
-			print("deleted duplicate character")
+			print(string.format("Deleted duplicate character %s", character.Name))
 
 			if character.Inventory then
-				for bb, items in pairs(character.Inventory.FindAllItems()) do
+				for _, items in pairs(character.Inventory.FindAllItems()) do
 					Entity.Spawner.AddItemToRemoveQueue(items)
 				end
 			end

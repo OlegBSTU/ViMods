@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Anode and Cathode" modversion="1.0.8" corepackage="False" steamworkshopid="3403386685" gameversion="1.7.7.0">
+  <Submarine file="%ModDir%/Cathode.sub" />
+  <Submarine file="%ModDir%/Anode.sub" />
+</contentpackage>

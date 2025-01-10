@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+  <Item name="" identifier="nytree" category="Electrical" Tags="light" scale="1">
+    <Sprite texture="nytree.png" sourcerect="0,0,148,224" depth="0.8" origin="0.5,0.5" />
+    <Body width="28" height="23" density="15" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem items="wrench,deattachtool" excludeditems="multitool" type="Equipped" />
+    </Holdable>
+    <LightComponent lightcolor="1.0,1.0,1.0,0.5" range="300.0" pulse="0.5" ison="true">
+      <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.4" />
+    </LightComponent>
+    <Price baseprice="2025">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity"/>
+      <Price storeidentifier="merchantresearch" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="5" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="smallplanter" />
+    </Fabricate>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="set_color" displayname="connection.setcolor" />
+    </ConnectionPanel>
+  </Item>
+
+</Items>

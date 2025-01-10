@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ItemAssembly name="Cathexis" description="" hideinmenus="false">
+  <Item name="" identifier="shuttleengine" ID="218" markedfordeconstruction="false" rect="-236,-126,213,89" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.4" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="True" Tags="light,engine" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.9" HiddenInGame="False" conditionpercentage="100">
+    <Engine MaxForce="300" PropellerPos="-350,0" DisablePropellerDamage="False" MinVoltage="0.5" PowerConsumption="500" IsActive="True" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="False" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,255,255,0" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="power_in">
+        <link w="394" i="1" />
+      </input>
+      <input name="set_force" />
+      <output name="condition_out" />
+    </ConnectionPanel>
+    <Repairable DeteriorationSpeed="0" MinDeteriorationDelay="0" MaxDeteriorationDelay="0" MinDeteriorationCondition="50" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="5" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairWrench">
+      <requireditem items="wrench" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+  </Item>
+  <Item name="" identifier="windoweddoorwbuttons" ID="220" markedfordeconstruction="false" rect="298,144,24,208" linked="345" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="door,weldable" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.5999999" HiddenInGame="False" conditionpercentage="100">
+    <Door OpeningSpeed="3" ClosingSpeed="3" ToggleCoolDown="1" IsOpen="False" ToggleWhenClicked="True" UseBetweenOutpostModules="True" BotsShouldKeepOpen="False" PickingTime="7.5" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgForceOpenCrowbar">
+      <requireditem items="crowbar" type="Equipped" characterinventoryslottype="None" optional="true" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <requireditem items="idcard" type="Picked" characterinventoryslottype="None" optional="true" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Door>
+    <Repairable DeteriorationSpeed="0" MinDeteriorationDelay="0" MaxDeteriorationDelay="0" MinDeteriorationCondition="50" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="10" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairWrench">
+      <requireditem items="wrench" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="toggle" />
+      <input name="set_state" />
+      <output name="state_out" />
+      <output name="condition_out" />
+      <output name="activate_out" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="windoweddoorwbuttons" ID="219" markedfordeconstruction="false" rect="202,144,24,208" linked="386" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="door,weldable" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.5999999" HiddenInGame="False" conditionpercentage="100">
+    <Door OpeningSpeed="3" ClosingSpeed="3" ToggleCoolDown="1" IsOpen="False" ToggleWhenClicked="True" UseBetweenOutpostModules="True" BotsShouldKeepOpen="False" PickingTime="7.5" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgForceOpenCrowbar">
+      <requireditem items="crowbar" type="Equipped" characterinventoryslottype="None" optional="true" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <requireditem items="idcard" type="Picked" characterinventoryslottype="None" optional="true" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Door>
+    <Repairable DeteriorationSpeed="0" MinDeteriorationDelay="0" MaxDeteriorationDelay="0" MinDeteriorationCondition="50" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="10" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairWrench">
+      <requireditem items="wrench" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="toggle" />
+      <input name="set_state" />
+      <output name="state_out" />
+      <output name="condition_out" />
+      <output name="activate_out" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="mediumsteelcabinet" ID="221" markedfordeconstruction="false" rect="112,128,87,187" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="locker,container" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.84" HiddenInGame="False" conditionpercentage="100">
+    <ItemContainer ContainableRestrictions="" AutoFill="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" contained=",,,,,,,,,,,,,,,,,,,,,," ExtraStackSize="0" />
+  </Item>
+  <Item name="" identifier="hatchwbuttons" ID="222" markedfordeconstruction="false" rect="-15,-48,128,49" linked="383" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.53" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="door,weldable" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" conditionpercentage="100">
+    <Door OpeningSpeed="3" ClosingSpeed="3" ToggleCoolDown="1" IsOpen="False" ToggleWhenClicked="True" UseBetweenOutpostModules="True" BotsShouldKeepOpen="False" PickingTime="7.5" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgForceOpenCrowbar">
+      <requireditem items="crowbar" type="Equipped" characterinventoryslottype="None" optional="true" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <requireditem items="idcard" type="Picked" characterinventoryslottype="None" optional="true" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Door>
+    <Repairable DeteriorationSpeed="0" MinDeteriorationDelay="0" MaxDeteriorationDelay="0" MinDeteriorationCondition="50" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="10" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairWrench">
+      <requireditem items="wrench" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="toggle" />
+      <input name="set_state" />
+      <output name="state_out" />
+      <output name="condition_out" />
+      <output name="activate_out" />
+    </ConnectionPanel>
+  </Item>
+  <Structure name="Large Horizontal Inside Wall" identifier="ff_x_wall" ID="223" rect="112,-63,160,48" Indestructible="False" MaxHealth="75" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.3" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Large Inside Wall Tie V2" identifier="inwallltiev2" ID="224" rect="-62,-91,14,72" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.6" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.42999998" HiddenInGame="False" />
+  <Item name="" identifier="smallpump" ID="226" markedfordeconstruction="false" rect="-46,-134,66,44" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="pump" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <Pump MaxFlow="100" IsOn="True" MinVoltage="0.3" PowerConsumption="60" IsActive="True" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="power_in">
+        <link w="393" i="0" />
+      </input>
+      <input name="toggle" />
+      <input name="set_active" />
+      <input name="set_speed" />
+      <input name="set_targetlevel" />
+      <output name="condition_out" />
+    </ConnectionPanel>
+    <Repairable DeteriorationSpeed="0.2" MinDeteriorationDelay="60" MaxDeteriorationDelay="240" MinDeteriorationCondition="0" RepairThreshold="80" MaxStressDeteriorationMultiplier="6" StressDeteriorationThreshold="0.9" StressDeteriorationIncreaseSpeed="0.05" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="5" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairWrench">
+      <requireditem items="wrench" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+  </Item>
+  <Item name="" identifier="smallpump" ID="225" markedfordeconstruction="false" rect="226,-13,66,44" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="pump" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" conditionpercentage="100">
+    <Pump MaxFlow="100" IsOn="True" MinVoltage="0.3" PowerConsumption="60" IsActive="True" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="power_in">
+        <link w="403" i="0" />
+      </input>
+      <input name="toggle" />
+      <input name="set_active" />
+      <input name="set_speed" />
+      <input name="set_targetlevel" />
+      <output name="condition_out" />
+    </ConnectionPanel>
+    <Repairable DeteriorationSpeed="0.2" MinDeteriorationDelay="60" MaxDeteriorationDelay="240" MinDeteriorationCondition="0" RepairThreshold="80" MaxStressDeteriorationMultiplier="6" StressDeteriorationThreshold="0.9" StressDeteriorationIncreaseSpeed="0.05" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="5" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairWrench">
+      <requireditem items="wrench" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+  </Item>
+  <Item name="" identifier="chaingun" ID="227" markedfordeconstruction="false" rect="-242,287,128,128" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="turret,light" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" conditionpercentage="100">
+    <LightComponent Range="2048" CastShadows="True" DrawBehindSubs="True" IsOn="True" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,204,204,255" IsActive="True" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <Turret MaxChargeTime="1" Reload="0.1" ShotsPerBurst="1" DelayBetweenBursts="0" RetractionDurationMultiplier="1" RecoilTime="0.1" RetractionDelay="0" RotationLimits="-203.40942,0.7096343" SpringStiffnessLowSkill="2" SpringStiffnessHighSkill="50" SpringDampingLowSkill="0.5" SpringDampingHighSkill="10" RotationSpeedLowSkill="1" RotationSpeedHighSkill="5" HudTint="0,0,0,0" AutoOperate="False" AllowAutoOperateWithWiring="False" RandomAimAmount="0" RandomAimMinTime="0" RandomAimMaxTime="0" RandomMovement="False" AimDelay="False" TargetCharacters="True" TargetMonsters="True" TargetHumans="True" TargetSubmarines="True" TargetItems="True" FriendlyTag="" FriendlyTeam="None" MinVoltage="0.5" PowerConsumption="400" IsActive="True" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="power_in">
+        <link w="405" i="1" />
+      </input>
+      <input name="position_in" />
+      <input name="trigger_in" />
+      <input name="toggle_light" />
+      <input name="set_light" />
+      <input name="set_auto_operate" />
+      <input name="toggle_auto_operate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="periscope" ID="228" markedfordeconstruction="false" flippedx="true" rect="-192,144,67,101" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="periscope" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.80100006" HiddenInGame="False" conditionpercentage="100">
+    <Controller IsToggle="False" Output="1" FalseOutput="0" State="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="ItemMsgInteractSelect">
+      <limbposition limb="Head" position="-10,-135" allowusinglimb="false" />
+      <limbposition limb="Torso" position="-10,-200" allowusinglimb="false" />
+      <limbposition limb="LeftHand" position="67,-170" allowusinglimb="false" />
+      <limbposition limb="RightHand" position="67,-170" allowusinglimb="false" />
+    </Controller>
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <output name="position_out" />
+      <output name="trigger_out" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="shuttlenavterminal" ID="229" markedfordeconstruction="false" flippedx="true" rect="-297,64,144,120" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="secondarynavterminal,light,navterminal,command" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.9" HiddenInGame="False" conditionpercentage="100">
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="True" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,255,255,0" IsActive="True" MinVoltage="0.5" PowerConsumption="5" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <Steering NeutralBallastLevel="0.5" MinVoltage="0.5" PowerConsumption="10" IsActive="True" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <Sonar UseTransducers="False" CenterOnTransducers="False" HasMineralScanner="False" MinVoltage="0.5" PowerConsumption="100" IsActive="True" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <CustomInterface Labels="Signal out #1" Signals="1" ElementStates="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="power_in" />
+      <input name="transducer_in" />
+      <input name="velocity_in" />
+      <output name="velocity_x_out" />
+      <output name="velocity_y_out" />
+      <output name="signal_out1" />
+      <output name="toggle_docking" />
+      <output name="current_velocity_x" />
+      <output name="current_velocity_y" />
+      <output name="current_position_x" />
+      <output name="current_position_y" />
+      <output name="condition_out" />
+    </ConnectionPanel>
+    <Repairable DeteriorationSpeed="0" MinDeteriorationDelay="0" MaxDeteriorationDelay="0" MinDeteriorationCondition="50" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="10" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+  </Item>
+  <Item name="" identifier="supercapacitor" ID="230" markedfordeconstruction="false" rect="-157,22,77,80" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="light,supercapacitor" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <PowerContainer RechargeWarningIndicatorLow="0.5" RechargeWarningIndicatorHigh="0.75" IndicatorPosition="53,11" IndicatorSize="47,10" IsHorizontal="True" MaxOutPut="20000000" Capacity="20" Charge="20" MaxRechargeSpeed="1000" RechargeSpeed="0" ExponentialRechargeSpeed="True" Efficiency="0.1" FlipIndicator="False" MinVoltage="0" PowerConsumption="0" IsActive="True" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <output name="power_out">
+        <link w="405" i="0" />
+      </output>
+      <input name="power_in">
+        <link w="404" i="0" />
+      </input>
+      <output name="charge" />
+      <output name="charge_%" />
+      <output name="charge_rate" />
+      <input name="set_rate" />
+      <output name="condition_out" />
+      <output name="load_value_out" />
+      <output name="power_value_out" />
+      <input name="disable_output" />
+    </ConnectionPanel>
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="False" Flicker="0" FlickerSpeed="1" PulseFrequency="0.4" PulseAmount="0.4" BlinkFrequency="0" LightColor="255,255,255,0" MinVoltage="0.5" PowerConsumption="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <Repairable DeteriorationSpeed="0.125" MinDeteriorationDelay="120" MaxDeteriorationDelay="300" MinDeteriorationCondition="0" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="5" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+    <itemstats />
+  </Item>
+  <Item name="" identifier="redwire" ID="405" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="-120;-16;-120;-64;-48;-64;-48;103.99902;-72;103.99902;-72;167.99902;-176;167.99902;-176;224" />
+  </Item>
+  <Item name="" identifier="redwire" ID="404" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="-120;-16;-120;-64;-48;-64;-48;104;72;104" />
+  </Item>
+  <Item name="" identifier="redwire" ID="403" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="256;-32;256;-72;-48;-72;-48;103.99902;72;104" />
+  </Item>
+  <Item name="" identifier="redwire" ID="402" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="-32;56;-32;24" />
+  </Item>
+  <Item name="" identifier="redwire" ID="401" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="12;24;12;56" />
+  </Item>
+  <Item name="" identifier="redwire" ID="400" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="72;24;72;56" />
+  </Item>
+  <Item name="" identifier="redwire" ID="399" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="28;24;28;56" />
+  </Item>
+  <Item name="" identifier="redwire" ID="398" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="88;24;88;56" />
+  </Item>
+  <Item name="" identifier="redwire" ID="397" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="-48;24;-48;56" />
+  </Item>
+  <Item name="" identifier="redwire" ID="396" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="28;104;48;104" />
+  </Item>
+  <Item name="" identifier="redwire" ID="395" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="-12;104;-32;104" />
+  </Item>
+  <Item name="" identifier="redwire" ID="394" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="-48;-16;-48;-72;-80;-72;-80;-152;-112;-152" />
+  </Item>
+  <Item name="" identifier="redwire" ID="393" markedfordeconstruction="false" rect="-49893,-15112,42,16" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="254,23,17,255" InventoryIconColor="254,23,17,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="smallitem,wire" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100" hideinassemblypreview="true">
+    <Holdable SpriteDepthWhenDropped="0.55" PickingTime="0" CanBePicked="True" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgPickUpSelect" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" nodes="-16;-152;-72;-152.00098;-72;-80;-48;-80;-48;-16" />
+  </Item>
+  <Item name="" identifier="shuttlebattery" ID="338" markedfordeconstruction="false" rect="-20,36,59,62" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="batterycellrecharger,battery" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <PowerContainer IndicatorPosition="21,12" IndicatorSize="54,35" IsHorizontal="True" MaxOutPut="1000" Capacity="2000" Charge="2000" MaxRechargeSpeed="500" RechargeSpeed="0" Efficiency="0.95" FlipIndicator="False" MinVoltage="0" PowerConsumption="0" IsActive="True" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <output name="power_out">
+        <link w="401" i="0" />
+      </output>
+      <input name="power_in">
+        <link w="399" i="0" />
+      </input>
+      <input name="set_rate" />
+      <output name="charge" />
+      <output name="charge_%" />
+      <output name="charge_rate" />
+      <output name="condition_out" />
+      <output name="load_value_out" />
+      <output name="power_value_out" />
+      <input name="disable_output" />
+    </ConnectionPanel>
+    <ItemContainer ContainableRestrictions="" AutoFill="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" contained=",," ExtraStackSize="0" />
+    <itemstats />
+  </Item>
+  <Item name="" identifier="shuttlebattery" ID="308" markedfordeconstruction="false" rect="-80,36,59,62" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="batterycellrecharger,battery" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <PowerContainer IndicatorPosition="21,12" IndicatorSize="54,35" IsHorizontal="True" MaxOutPut="1000" Capacity="2000" Charge="2000" MaxRechargeSpeed="500" RechargeSpeed="0" Efficiency="0.95" FlipIndicator="False" MinVoltage="0" PowerConsumption="0" IsActive="True" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <output name="power_out">
+        <link w="402" i="1" />
+      </output>
+      <input name="power_in">
+        <link w="397" i="0" />
+      </input>
+      <input name="set_rate" />
+      <output name="charge" />
+      <output name="charge_%" />
+      <output name="charge_rate" />
+      <output name="condition_out" />
+      <output name="load_value_out" />
+      <output name="power_value_out" />
+      <input name="disable_output" />
+    </ConnectionPanel>
+    <ItemContainer ContainableRestrictions="" AutoFill="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" contained=",," ExtraStackSize="0" />
+    <itemstats />
+  </Item>
+  <Item name="" identifier="shuttlebattery" ID="231" markedfordeconstruction="false" rect="40,36,59,62" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="batterycellrecharger,battery" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <PowerContainer IndicatorPosition="21,12" IndicatorSize="54,35" IsHorizontal="True" MaxOutPut="1000" Capacity="2000" Charge="2000" MaxRechargeSpeed="500" RechargeSpeed="0" Efficiency="0.95" FlipIndicator="False" MinVoltage="0" PowerConsumption="0" IsActive="True" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <output name="power_out">
+        <link w="400" i="0" />
+      </output>
+      <input name="power_in">
+        <link w="398" i="0" />
+      </input>
+      <input name="set_rate" />
+      <output name="charge" />
+      <output name="charge_%" />
+      <output name="charge_rate" />
+      <output name="condition_out" />
+      <output name="load_value_out" />
+      <output name="power_value_out" />
+      <input name="disable_output" />
+    </ConnectionPanel>
+    <ItemContainer ContainableRestrictions="" AutoFill="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" contained=",," ExtraStackSize="0" />
+    <itemstats />
+  </Item>
+  <Item name="" identifier="emergencylight" ID="340" markedfordeconstruction="false" rect="98,-112,48,8" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="light,smallitem" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <LightComponent Range="250" CastShadows="False" DrawBehindSubs="False" IsOn="True" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,0,0,50" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="toggle" />
+      <input name="set_state" />
+      <input name="set_color" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="junctionbox" ID="343" markedfordeconstruction="false" rect="42,132,55,88" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="light,junctionbox" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <PowerTransfer CanBeOverloaded="True" OverloadVoltage="2" FireProbability="0.15" IsActive="True" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="True" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,255,255,0" IsActive="True" MinVoltage="0.5" PowerConsumption="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="False" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="1.5" LightColor="255,255,255,0" MinVoltage="0.5" PowerConsumption="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <output name="power">
+        <link w="396" i="1" />
+        <link w="398" i="1" />
+        <link w="400" i="1" />
+        <link w="403" i="1" />
+        <link w="404" i="1" />
+      </output>
+      <output name="signal_0" />
+      <output name="signal_1" />
+      <output name="signal_2" />
+      <output name="signal_3" />
+      <output name="condition_out" />
+      <output name="power_value_out" />
+      <output name="load_value_out" />
+    </ConnectionPanel>
+    <Repairable DeteriorationSpeed="0.1" MinDeteriorationDelay="120" MaxDeteriorationDelay="720" MinDeteriorationCondition="0" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="5" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+  </Item>
+  <Item name="" identifier="junctionbox" ID="342" markedfordeconstruction="false" rect="-18,132,55,88" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="light,junctionbox" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <PowerTransfer CanBeOverloaded="True" OverloadVoltage="2" FireProbability="0.15" IsActive="True" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="True" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,255,255,0" IsActive="True" MinVoltage="0.5" PowerConsumption="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="False" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="1.5" LightColor="255,255,255,0" MinVoltage="0.5" PowerConsumption="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <output name="power">
+        <link w="395" i="0" />
+        <link w="396" i="0" />
+        <link w="399" i="1" />
+        <link w="401" i="1" />
+      </output>
+      <output name="signal_0" />
+      <output name="signal_1" />
+      <output name="signal_2" />
+      <output name="signal_3" />
+      <output name="condition_out" />
+      <output name="power_value_out" />
+      <output name="load_value_out" />
+    </ConnectionPanel>
+    <Repairable DeteriorationSpeed="0.1" MinDeteriorationDelay="120" MaxDeteriorationDelay="720" MinDeteriorationCondition="0" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="5" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+  </Item>
+  <Item name="" identifier="junctionbox" ID="341" markedfordeconstruction="false" rect="-78,132,55,88" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="0" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="light,junctionbox" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <PowerTransfer CanBeOverloaded="True" OverloadVoltage="2" FireProbability="0.15" IsActive="True" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgInteractSelect" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="True" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,255,255,0" IsActive="True" MinVoltage="0.5" PowerConsumption="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="False" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="1.5" LightColor="255,255,255,0" MinVoltage="0.5" PowerConsumption="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <output name="power">
+        <link w="393" i="1" />
+        <link w="394" i="0" />
+        <link w="395" i="1" />
+        <link w="397" i="1" />
+        <link w="402" i="0" />
+      </output>
+      <output name="signal_0" />
+      <output name="signal_1" />
+      <output name="signal_2" />
+      <output name="signal_3" />
+      <output name="condition_out" />
+      <output name="power_value_out" />
+      <output name="load_value_out" />
+    </ConnectionPanel>
+    <Repairable DeteriorationSpeed="0.1" MinDeteriorationDelay="120" MaxDeteriorationDelay="720" MinDeteriorationCondition="0" RepairThreshold="80" MaxStressDeteriorationMultiplier="1" StressDeteriorationThreshold="0.5" StressDeteriorationIncreaseSpeed="0.1" StressDeteriorationDecreaseSpeed="0.1" FixDurationLowSkill="25" FixDurationHighSkill="5" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRepairScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+    </Repairable>
+  </Item>
+  <Item name="" identifier="dockingport" ID="344" markedfordeconstruction="false" rect="259,147,113,209" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="-180" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="dock,light" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.9" HiddenInGame="False" conditionpercentage="100">
+    <DockingPort MainDockingPort="False" ApplyEffectsOnDocking="True" ForceDockingDirection="None" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <PowerTransfer CanBeOverloaded="False" OverloadVoltage="2" FireProbability="0" IsActive="True" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <Wire Width="0.3" NoAutoLock="False" UseSpriteDepth="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="False" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,0,0,0" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <LightComponent Range="10" CastShadows="False" DrawBehindSubs="False" IsOn="False" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="0,255,0,0" MinVoltage="0" PowerConsumption="0" Voltage="1" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="False" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="toggle" />
+      <input name="set_state" />
+      <output name="power" />
+      <output name="state_out" />
+      <output name="proximity_sensor" />
+      <output name="on_dock" />
+      <output name="on_undock" />
+    </ConnectionPanel>
+  </Item>
+  <Structure name="Shuttle Shell A25" identifier="sshella25" ID="378" rect="171,252,155,113" flippedx="true" flippedy="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A25" identifier="sshella25" ID="346" rect="-82,252,155,113" flippedx="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A32c" identifier="sshella32c" ID="347" rect="191,225,144,43" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="-140" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.9000001" HiddenInGame="False" />
+  <Structure name="Shuttle Plate A" identifier="sshellaplatea" ID="348" rect="-250,-72,113,113" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.1" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A15b" identifier="sshella15b" ID="350" rect="-149,-208,220,29" flippedx="true" flippedy="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.9000001" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A15b" identifier="sshella15b" ID="349" rect="68,-208,220,29" flippedy="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.9000001" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A28" identifier="sshella28" ID="351" rect="200,209,49,115" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.3" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.9000001" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A06" identifier="sshellaA06" ID="356" rect="-182,-57,106,45" flippedx="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.4" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A06" identifier="sshellaA06" ID="355" rect="117,-57,106,45" flippedx="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.4" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A06" identifier="sshellaA06" ID="354" rect="-100,-57,106,45" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.4" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A06" identifier="sshellaA06" ID="353" rect="199,-57,106,45" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.4" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.39999998" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A06" identifier="sshellaA06" ID="352" rect="-266,-57,106,45" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.4" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A40" identifier="sshella40" ID="357" rect="-206,272,204,102" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8000001" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A23" identifier="sshella23" ID="360" rect="-300,205,116,121" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.55" Rotation="110" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A23" identifier="sshella23" ID="359" rect="-193,-89,116,121" flippedy="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.55" Rotation="90" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A23" identifier="sshella23" ID="358" rect="-299,-17,116,121" flippedy="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.55" Rotation="110" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A Glass F" identifier="sshellaglassf" ID="361" rect="-370,48,153,47" Indestructible="False" MaxHealth="150" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.4" Rotation="90" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A24" identifier="sshella24" ID="362" rect="207,-118,108,127" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="90" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A05" identifier="sshella05" ID="367" rect="225,-110,155,45" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="90" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.39999998" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A05" identifier="sshella05" ID="366" rect="-83,-177,155,45" flippedx="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A05" identifier="sshella05" ID="365" rect="-203,185,155,45" flippedx="true" flippedy="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.801" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A05" identifier="sshella05" ID="364" rect="49,257,155,45" flippedy="true" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A05" identifier="sshella05" ID="363" rect="69,-176,155,45" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="376" rect="-83,-174,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="375" rect="58,-176,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="374" rect="223,-171,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="90" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="373" rect="39,260,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="372" rect="180,258,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="371" rect="-175,187,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="370" rect="-305,136,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="90" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="369" rect="-305,-23,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="90" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Shell A17a" identifier="sshella17a" ID="368" rect="193,-173,23,51" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="True" DisallowedUpgrades="" SpriteDepth="0.7" HiddenInGame="False" />
+  <Structure name="Shuttle Lights A" identifier="sshellalightsa" ID="377" rect="210,-127,128,159" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.5" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.49999997" HiddenInGame="False" />
+  <Item name="" identifier="searchlight" ID="379" markedfordeconstruction="false" rect="-323,-83,49,40" NonInteractable="False" NonPlayerTeamInteractable="False" AllowSwapping="True" Rotation="-133" Scale="0.5" SpriteColor="255,255,255,255" InventoryIconColor="255,255,255,255" ContainerColor="255,255,255,255" InvulnerableToDamage="False" Tags="light,searchlight" DisplaySideBySideWhenLinked="False" DisallowedUpgrades="" SpriteDepth="0.8" HiddenInGame="False" conditionpercentage="100">
+    <LightComponent Range="2500" CastShadows="True" DrawBehindSubs="True" IsOn="True" Flicker="0" FlickerSpeed="1" PulseFrequency="0" PulseAmount="0" BlinkFrequency="0" LightColor="255,255,255,255" IsActive="True" MinVoltage="0.5" PowerConsumption="50" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <Turret BaseRotation="-133" Reload="1E+09" ShotsPerBurst="1" DelayBetweenBursts="0" RetractionDurationMultiplier="1" RecoilTime="0.1" RetractionDelay="0" RotationLimits="45.99455,217.36357" SpringStiffnessLowSkill="25" SpringStiffnessHighSkill="25" SpringDampingLowSkill="5" SpringDampingHighSkill="5" RotationSpeedLowSkill="0.5" RotationSpeedHighSkill="0.5" HudTint="0,0,0,0" AutoOperate="True" AllowAutoOperateWithWiring="False" RandomAimAmount="0" RandomAimMinTime="0" RandomAimMaxTime="0" RandomMovement="True" AimDelay="False" TargetCharacters="True" TargetMonsters="True" TargetHumans="True" TargetSubmarines="True" TargetItems="True" FriendlyTag="" FriendlyTeam="None" MinVoltage="0.5" PowerConsumption="10000" IsActive="True" VulnerableToEMP="True" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="" />
+    <ConnectionPanel Locked="False" PickingTime="0" CanBePicked="False" LockGuiFramePosition="False" GuiFrameOffset="0,0" AllowInGameEditing="True" Msg="ItemMsgRewireScrewdriver">
+      <requireditem items="screwdriver" type="Equipped" characterinventoryslottype="None" optional="false" ignoreineditor="false" excludebroken="true" requireempty="false" excludefullcondition="false" targetslot="-1" allowvariants="true" rotation="0" setactive="false" />
+      <input name="toggle" />
+      <input name="power_in" />
+      <input name="position_in" />
+      <input name="set_light" />
+    </ConnectionPanel>
+  </Item>
+  <Structure name="Back Wall C1" identifier="FF_Wall_C1" ID="380" rect="-288,144,597,224" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="1" Rotation="0" TextureScale="0.5,0.5" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.98" HiddenInGame="False" />
+  <Structure name="Back Wall Ballast C" identifier="bwbc" ID="381" rect="-164,-80,118,94" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="1" Rotation="0" TextureScale="0.5,0.5" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.98" HiddenInGame="False" />
+  <Structure name="Back Wall Ballast A2" identifier="FF_Wall_BP" ID="382" rect="-46,-80,320,96" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="1" Rotation="0" TextureScale="0.5,0.5" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.98" HiddenInGame="False" />
+  <Structure name="Platform Basic" identifier="platform" ID="385" rect="-46,-132,320,27" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="1" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.9" HiddenInGame="False" />
+  <Structure name="Submarine Bow D" identifier="subfrontf1p1" ID="387" rect="-284,-88,544,234" flippedy="true" Indestructible="False" MaxHealth="400" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.89999986" Rotation="0" TextureScale="1,1" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.81000006" HiddenInGame="False" />
+  <Structure name="Metal Wall" identifier="Metal_Wall_2" ID="388" rect="-35,214,320,70" Indestructible="False" MaxHealth="100" SpriteColor="255,255,255,255" UseDropShadow="False" DropShadowOffset="0,0" Scale="0.35" Rotation="0" TextureScale="0.5,0.5" TextureOffset="0,0" NoAITarget="False" DisallowedUpgrades="" SpriteDepth="0.98" HiddenInGame="False" />
+  <Gap ID="345" horizontal="true" HiddenInGame="false" Layer="" rect="298,144,24,208" />
+  <Gap ID="383" horizontal="false" HiddenInGame="false" Layer="" rect="-15,-48,135,51" />
+  <Hull ID="384" rect="-46,-91,326,87" water="0" backgroundsections="" RoomName="roomname.droneballast" AmbientLight="0,0,0,0" Oxygen="28362" IsWetRoom="True" AvoidStaying="True" DisallowedUpgrades="" SpriteDepth="0.001" Scale="0" HiddenInGame="False" />
+  <Gap ID="386" horizontal="true" HiddenInGame="false" Layer="" rect="202,144,24,208" />
+  <Hull ID="389" rect="224,143,77,200" water="0" backgroundsections="" RoomName="roomname.airlock" AmbientLight="0,0,0,0" Oxygen="15400" IsWetRoom="True" AvoidStaying="True" DisallowedUpgrades="" SpriteDepth="0.001" Scale="0" HiddenInGame="False" />
+  <Hull ID="390" rect="-276,143,481,200" water="0" backgroundsections="" RoomName="roomname.dronecontrol" AmbientLight="0,0,0,0" Oxygen="96200" IsWetRoom="False" AvoidStaying="False" DisallowedUpgrades="" SpriteDepth="0.001" Scale="0" HiddenInGame="False" />
+  <Hull ID="391" rect="-38,198,318,55" water="0" backgroundsections="" RoomName="roomname.dronecontrol" AmbientLight="0,0,0,0" Oxygen="17490" IsWetRoom="False" AvoidStaying="False" DisallowedUpgrades="" SpriteDepth="0.001" Scale="0" HiddenInGame="False" />
+  <Hull ID="392" rect="31,214,178,16" water="0" backgroundsections="" RoomName="roomname.dronecontrol" AmbientLight="0,0,0,0" Oxygen="2848" IsWetRoom="False" AvoidStaying="False" DisallowedUpgrades="" SpriteDepth="0.001" Scale="0" HiddenInGame="False" />
+</ItemAssembly>

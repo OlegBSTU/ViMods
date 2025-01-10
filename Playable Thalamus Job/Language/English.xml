@@ -4,6 +4,10 @@
   <jobdescription.ThalamusJob>Once human, once husk, now - a sentient plant, called Thalamis</jobdescription.ThalamusJob>
 
 
+  <ItemMsgRewireAcid>[[use]] Rewire (Sulphuric Acid)</ItemMsgRewireAcid>
+  <ItemMsgDetachKnife>[[use]] Detach (Knife)</ItemMsgDetachKnife>
+
+  <luringgland.prime>Start Countdown (45s)</luringgland.prime>
 
 
   <talenttree.Thalamus_Nest>Nest</talenttree.Thalamus_Nest>
@@ -31,7 +35,6 @@
     <talentName.innerpores>Inner Pores</talentName.innerpores>
   <talentdescription.innerpores>You can hold onto your water and keep yourself hydrated for longer</talentdescription.innerpores>
 
-
     <talentName.calmingpheromones>Calming Pheromones</talentName.calmingpheromones>
   <talentdescription.calmingpheromones>Makes your crewmates less susceptible to psychosis, including your own</talentdescription.calmingpheromones>
 
@@ -52,7 +55,9 @@
 
 
     <talentName.powerplant>Powerplant</talentName.powerplant>
-  <talentdescription.powerplant>You can craft a power generating mountable gland, which constantly emits a small current. Stronger underwater, limit of 2</talentdescription.powerplant>
+  <talentdescription.powerplant>You can craft a power generating mountable gland, which constantly emits a small current. Two times stronger underwater</talentdescription.powerplant>
+  <talentdescription.powerplantreminder>You can only install a maximum of [itemcount] of this item on your submarine.</talentdescription.powerplantreminder>
+
 
     <talentName.luringgland>Luring gland</talentName.luringgland>
   <talentdescription.luringgland>You can craft a luring mountable gland, which can be turned on and off manually or with signals and emits a decoy noise</talentdescription.luringgland>
@@ -61,7 +66,7 @@
   <talentdescription.lightbulb>You can craft a light bulb, a portable mountable light source. Can emit light in inventory. Stronger underwater</talentdescription.lightbulb>
 
     <talentName.capacitorbulb>Capacitor Bulb</talentName.capacitorbulb>
-  <talentdescription.capacitorbulb>You can craft a capacitor bulb, an energy-storing mountable. Limit of 2, is 2 times weaker that a battery cell</talentdescription.capacitorbulb>
+  <talentdescription.capacitorbulb>You can craft a capacitor bulb, an energy-storing mountable gland. Limit of 2, is 2 times weaker that a battery cell</talentdescription.capacitorbulb>
 
     <talentName.wrappinggland>Wrapping Gland</talentName.wrappinggland>
   <talentdescription.wrappinggland>You can craft a mountable wrapping gland. Can only be held in both hands. Treats bleeding of everyone around it, and slows hostiles. Needs power. Stronger undderwater. Limit of 2</talentdescription.wrappinggland>
@@ -72,8 +77,8 @@
     <talentName.pumpinggland>Pumping Bulb</talentName.pumpinggland>
   <talentdescription.pumpinggland>You can craft a mountable pumping bulb. Can only be held in both hands. Does not require power, but is more powerful when powered. Can be signal-controlled, limit of 2</talentdescription.pumpinggland>
   
-    <talentName.buyoancegland>Buyoance Bulb</talentName.buyoancegland>
-  <talentdescription.buyoancegland>You can craft a mountable buyoance bulb. Can only be held in both hands. Does not require power, but is more powerful when powered. Can be signal-controlled, limit of 2</talentdescription.buyoancegland>
+    <talentName.buyoancebulb>Buyoance Bulb</talentName.buyoancebulb>
+  <talentdescription.buyoancebulb>You can craft a mountable buyoance bulb. Can only be held in both hands. Does not require power, but is more powerful when powered. Can be signal-controlled, limit of 2</talentdescription.buyoancebulb>
 
 
     <talentName.breatheitin>Breate in in</talentName.breatheitin>
@@ -88,11 +93,11 @@
     <talentName.endoskeleton>Endoskeleton</talentName.endoskeleton>
   <talentdescription.endoskeleton>Increases walking speed by 20%, decreases swimming speed by 10%</talentdescription.endoskeleton>
 
-    <talentName.gardenerdidit>Gardener did it!</talentName.gardenerdidit>
-  <talentdescription.gardenerdidit>You can now craft a ballast-flora killing spray. Never aim at thalamis crewmates</talentdescription.gardenerdidit>
+    <talentName.gardenwarfare>Garden Warfare</talentName.gardenwarfare>
+  <talentdescription.gardenwarfare>You can now craft new seeds and weapons. All plants must be planted in water. Refer to mod page if you need extra info</talentdescription.gardenwarfare>
 
-    <talentName.slipperycarapace>Slippery Carapace</talentName.slipperycarapace>
-  <talentdescription.slipperycarapace>There's a 10% chance to stun the attacker for 1 second</talentdescription.slipperycarapace>
+    <talentName.talenttree>Talent Tree</talentName.talenttree>
+  <talentdescription.talenttree>You can now craft special tree seed. Chopping it will allow you to make boards so you can barricade yourself</talentdescription.talenttree>
 
     <talentName.wisetree>Wise Tree</talentName.wisetree>
   <talentdescription.wisetree>You now gain 50% more experience</talentdescription.wisetree>
@@ -107,8 +112,8 @@
     <talentName.foresttitan>Forest Titan</talentName.foresttitan>
   <talentdescription.foresttitan>Increases your character in size by giving it an exosuit that CANT BE TAKEN OFF. It gives 50% damage resistance from all sources but fire and cuts, makes you immune to flowing water and slows you down by 20%. Does not need power. </talentdescription.foresttitan>
 
-    <talentName.gardenwarfare>Garden Warfare</talentName.gardenwarfare>
-  <talentdescription.gardenwarfare>You can now craft new seeds and weapons. All plants must be planted in water. Refer to mod page if you need extra info</talentdescription.gardenwarfare>
+    <talentName.gardenerdidit>Gardener did it!</talentName.gardenerdidit>
+  <talentdescription.gardenerdidit>You can now craft a ballast flora killing spray. Never aim at thalamis crewmates</talentdescription.gardenerdidit>
 
     <talentName.lateblooming>Late Blooming</talentName.lateblooming>
   <talentdescription.lateblooming>You gain 10%+ movement and swinging speed when below 50% vitality, this caps at 25% speed at 10% vitality</talentdescription.lateblooming>
@@ -127,6 +132,32 @@
 
     <talentName.immuneresponse>Immune Response</talentName.immuneresponse>
   <talentdescription.immuneresponse>Upon dying, release 3 terminal cells to attack any non-thalamis they can find</talentdescription.immuneresponse>
+
+
+
+    <entityname.generatinggland>Generating Gland</entityname.generatinggland>
+  <entitydescription.generatinggland>A bioelectrical organ, constantly generating a small current. Can be attached to a wall. Can only be carried in 2 hands. Two times stronger underwater</entitydescription.generatinggland>
+
+    <entityname.luringgland>Luring Gland</entityname.luringgland>
+  <entitydescription.luringgland>A sinister-looking organ. Can be primed by hand or with the depth charge device. Emits a sound to lure creatures close. Explodes on contact or after a delay, stunning everyone in a medium radius. Neutral buyoancy</entitydescription.luringgland>
+
+    <entityname.lightbulb>Light Bulb</entityname.lightbulb>
+  <entitydescription.lightbulb>A glowing piece of planty flesh, can be carried in hands or inventory, or attached to a wall. Can't be configured, but can be turned off. Brighter underwater</entitydescription.lightbulb>
+
+    <entityname.capacitorbulb>Capacitor Bulb</entityname.capacitorbulb>
+  <entitydescription.capacitorbulb>An organic battery, holds a small charge for electrical appliances or other glands or bulbs. Can be attached to a wall, or carried in hand</entitydescription.capacitorbulb>
+
+    <entityname.wrappinggland>Wrapping Gland</entityname.wrappinggland>
+  <entitydescription.wrappinggland>A soft organ, slows hostiles and bandages bleeding in allies. Can only be held in 2 hands, requires power to work, stronger underwater, can be attached to a wall</entitydescription.wrappinggland>
+
+    <entityname.thunderbulb>Thunder Bulb</entityname.thunderbulb>
+  <entitydescription.thunderbulb>A small plant organ, storing and then violently discharging electricity around itself. Stronger underwater, can be attached to a wall or held in 2 hands, requires power to work. Can contain a capacitor bulb inside. Can't be toggled off if powered</entitydescription.thunderbulb>
+
+    <entityname.pumpinggland>Pumping Gland</entityname.pumpinggland>
+  <entitydescription.pumpinggland>A strange organ, slowly pumping water in and out of the hull when it's told to with electrical signals. Can be carried in hands or inventory. Does not need power, but is more efficient when powered. Can only be controlled with simple signals like turning it on, off and changing direction</entitydescription.pumpinggland>
+
+    <entityname.buyoancebulb>Buyoance Bulb</entityname.buyoancebulb>
+  <entitydescription.buyoancebulb>A giant organ, drilling a hole in the submarine wall and creating a sack to later fill with gas, effectively increasing submarine vertical mobility Can only be carried in two hands, and cannot be re-picked. Does not need power, but is more efficient when powered. Will only fill itself with gas when toggled on.</entitydescription.buyoancebulb>
 
 
 </infotexts>

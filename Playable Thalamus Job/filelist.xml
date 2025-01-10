@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentpackage name="Playable Thalamus Job" modversion="1.0.1" corepackage="False" gameversion="1.7.7.0">
-  <Character file="%ModDir%/Characters/ThalamusHuman/ThalamusHuman.xml" />
-  <Jobs file="%ModDir%/ThalamusJob.xml" />
+
+  <Character file="%ModDir%/XML/ThalamusHuman.xml" />
+  <Jobs file="%ModDir%/XML/ThalamusJob.xml" />
+  <TalentTrees file="%ModDir%/XML/TalentTrees.xml" />
+  <Talents file="%ModDir%/XML/Talents.xml" />
+
+  <Afflictions file="%ModDir%/XML/Afflictions.xml" />
+  <Item file="%ModDir%/XML/Items.xml" />
+
   <Text file="%ModDir%/Language/English.xml" />
-  <Afflictions file="%ModDir%/Afflictions.xml" />
-  <Afflictions file="%ModDir%/TalentAfflictions.xml" />
-  <Item file="%ModDir%/Items.xml" />
-  <Item file="%ModDir%/ItemOverrides.xml" />
-  <TalentTrees file="%ModDir%/TalentTrees.xml" />
-  <Talents file="%ModDir%/Talents.xml" />
+
 </contentpackage>
