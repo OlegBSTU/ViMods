@@ -3,7 +3,8 @@ if CLIENT then return end
 
 local Path = table.pack(...)[1]
 dofile(Path .. "/Lua/Scripts/helperfunctions.lua")
-dofile(Path .. "/Lua/Scripts/ondamaged.lua")
+dofile(Path .. "/Lua/Scripts/Server/ondamaged.lua")
+dofile(Path .. "/Lua/Scripts/Server/thhumanupdate.lua")
 local characterID = "ThalamusHuman"
 local jobID = "ThalamusJob"
 

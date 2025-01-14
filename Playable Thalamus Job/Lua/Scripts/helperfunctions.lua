@@ -382,8 +382,15 @@ function HF.SetAfflictionLimb(character, identifier, limbtype, strength, aggress
 	-- We need to reverse the resistance effect so that proper values are given in our CharacterHealth.ApplyAffliction, as we are using this command for our internal affliction updates and functions, that do not account for resistance in the first place.
 	local strength = strength * character.CharacterHealth.MaxVitality / 100 / (1 - resistance)
 	local affliction = prefab.Instantiate(strength, aggressor)
+	--local recalculateVitality = NTC.AfflictionsAffectingVitality[identifier] ~= nil
 
-	character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(limbtype), affliction, false, true)
+	character.CharacterHealth.ApplyAffliction(
+		character.AnimController.GetLimb(limbtype),
+		affliction,
+		false,
+		true
+		--recalculateVitality
+	)
 
 	-- turn target aggressive if damaging
 	--    if(aggressor ~= nil and character~=aggressor) then

@@ -10,17 +10,7 @@ local convertedDamageTypes = {
 	--"foreignbody",
 }
 
-local damageTypeSFXDict = {}
---damageTypeSFXDict["blunttrauma"] = "ntcsfx_cyberblunt"
---damageTypeSFXDict["lacerations"] = "ntcsfx_cyberblunt"
---damageTypeSFXDict["burn"] = "ntcsfx_welding"
---damageTypeSFXDict["gunshotwound"] = "ntcsfx_cyberblunt"
---damageTypeSFXDict["bitewounds"] = "ntcsfx_cyberbite"
---damageTypeSFXDict["explosiondamage"] = "ntcsfx_cyberblunt"
---damageTypeSFXDict["internaldamage"] = "ntcsfx_cyberblunt"
---damageTypeSFXDict["foreignbody"] = "ntcsfx_cyberblunt"
-
-local function ConvertDamageTypes(character, limbtype)
+function THConvertDamageTypes(character, limbtype)
 	-- local function isExtremity()
 	--     return not limbtype==LimbType.Torso and not limbtype==LimbType.Head
 	-- end
@@ -48,7 +38,7 @@ local function ConvertDamageTypes(character, limbtype)
 	local prevgnawed = gnawed
 	local explosiondamage_thalamis = HF.GetAfflictionStrengthLimb(character, limbtype, "explosiondamage_thalamis", 0)
 	local prevexplosiondamage_thalamis = explosiondamage_thalamis
-	local organisdamage = HF.GetAfflictionStrengthLimb(character, limbtype, "ntc_bentmetal", 0)
+	local organisdamage = HF.GetAfflictionStrengthLimb(character, limbtype, "organisdamage", 0)
 	local prevorganisdamage = organisdamage
 	local bruisedtissue = HF.GetAfflictionStrengthLimb(character, limbtype, "bruisedtissue", 0)
 	local prevbruisedtissue = bruisedtissue
@@ -201,12 +191,10 @@ Hook.Add("character.applyDamage", "ThalamusJob.ondamaged", function(characterHea
 		return
 	end
 
-	print("hit")
 	-- automatically convert damage types
 	local targetChar = characterHealth.Character
 	local causeDamageTypeConversion = false
 	local identifier = ""
-	local sfxidentifier = nil
 
 	for index, value in ipairs(attackResult.Afflictions) do
 		if value.Strength > 1 then
@@ -214,20 +202,14 @@ Hook.Add("character.applyDamage", "ThalamusJob.ondamaged", function(characterHea
 
 			if HF.TableContains(convertedDamageTypes, identifier) then
 				causeDamageTypeConversion = true
-				if damageTypeSFXDict[identifier] ~= nil then
-					sfxidentifier = damageTypeSFXDict[identifier]
-				end
 			end
 		end
 	end
 
 	--if causeDamageTypeConversion and NTCyb.HF.LimbIsCyber(targetChar, hitLimb.type) then
 	if causeDamageTypeConversion then
-		if sfxidentifier ~= nil then
-			HF.GiveItem(targetChar, sfxidentifier)
-		end
 		Timer.Wait(function()
-			ConvertDamageTypes(targetChar, hitLimb.type)
+			THConvertDamageTypes(targetChar, hitLimb.type)
 		end, 1)
 	end
 end)
